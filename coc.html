@@ -10,197 +10,267 @@
 
     on('change:for_buff1 change:for_buff2 change:for_buff3 change:for_buff4 change:for_buff5', function(eventInfo) {
         getAttrs(['FOR_BUFF1', 'FOR_BUFF2', 'FOR_BUFF3', 'FOR_BUFF4', 'FOR_BUFF5'], function(values) {
-            buff1 = parseInt(values.FOR_BUFF1) || 0;
-            buff2 = parseInt(values.FOR_BUFF2) || 0;
-            buff3 = parseInt(values.FOR_BUFF3) || 0;
-            buff4 = parseInt(values.FOR_BUFF4) || 0;
-            buff5 = parseInt(values.FOR_BUFF5) || 0;
+            var buff1 = parseInt(values.FOR_BUFF1) || 0;
+            var buff2 = parseInt(values.FOR_BUFF2) || 0;
+            var buff3 = parseInt(values.FOR_BUFF3) || 0;
+            var buff4 = parseInt(values.FOR_BUFF4) || 0;
+            var buff5 = parseInt(values.FOR_BUFF5) || 0;
             setAttrs({
-              FOR_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                FOR_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
     });
 
     on('change:dex_buff1 change:dex_buff2 change:dex_buff3 change:dex_buff4 change:dex_buff5', function(eventInfo) {
         getAttrs(['DEX_BUFF1', 'DEX_BUFF2', 'DEX_BUFF3', 'DEX_BUFF4', 'DEX_BUFF5'], function(values) {
-            buff1 = parseInt(values.DEX_BUFF1) || 0;
-            buff2 = parseInt(values.DEX_BUFF2) || 0;
-            buff3 = parseInt(values.DEX_BUFF3) || 0;
-            buff4 = parseInt(values.DEX_BUFF4) || 0;
-            buff5 = parseInt(values.DEX_BUFF5) || 0;
+            var buff1 = parseInt(values.DEX_BUFF1) || 0;
+            var buff2 = parseInt(values.DEX_BUFF2) || 0;
+            var buff3 = parseInt(values.DEX_BUFF3) || 0;
+            var buff4 = parseInt(values.DEX_BUFF4) || 0;
+            var buff5 = parseInt(values.DEX_BUFF5) || 0;
             setAttrs({
-              DEX_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                DEX_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
     });
 
     on('change:con_buff1 change:con_buff2 change:con_buff3 change:con_buff4 change:con_buff5', function(eventInfo) {
         getAttrs(['CON_BUFF1', 'CON_BUFF2', 'CON_BUFF3', 'CON_BUFF4', 'CON_BUFF5'], function(values) {
-            buff1 = parseInt(values.CON_BUFF1) || 0;
-            buff2 = parseInt(values.CON_BUFF2) || 0;
-            buff3 = parseInt(values.CON_BUFF3) || 0;
-            buff4 = parseInt(values.CON_BUFF4) || 0;
-            buff5 = parseInt(values.CON_BUFF5) || 0;
+            var buff1 = parseInt(values.CON_BUFF1) || 0;
+            var buff2 = parseInt(values.CON_BUFF2) || 0;
+            var buff3 = parseInt(values.CON_BUFF3) || 0;
+            var buff4 = parseInt(values.CON_BUFF4) || 0;
+            var buff5 = parseInt(values.CON_BUFF5) || 0;
             setAttrs({
-              CON_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                CON_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
     });
 
     on('change:int_buff1 change:int_buff2 change:int_buff3 change:int_buff4 change:int_buff5', function(eventInfo) {
         getAttrs(['INT_BUFF1', 'INT_BUFF2', 'INT_BUFF3', 'INT_BUFF4', 'INT_BUFF5'], function(values) {
-            buff1 = parseInt(values.INT_BUFF1) || 0;
-            buff2 = parseInt(values.INT_BUFF2) || 0;
-            buff3 = parseInt(values.INT_BUFF3) || 0;
-            buff4 = parseInt(values.INT_BUFF4) || 0;
-            buff5 = parseInt(values.INT_BUFF5) || 0;
+            var buff1 = parseInt(values.INT_BUFF1) || 0;
+            var buff2 = parseInt(values.INT_BUFF2) || 0;
+            var buff3 = parseInt(values.INT_BUFF3) || 0;
+            var buff4 = parseInt(values.INT_BUFF4) || 0;
+            var buff5 = parseInt(values.INT_BUFF5) || 0;
             setAttrs({
-              INT_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                INT_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
     });
 
     on('change:per_buff1 change:per_buff2 change:per_buff3 change:per_buff4 change:per_buff5', function(eventInfo) {
         getAttrs(['PER_BUFF1', 'PER_BUFF2', 'PER_BUFF3', 'PER_BUFF4', 'PER_BUFF5'], function(values) {
-            buff1 = parseInt(values.PER_BUFF1) || 0;
-            buff2 = parseInt(values.PER_BUFF2) || 0;
-            buff3 = parseInt(values.PER_BUFF3) || 0;
-            buff4 = parseInt(values.PER_BUFF4) || 0;
-            buff5 = parseInt(values.PER_BUFF5) || 0;
+            var buff1 = parseInt(values.PER_BUFF1) || 0;
+            var buff2 = parseInt(values.PER_BUFF2) || 0;
+            var buff3 = parseInt(values.PER_BUFF3) || 0;
+            var buff4 = parseInt(values.PER_BUFF4) || 0;
+            var buff5 = parseInt(values.PER_BUFF5) || 0;
             setAttrs({
-              PER_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                PER_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
     });
 
     on('change:sag_buff1 change:sag_buff2 change:sag_buff3 change:sag_buff4 change:sag_buff5', function(eventInfo) {
         getAttrs(['SAG_BUFF1', 'SAG_BUFF2', 'SAG_BUFF3', 'SAG_BUFF4', 'SAG_BUFF5'], function(values) {
-            buff1 = parseInt(values.SAG_BUFF1) || 0;
-            buff2 = parseInt(values.SAG_BUFF2) || 0;
-            buff3 = parseInt(values.SAG_BUFF3) || 0;
-            buff4 = parseInt(values.SAG_BUFF4) || 0;
-            buff5 = parseInt(values.SAG_BUFF5) || 0;
+            var buff1 = parseInt(values.SAG_BUFF1) || 0;
+            var buff2 = parseInt(values.SAG_BUFF2) || 0;
+            var buff3 = parseInt(values.SAG_BUFF3) || 0;
+            var buff4 = parseInt(values.SAG_BUFF4) || 0;
+            var buff5 = parseInt(values.SAG_BUFF5) || 0;
             setAttrs({
-              SAG_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                SAG_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
     });
 
     on('change:cha_buff1 change:cha_buff2 change:cha_buff3 change:cha_buff4 change:cha_buff5', function(eventInfo) {
         getAttrs(['CHA_BUFF1', 'CHA_BUFF2', 'CHA_BUFF3', 'CHA_BUFF4', 'CHA_BUFF5'], function(values) {
-            buff1 = parseInt(values.CHA_BUFF1) || 0;
-            buff2 = parseInt(values.CHA_BUFF2) || 0;
-            buff3 = parseInt(values.CHA_BUFF3) || 0;
-            buff4 = parseInt(values.CHA_BUFF4) || 0;
-            buff5 = parseInt(values.CHA_BUFF5) || 0;
+            var buff1 = parseInt(values.CHA_BUFF1) || 0;
+            var buff2 = parseInt(values.CHA_BUFF2) || 0;
+            var buff3 = parseInt(values.CHA_BUFF3) || 0;
+            var buff4 = parseInt(values.CHA_BUFF4) || 0;
+            var buff5 = parseInt(values.CHA_BUFF5) || 0;
             setAttrs({
-              CHA_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                CHA_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
     });
     
     on('change:atkcac_buff1 change:atkcac_buff2 change:atkcac_buff3 change:atkcac_buff4 change:atkcac_buff5', function(eventInfo) {
         getAttrs(['ATKCAC_BUFF1', 'ATKCAC_BUFF2', 'ATKCAC_BUFF3', 'ATKCAC_BUFF4', 'ATKCAC_BUFF5'], function(values) {
-            buff1 = parseInt(values.ATKCAC_BUFF1) || 0;
-            buff2 = parseInt(values.ATKCAC_BUFF2) || 0;
-            buff3 = parseInt(values.ATKCAC_BUFF3) || 0;
-            buff4 = parseInt(values.ATKCAC_BUFF4) || 0;
-            buff5 = parseInt(values.ATKCAC_BUFF5) || 0;
+            var buff1 = parseInt(values.ATKCAC_BUFF1) || 0;
+            var buff2 = parseInt(values.ATKCAC_BUFF2) || 0;
+            var buff3 = parseInt(values.ATKCAC_BUFF3) || 0;
+            var buff4 = parseInt(values.ATKCAC_BUFF4) || 0;
+            var buff5 = parseInt(values.ATKCAC_BUFF5) || 0;
             setAttrs({
-              ATKCAC_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                ATKCAC_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
     });
 
     on('change:atktir_buff1 change:atktir_buff2 change:atktir_buff3 change:atktir_buff4 change:atktir_buff5', function(eventInfo) {
         getAttrs(['ATKTIR_BUFF1', 'ATKTIR_BUFF2', 'ATKTIR_BUFF3', 'ATKTIR_BUFF4', 'ATKTIR_BUFF5'], function(values) {
-            buff1 = parseInt(values.ATKTIR_BUFF1) || 0;
-            buff2 = parseInt(values.ATKTIR_BUFF2) || 0;
-            buff3 = parseInt(values.ATKTIR_BUFF3) || 0;
-            buff4 = parseInt(values.ATKTIR_BUFF4) || 0;
-            buff5 = parseInt(values.ATKTIR_BUFF5) || 0;
+            var buff1 = parseInt(values.ATKTIR_BUFF1) || 0;
+            var buff2 = parseInt(values.ATKTIR_BUFF2) || 0;
+            var buff3 = parseInt(values.ATKTIR_BUFF3) || 0;
+            var buff4 = parseInt(values.ATKTIR_BUFF4) || 0;
+            var buff5 = parseInt(values.ATKTIR_BUFF5) || 0;
             setAttrs({
-              ATKTIR_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                ATKTIR_BUFF: buff1 + buff2 + buff3 + buff4 + buff5 + etat_tir
             });
        });
     });
 
     on('change:atkmag_buff1 change:atkmag_buff2 change:atkmag_buff3 change:atkmag_buff4 change:atkmag_buff5', function(eventInfo) {
         getAttrs(['ATKMAG_BUFF1', 'ATKMAG_BUFF2', 'ATKMAG_BUFF3', 'ATKMAG_BUFF4', 'ATKMAG_BUFF5'], function(values) {
-            buff1 = parseInt(values.ATKMAG_BUFF1) || 0;
-            buff2 = parseInt(values.ATKMAG_BUFF2) || 0;
-            buff3 = parseInt(values.ATKMAG_BUFF3) || 0;
-            buff4 = parseInt(values.ATKMAG_BUFF4) || 0;
-            buff5 = parseInt(values.ATKMAG_BUFF5) || 0;
+            var buff1 = parseInt(values.ATKMAG_BUFF1) || 0;
+            var buff2 = parseInt(values.ATKMAG_BUFF2) || 0;
+            var buff3 = parseInt(values.ATKMAG_BUFF3) || 0;
+            var buff4 = parseInt(values.ATKMAG_BUFF4) || 0;
+            var buff5 = parseInt(values.ATKMAG_BUFF5) || 0;
             setAttrs({
-              ATKMAG_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                ATKMAG_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
     });
 
     on('change:atkmen_buff1 change:atkmen_buff2 change:atkmen_buff3 change:atkmen_buff4 change:atkmen_buff5', function(eventInfo) {
         getAttrs(['ATKMEN_BUFF1', 'ATKMEN_BUFF2', 'ATKMEN_BUFF3', 'ATKMEN_BUFF4', 'ATKMEN_BUFF5'], function(values) {
-            buff1 = parseInt(values.ATKMEN_BUFF1) || 0;
-            buff2 = parseInt(values.ATKMEN_BUFF2) || 0;
-            buff3 = parseInt(values.ATKMEN_BUFF3) || 0;
-            buff4 = parseInt(values.ATKMEN_BUFF4) || 0;
-            buff5 = parseInt(values.ATKMEN_BUFF5) || 0;
+            var buff1 = parseInt(values.ATKMEN_BUFF1) || 0;
+            var buff2 = parseInt(values.ATKMEN_BUFF2) || 0;
+            var buff3 = parseInt(values.ATKMEN_BUFF3) || 0;
+            var buff4 = parseInt(values.ATKMEN_BUFF4) || 0;
+            var buff5 = parseInt(values.ATKMEN_BUFF5) || 0;
             setAttrs({
-              ATKMEN_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                ATKMEN_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
     });
 
     on('change:atkpsy_buff1 change:atkpsy_buff2 change:atkpsy_buff3 change:atkpsy_buff4 change:atkpsy_buff5', function(eventInfo) {
         getAttrs(['ATKPSY_BUFF1', 'ATKPSY_BUFF2', 'ATKPSY_BUFF3', 'ATKPSY_BUFF4', 'ATKPSY_BUFF5'], function(values) {
-            buff1 = parseInt(values.ATKPSY_BUFF1) || 0;
-            buff2 = parseInt(values.ATKPSY_BUFF2) || 0;
-            buff3 = parseInt(values.ATKPSY_BUFF3) || 0;
-            buff4 = parseInt(values.ATKPSY_BUFF4) || 0;
-            buff5 = parseInt(values.ATKPSY_BUFF5) || 0;
+            var buff1 = parseInt(values.ATKPSY_BUFF1) || 0;
+            var buff2 = parseInt(values.ATKPSY_BUFF2) || 0;
+            var buff3 = parseInt(values.ATKPSY_BUFF3) || 0;
+            var buff4 = parseInt(values.ATKPSY_BUFF4) || 0;
+            var buff5 = parseInt(values.ATKPSY_BUFF5) || 0;
             setAttrs({
-              ATKPSY_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                ATKPSY_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
     });
 
     on('change:init_buff1 change:init_buff2 change:init_buff3 change:init_buff4 change:init_buff5', function(eventInfo) {
         getAttrs(['INIT_BUFF1', 'INIT_BUFF2', 'INIT_BUFF3', 'INIT_BUFF4', 'INIT_BUFF5'], function(values) {
-            buff1 = parseInt(values.INIT_BUFF1) || 0;
-            buff2 = parseInt(values.INIT_BUFF2) || 0;
-            buff3 = parseInt(values.INIT_BUFF3) || 0;
-            buff4 = parseInt(values.INIT_BUFF4) || 0;
-            buff5 = parseInt(values.INIT_BUFF5) || 0;
+            var buff1 = parseInt(values.INIT_BUFF1) || 0;
+            var buff2 = parseInt(values.INIT_BUFF2) || 0;
+            var buff3 = parseInt(values.INIT_BUFF3) || 0;
+            var buff4 = parseInt(values.INIT_BUFF4) || 0;
+            var buff5 = parseInt(values.INIT_BUFF5) || 0;
             setAttrs({
-              INIT_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                INIT_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
     });
 
     on('change:def_buff1 change:def_buff2 change:def_buff3 change:def_buff4 change:def_buff5', function(eventInfo) {
         getAttrs(['DEF_BUFF1', 'DEF_BUFF2', 'DEF_BUFF3', 'DEF_BUFF4', 'DEF_BUFF5'], function(values) {
-            buff1 = parseInt(values.DEF_BUFF1) || 0;
-            buff2 = parseInt(values.DEF_BUFF2) || 0;
-            buff3 = parseInt(values.DEF_BUFF3) || 0;
-            buff4 = parseInt(values.DEF_BUFF4) || 0;
-            buff5 = parseInt(values.DEF_BUFF5) || 0;
+            var buff1 = parseInt(values.DEF_BUFF1) || 0;
+            var buff2 = parseInt(values.DEF_BUFF2) || 0;
+            var buff3 = parseInt(values.DEF_BUFF3) || 0;
+            var buff4 = parseInt(values.DEF_BUFF4) || 0;
+            var buff5 = parseInt(values.DEF_BUFF5) || 0;
             setAttrs({
-              DEF_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                DEF_BUFF: buff1 + buff2 + buff3 + buff4 + buff5 + etat_def
             });
        });
     });
 
     on('change:defp_buff1 change:defp_buff2 change:defp_buff3 change:defp_buff4 change:defp_buff5', function(eventInfo) {
         getAttrs(['DEFP_BUFF1', 'DEFP_BUFF2', 'DEFP_BUFF3', 'DEFP_BUFF4', 'DEFP_BUFF5'], function(values) {
-            buff1 = parseInt(values.DEFP_BUFF1) || 0;
-            buff2 = parseInt(values.DEFP_BUFF2) || 0;
-            buff3 = parseInt(values.DEFP_BUFF3) || 0;
-            buff4 = parseInt(values.DEFP_BUFF4) || 0;
-            buff5 = parseInt(values.DEFP_BUFF5) || 0;
+            var buff1 = parseInt(values.DEFP_BUFF1) || 0;
+            var buff2 = parseInt(values.DEFP_BUFF2) || 0;
+            var buff3 = parseInt(values.DEFP_BUFF3) || 0;
+            var buff4 = parseInt(values.DEFP_BUFF4) || 0;
+            var buff5 = parseInt(values.DEFP_BUFF5) || 0;
             setAttrs({
-              DEFP_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
+                DEFP_BUFF: buff1 + buff2 + buff3 + buff4 + buff5
             });
        });
+    });
+    
+    on('change:condition', function(eventInfo) {
+        getAttrs(['PCONDITION', 'CONDITION', 'ATKCAC_BUFF', 'ATKTIR_BUFF', 'INIT_BUFF', 'DEF_BUFF'], function(values) {
+            var pinit = 0;
+            var patc = 0;
+            var patd = 0;
+            var pdef = 0;
+            var minit = 0;
+            var matc = 0;
+            var matd = 0;
+            var mdef = 0;
+            switch (values.PCONDITION) {
+                case 'A':
+                    pinit = 5;
+                    patc = 5;
+                    pdef = 5;
+                    patd = 10;
+                    break;
+                case 'E':
+                    pdef = 5;
+                    break;
+                case 'I':
+                    etatde = '20';
+                    break;
+                case 'R':
+                    patc = 5;
+                    patd = 5;
+                    pdef = 5;
+                    break;
+                case 'S':
+                    pdef = 5;
+                    break;
+                case '':
+                    break;
+            }
+            switch (values.CONDITION) {
+                case 'A':
+                    minit = 5;
+                    matc = 5;
+                    mdef = 5;
+                    matd = 10;
+                    break;
+                case 'E':
+                    mdef = 5;
+                    break;
+                case 'I':
+                    etatde = '12';
+                    break;
+                case 'R':
+                    matc = 5;
+                    matd = 5;
+                    mdef = 5;
+                    break;
+                case 'S':
+                    mdef = 5;
+                    break;
+                case '':
+                    etatde = '20';
+                    break;
+            }
+            setAttrs({
+                ATKCAC_BUFF: values.ATKCAC_BUFF + patc - matc,
+                ATKTIR_BUFF: values.ATKTIR_BUFF + patd - matd,
+                INIT_BUFF: values.INIT_BUFF + pinit - minit,
+                DEF_BUFF: values.DEF_BUFF + pdef - mdef,
+                ETATDE: etatde,
+                PCONDITION: values.CONDITION
+            });
+       }); 
     });
 
 </script>
@@ -231,6 +301,7 @@
     <input type="hidden" name="attr_DEF_BUFF" value="0" />
     <input type="hidden" name="attr_DEFP_BUFF" value="0" />
     <!-- FIN Buffs -->
+    <input type="hidden" name="attr_PCONDITION" value="" />
     <div class="sheet-container"><!-- Identité -->
         <div style="vertical-align: middle;text-align: center;">
             <img style="width:70%; height:90%"  title="Version 2.0 - 21/11/2018" src="https://s3.eu-west-3.amazonaws.com/chroniques-oubliees/COC/coc_logo.png"/>
@@ -357,11 +428,22 @@
                                 <td class="sheet-boxinputlight"><input type="number" name="attr_CHA_TEST" value="@{CHA}+@{CHA_BONUS}" disabled /></td>
                             </tr>
                             <tr>
-                                <td class="sheet-textfat">ÉTAT</td>
-                                <td class="sheet-boxinputlight" COLSPAN="5">
-                                    <input type="radio" name="attr_ETATDE" value="20" checked >Normal (d20)</input>
+                                <td class="sheet-textfat" colspan="6">ÉTATS PRÉJUDICIABLES</td>
+                            </tr>
+                            <tr>
+                                <td class="sheet-boxinputlight" colspan="6">
+                                    <input type="radio" name="attr_ETATDE" value="20" title="Jet d'un d20 pour tous les tests" checked >Normal</input>
                                     &nbsp;
-                                    <input type="radio" name="attr_ETATDE" value="12" >Affaibli (d12)</input>
+                                    <input type="radio" name="attr_ETATDE" value="12" title="Jet d'un d12 pour tous les tests">Affaibli</input>
+                                    &nbsp;
+                                    <select class="sheet-carac" style="min-width: 100px;" name="attr_CONDITION">
+                                        <option value="" selected>-</option>
+                                        <option value="A">Aveuglé</option>
+                                        <option value="E">Etourdi</option>
+                                        <option value="I">Immobilisé</option>
+                                        <option value="R">Renversé</option>
+                                        <option value="S">Surpris</option>
+                                    </select>
                                 </td>
                             </tr>
                         </table>
@@ -940,6 +1022,7 @@
                     </table>
                 </div>
             </div>
+            <img class="sheet-imghr" src="https://s3.eu-west-3.amazonaws.com/chroniques-oubliees/COC/coc_hr.jpg" />
         </div> <!-- FIN Equipement et règles optionnelles -->
     </div>
     <div class="sheet-tab-content sheet-tab4">
@@ -1225,6 +1308,7 @@
                     </td>
                 </tr>
             </table>
+            <img class="sheet-imghr" src="https://s3.eu-west-3.amazonaws.com/chroniques-oubliees/COC/coc_hr.jpg" />
         </div> <!-- FIN BUFFS -->
     </div>
 </div> <!-- FIN FDP -->
