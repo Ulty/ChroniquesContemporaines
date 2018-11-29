@@ -284,6 +284,36 @@ td.sheet-buff-text {
     width: 12%;
 }
 
+.sheet-options-flag {
+opacity: 0;
+top: 0px;
+right: 16px;
+position: absolute;
+width: 16px;
+min-height: 16px;
+z-index: 2;
+}
+.sheet-options-flag + span {
+right: 16px;
+position: absolute;
+white-space: nowrap;
+width: 16px;
+height: 16px;
+font-size: 16px;
+font-family: pictos;
+color: #BBBBBB;
+cursor: pointer;
+margin-top: 0px;
+display: none;
+}
+.sheet-options-flag:hover + span,.sheet-options-flag:checked + span {
+color: #C3996B;
+display: block;
+}
+.sheet-attack:hover .sheet-options-flag + span {display: block;}
+.sheet-options {display: none;}
+.sheet-options-flag:checked ~ .sheet-options {display: block;}
+
 /* TEMPLATES */
 
 .sheet-rolltemplate-co1 .sheet-imghr{
