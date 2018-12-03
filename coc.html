@@ -390,6 +390,21 @@
             });
         });
     });
+    
+    on('change:poisse', function(eventInfo) {
+        getAttrs(['POISSE'], function(values) {
+            var jetn = (values.POISSE == '1') ? '2d@{ETATDE}kl1' : '1d@{ETATDE}';
+            var jets = (values.POISSE == '1') ? '1d@{ETATDE}' : '2d@{ETATDE}kh1';
+            var jetsh = (values.POISSE == '1') ? '2d@{ETATDE}kh1' : '{2d@{ETATDE}kh1, 0d20+10}kh1';
+            var jetr = (values.POISSE == '1') ? '2d12kl1' : '1d12';
+            setAttrs({
+                JETNORMAL: jetn,
+                JETSUP: jets,
+                JETSUPHERO: jetsh,
+                JETRISQUE: jetr
+            });
+        });
+    });
 
 </script>
 
@@ -402,6 +417,7 @@
     <input type="hidden" name="attr_JETNORMAL" value="1d@{ETATDE}" />
     <input type="hidden" name="attr_JETSUP" value="2d@{ETATDE}kh1" />
     <input type="hidden" name="attr_JETSUPHERO" value="{2d@{ETATDE}kh1, 0d20+10}kh1" />
+    <input type="hidden" name="attr_JETRISQUE" value="1d12" />
     <!-- INPUT HIDDEN Buffs -->
     <input type="hidden" name="attr_FOR_BUFF" value="0" />
     <input type="hidden" name="attr_DEX_BUFF" value="0" />
@@ -551,12 +567,19 @@
                             </tr>
                             <tr>
                                 <td class="sheet-boxinputlight" colspan="6">
-                                    <input type="radio" name="attr_ETATDE" value="20" title="@{ETATDE} Jet d'un d20 pour tous les tests" checked >Normal</input>
                                     &nbsp;
-                                    <input type="radio" name="attr_ETATDE" value="12" title="@{ETATDE} Jet d'un d12 pour tous les tests">Affaibli</input>
+                                    <input type="radio" name="attr_ETATDE" value="20" title="@{ETATDE} Jet d'un d20 pour tous les tests" checked >&nbsp;Normal</input>
                                     &nbsp;
+                                    <input type="radio" name="attr_ETATDE" value="12" title="@{ETATDE} Jet d'un d12 pour tous les tests">&nbsp;Affaibli</input>
+                                    &nbsp;
+                                    <input type="checkbox" name="attr_POISSE" title="@{POISSE} Moins bon de deux d20 pour tous les tests" value="1" />&nbsp;Poisse
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sheet-boxinputlight" colspan="6">
+                                    Autres conditions :&nbsp;
                                     <select class="sheet-carac" style="min-width: 100px;" name="attr_CONDITION" title="@{CONDITION}">
-                                        <option value="" selected>-</option>
+                                        <option value="" selected>(aucune)</option>
                                         <option value="A">Aveuglé</option>
                                         <option value="E">Etourdi</option>
                                         <option value="I">Immobilisé</option>
@@ -580,7 +603,7 @@
                                             <td class="sheet-textfat">Total</td>
                                         </tr>
                                         <tr>
-                                            <td class="sheet-boxtitre"><button class="sheet-boxtitre" type="roll" name="JET_CAC" title="Jet d'attaque au contact" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Au Contact}} {{subtags=Attaque}} {{attaque=[[1d@{ETATDE}[Dé] + [[@{ATKCAC}]][Bonus] ]]}}"> AU CONTACT</button></td>
+                                            <td class="sheet-boxtitre"><button class="sheet-boxtitre" type="roll" name="JET_CAC" title="Jet d'attaque au contact" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Au Contact}} {{subtags=Attaque}} {{attaque=[[ @{JETNORMAL}[Dé] + [[@{ATKCAC}]][Bonus] ]]}}"> AU CONTACT</button></td>
                                             <td class="sheet-boxinput"><input type="number" name="attr_ATKCAC_BASE" value="0" title="@{ATKCAC_BASE} Score de base" /></td>
                                             <td class="sheet-boxinput">
                                                 <select class="sheet-carac" name="attr_ATKCAC_CARAC" title="@{ATKCAC_CARAC}" size="1">
@@ -596,7 +619,7 @@
                                             <td class="sheet-boxinputlight"><input type="number" name="attr_ATKCAC" title="@{ATKCAC}" value="@{ATKCAC_BASE}+@{ATKCAC_CARAC}+@{ATKCAC_DIV}" disabled /></td>
                                         </tr>
                                         <tr>
-                                            <td class="sheet-boxtitre"><button class="sheet-boxtitre" type="roll" name="JET_TIR" title="Jet d'attaque à distance" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=&Agrave; Distance}} {{subtags=Attaque}} {{attaque=[[ 1d@{ETATDE}[Dé] + [[@{ATKTIR}]][Bonus] ]]}}"> &Agrave; DISTANCE</button></td>
+                                            <td class="sheet-boxtitre"><button class="sheet-boxtitre" type="roll" name="JET_TIR" title="Jet d'attaque à distance" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=&Agrave; Distance}} {{subtags=Attaque}} {{attaque=[[ @{JETNORMAL}[Dé] + [[@{ATKTIR}]][Bonus] ]]}}"> &Agrave; DISTANCE</button></td>
                                             <td class="sheet-boxinput"><input type="number" name="attr_ATKTIR_BASE" value="0" title="@{ATKTIR_BASE} Score de base" /></td>
                                             <td class="sheet-boxinput">
                                                 <select class="sheet-carac" name="attr_ATKTIR_CARAC" title="@{ATKTIR_CARAC}" size="1">
@@ -612,7 +635,7 @@
                                             <td class="sheet-boxinputlight"><input type="number" name="attr_ATKTIR" title="@{ATKTIR}" value="@{ATKTIR_BASE}+@{ATKTIR_CARAC}+@{ATKTIR_DIV}" disabled /></td>
                                         </tr>
                                         <tr>
-                                            <td class="sheet-boxtitre"><button class="sheet-boxtitre" type="roll" name="JET_MEN" title="Jet d'attaque mentale" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Mental}} {{subtags=Attaque}} {{attaque=[[ 1d@{ETATDE}[Dé] + [[@{ATKMEN}]][Bonus] ]]}}"> MENTAL</button></td>
+                                            <td class="sheet-boxtitre"><button class="sheet-boxtitre" type="roll" name="JET_MEN" title="Jet d'attaque mentale" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Mental}} {{subtags=Attaque}} {{attaque=[[ @{JETNORMAL}[Dé] + [[@{ATKMEN}]][Bonus] ]]}}"> MENTAL</button></td>
                                             <td class="sheet-boxinput"><input type="number" name="attr_ATKMEN_BASE" value="0" title="@{ATKMEN_BASE} Score de base" /></td>
                                             <td class="sheet-boxinput">
                                                 <select class="sheet-carac" name="attr_ATKMEN_CARAC" title="@{ATKMEN_CARAC}" size="1">
@@ -628,7 +651,7 @@
                                             <td class="sheet-boxinputlight"><input type="number" name="attr_ATKMEN" title="@{ATKMEN}" value="@{ATKMEN_BASE}+@{ATKMEN_CARAC}+@{ATKMEN_DIV}" disabled /></td>
                                         </tr>
                                         <tr>
-                                            <td class="sheet-boxtitre"><button class="sheet-boxtitre" type="roll" name="JET_MAG" title="Jet d'attaque magique" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Magique}} {{subtags=Attaque}} {{attaque=[[ 1d@{ETATDE}[Dé] + [[@{ATKMAG}]][Bonus] ]]}}"> MAGIQUE</button></td>
+                                            <td class="sheet-boxtitre"><button class="sheet-boxtitre" type="roll" name="JET_MAG" title="Jet d'attaque magique" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Magique}} {{subtags=Attaque}} {{attaque=[[ @{JETNORMAL}[Dé] + [[@{ATKMAG}]][Bonus] ]]}}"> MAGIQUE</button></td>
                                             <td class="sheet-boxinput"><input type="number" name="attr_ATKMAG_BASE" value="0" title="@{ATKMAG_BASE} Score de base" /></td>
                                             <td class="sheet-boxinput">
                                                 <select class="sheet-carac" name="attr_ATKMAG_CARAC" title="@{ATKMAG_CARAC}" size="1">
@@ -801,7 +824,7 @@
                         <table  class="sheet-tabsep">
                             <tr>
                                 <td>
-                                    <button type="roll" class="sheet-neutre" name="JetArme" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Attaque}} {{name=@{armenom}}} {{desc=@{armejetn}}} {{attaque=[[ @{armejetd}cs>@{armecrit}cf<[[@{armeinct}+(1*@{arc_feu})]][Dé] +[[@{armeatk}]][Attaque] +[[@{armeatkdiv}]][Bonus] +([[@{visee_att}]])[Tir visé] -([[@{arc_feu}*3]])[Arc de feu] +([[@{distance}]])[Portée] ]]}} {{degats=[[ @{armedmnbde}d@{armedmde}@{dm_nolim}[Dé DM] +([[@{armedmcar}]])[Mod.DM] +(@{armedmdiv})[Bonus DM] +([[@{visee_dm}]])[Tir visé] -([[@{arc_feu}*3]])[Arc de feu] ]]}} {{special=@{armespec}}}" />
+                                    <button type="roll" class="sheet-neutre" name="JetArme" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Attaque}} {{name=@{armenom}}} {{desc=@{armejetn}}} {{attaque=[[ @{armejetd}cs>@{armecrit}cf<[[@{armeinct}+(1*@{arc_feu})]][Dé] +[[@{armeatk}]][Attaque] +[[@{armeatkdiv}]][Bonus] +([[@{visee_att}]])[Tir visé] -([[@{arc_feu}*3]])[Arc de feu] +([[@{distance}]])[Portée] ]]}} {{degats=[[ @{armedmnbde}d@{armedmde}@{armedmrel}@{armedmvrel}[Dé DM] +([[@{armedmcar}]])[Mod.DM] +(@{armedmdiv})[Bonus DM] +([[@{visee_dm}]])[Tir visé] -([[@{arc_feu}*3]])[Arc de feu] ]]}} {{special=@{armespec}}}" />
                                 </td>
                                 <td class="sheet-boxinputleft" style="min-width:130px;">
                                     <input type="text" name="attr_armenom" title="@armenom}" style="font-weight: bold;" placeholder="Arme/attaque"/>
@@ -874,9 +897,9 @@
                                 </td>
                                 <td class="sheet-boxinputleft" style="width: 150px;">&nbsp;Type de jet
                                     <select class="sheet-carac" style="width: 65px;" name="attr_armejetd" size="1" title="@{armejetd} Jet d'attaque : 'Risque' = avec d12, 'Expert' = meilleur de deux d20">
-                                        <option value="1d@{ETATDE}" selected>Normal</option>
-                                        <option value="1d12">Risque (d12)</option>
-                                        <option value="2d@{ETATDE}kh1">Expert (2 d20)</option>
+        								<option value="@{JETNORMAL}" selected>Normal</option>
+        								<option value="@{JETRISQUE}">Risque (d12)</option>
+        								<option value="@{JETSUP}">Expert (2 d20)</option>
                                     </select>
                                 </td>
                                 <td class="sheet-boxinputleft" style="width: 32px;">
@@ -1183,13 +1206,7 @@
                     <td style="width: 20%;">
                         <span class="textbase">Initiative variable</span>&nbsp;<input type="checkbox" name="attr_INIT_VAR" title="@{INIT_VAR}" value="[[1d6!]]" />
                     </td>
-                    <td style="width: 25%;">
-                        <span class="textbase">Type de DM</span>&nbsp;
-                        <select class="sheet-carac" style="width: 90px;" name="attr_dm_nolim" size="1" title="@{dm_nolim}">
-                            <option value="" selected>Normaux</option>
-                            <option value="!">Sans limite</option>
-                        </select>
-                    </td>
+                    <td style="width: 25%;"></td>
                     <td style="width: 20%;"></td>
                     <td style="width: 20%;"></td>
                 </tr>
