@@ -229,10 +229,18 @@ textarea.sheet-voixdesc{
     height: 100%;
     overflow-y: auto;
 }
-
 .sheet-container{
   display:flex;
 }
+td.sheet-buff {
+    padding: 2px;
+}
+td.sheet-buff-text {
+    width: 12%;
+}
+
+/* TABS */
+
 div.sheet-tab-content { display: none; }
 input.sheet-tab1:checked ~ div.sheet-tab1,
 input.sheet-tab2:checked ~ div.sheet-tab2,
@@ -269,46 +277,76 @@ input.sheet-tab:checked + span::before {
 }
 .sheet-block-hidden,
 .sheet-block-switch:checked ~ .sheet-block-show {
-  display: block;
+    display: block;
 }
 .sheet-block-show,
 .sheet-block-switch:checked ~ .sheet-block-hidden {
-  display: none;
+    display: none;
 }
 
-td.sheet-buff {
-    padding: 2px;
+/* Switch -- styled checkboxes */
+
+input[type="checkbox"].sheet-block-switch {
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    margin: -10px;
+    cursor: pointer;
+    z-index: 1;    
+}
+input[type="checkbox"].sheet-block-switch + span::before {
+    margin-right: 4px;
+    line-height: 14px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    content: "▼";
+    width: 16px;
+    height: 16px;
+    font-size: 12px;    
+}
+input[type="checkbox"].sheet-block-switch:checked + span::before {
+    content: "►";
+}
+.sheet-block-hidden,
+.sheet-block-switch:checked ~ .sheet-block-show {
+    display: block;
+}
+.sheet-block-show,
+.sheet-block-switch:checked ~ .sheet-block-hidden {
+    display: none;
 }
 
-td.sheet-buff-text {
-    width: 12%;
-}
+/* Optional display -- Gears */
 
 .sheet-options-flag {
-opacity: 0;
-top: 0px;
-right: 16px;
-position: absolute;
-width: 16px;
-min-height: 16px;
-z-index: 2;
+    opacity: 0;
+    top: 0px;
+    right: 16px;
+    position: absolute;
+    width: 16px;
+    min-height: 16px;
+    z-index: 2;
 }
 .sheet-options-flag + span {
-right: 16px;
-position: absolute;
-white-space: nowrap;
-width: 16px;
-height: 16px;
-font-size: 16px;
-font-family: pictos;
-color: #BBBBBB;
-cursor: pointer;
-margin-top: 0px;
-display: none;
+    right: 16px;
+    position: absolute;
+    white-space: nowrap;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    font-family: pictos;
+    color: #BBBBBB;
+    cursor: pointer;
+    margin-top: 0px;
+    display: none;
 }
 .sheet-options-flag:hover + span,.sheet-options-flag:checked + span {
-color: #C3996B;
-display: block;
+    color: #C3996B;
+    display: block;
 }
 .sheet-attack:hover .sheet-options-flag + span {display: block;}
 .sheet-options {display: none;}
