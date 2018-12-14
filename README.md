@@ -9,7 +9,7 @@ Cette feuilles de personnage inclut quelques jets et r&egrave;gles optionnelles.
 Le jeu complet est disponible sur le site de l'éditeur [Black Book Editions](http://www.black-book-editions.fr/produit.php?id=4349).
 
 # Version courante
-2.2 [Screenshot](coc_v2.png)
+2.3 [Screenshot](coc_v2.png)
 
 # Notes de version
 
