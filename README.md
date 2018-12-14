@@ -13,6 +13,9 @@ Le jeu complet est disponible sur le site de l'éditeur [Black Book Editions](ht
 
 # Notes de version
 
+## V2.3 (2018-12-13)
+* Correction d'un bug sur le calcul des buffs Divers ATD et DEF
+
 ## v2.2 (2018-12-11)
 * Modification du bouton de jet d'attaque pour générer un attribut pour chaque ligne. 
 * Correction des espaces dans la commande invoquée par le bouton d'attaque pour en permettre l'utilisation à la fois dans le chat et via l'API en appelant la pseudo ability %{nom|repeating_armes_$n_jet} (où n est le no de ligne, base 0)
