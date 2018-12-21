@@ -291,19 +291,19 @@ input.sheet-tab:checked + span::before {
     border-bottom-color: #fff;
     border-bottom-width: 5px
 }
-.sheet-block-hidden,
-.sheet-block-switch:checked ~ .sheet-block-show {
-	display: block;
-}
-.sheet-block-show,
-.sheet-block-switch:checked ~ .sheet-block-hidden {
-	display: none;
-}
 input.sheet-hidden-tab {
     display: none;
     height: 0px;
     position: relative;
     top: -10px;
+}
+.sheet-block-hidden,
+.sheet-block-switch:checked ~ .sheet-block-show {
+  display: block;
+}
+.sheet-block-show,
+.sheet-block-switch:checked ~ .sheet-block-hidden {
+  display: none;
 }
 
 /* Switch -- styled checkboxes */
@@ -334,14 +334,14 @@ input[type="checkbox"].sheet-block-switch + span::before {
 input[type="checkbox"].sheet-block-switch:checked + span::before {
     content: "▼";
 }
-
-
-
-
-
-
-
-
+.sheet-block-hidden,
+.sheet-block-switch:checked ~ .sheet-block-show {
+  display: block;
+}
+.sheet-block-show,
+.sheet-block-switch:checked ~ .sheet-block-hidden {
+  display: none;
+}
 
 /* Optional display -- Gears */
 
