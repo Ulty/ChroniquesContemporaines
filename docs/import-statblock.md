@@ -1,6 +1,6 @@
 # Import de statblock #
 
-La version 3.3 de la fiche de personnage Chroniques Galactiques comporte une fonction d'import de statblock (bloc d'attributs abrégé résumant les données techniques de jeu) pour les fiches de PNJ. Cette fonction tente d'extraire les données du statblock et les insère dans la fiche de PNJ.
+La version 2.4 de la fiche de personnage Chroniques Oubliées Contemporain comporte une fonction d'import de statblock (bloc d'attributs abrégé résumant les données techniques de jeu) pour les fiches de PNJ. Cette fonction tente d'extraire les données du statblock et les insère dans la fiche de PNJ.
 
 Cette fonction est capable de récupérer :
 * Le Niveau de Créature (NC)
@@ -13,7 +13,7 @@ Cette fonction est capable de récupérer :
 ## Mode d'emploi ##
 Pour importer un statblock et récupérer ses données dans une fiche de PNJ :
 1. Copier le texte du statblock depuis un document PDF
-2. Sur l'onglet _PNJ_ et le sous-onglet _Configuration_, cliquer sur la flèche _Importer statblock_ pour afficher le champ d'import
+2. Sur l'onglet _PNJ_ et le sous-onglet _Caractéristiques_, cliquer sur la flèche _Importer statblock_ pour afficher le champ d'import
 3. Coller le texte précédemment copié dans le champ approprié
 4. Cliquer en dehors de ce champ : la fonction d'import se déclenche
 
