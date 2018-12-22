@@ -1,4 +1,4 @@
-## Documents pour la fiche de personnage Chroniques Galactiques ##
+## Documents pour la fiche de personnage Chroniques Contemporaines ##
 
 Cliquer sur un lien pour consulter la documentation correspondante :
 
