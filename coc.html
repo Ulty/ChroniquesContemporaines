@@ -300,7 +300,7 @@
         // LAST_PV
         getAttrs(['PV'], function(values) {
             setAttrs({ LAST_PV: values.PV })
-        })
+        });
     });
 
     on('change:for_buff1 change:for_buff2 change:for_buff3 change:for_buff4 change:for_buff5', function(eventInfo) {
@@ -621,7 +621,7 @@
             setAttrs({
                 LAST_PV: values.PV,
                 BLESSURE: blessure
-            })
+            });
         });
     });
     
@@ -1128,7 +1128,7 @@
                                         <input type="text" name="attr_armenom" title="@armenom}" style="width: 125px; font-weight: bold;" placeholder="Arme/attaque"/>
                                     </td>
                                     <td class="sheet-boxinputleft" style="min-width: 135px;">
-                                        <input type="checkbox" name="attr_armeatt" title="@{armeatt} Faire un jet d'attaque pour toucher" value="{{attaque=" />
+                                        <input type="checkbox" name="attr_armeatt" title="@{armeatt} Faire un jet d'attaque pour toucher" value="{{attaque=" checked="checked" />
                                         <select class="sheet-carac" style="width: 87px;" name="attr_armeatk" title="@{armeatk}" size="1">
                                             <option value="@{ATKCAC}" selected>CONTACT</option>
                                             <option value="@{ATKTIR}">DISTANCE</option>
@@ -1140,7 +1140,7 @@
                                         <input type="number" name="attr_armecrit" style="width:32px;" min="2" max="20" value="20" title="@{armecrit} Seuil de Critique (par défaut 20)" />
                                     </td>
                                     <td class="sheet-boxinputleft">
-                                        <input type="checkbox" name="attr_armedmg" title="@{armedmg} Faire un jet de dommages" value="{{degats=" />
+                                        <input type="checkbox" name="attr_armedmg" title="@{armedmg} Faire un jet de dommages" value="{{degats=" checked="checked" />
                                         <input type="number" style="width:32px;" name="attr_armedmnbde" value="1" title="@{armedmnbde} Nombre de dés de dommage" />
                                         <select class="sheet-carac"  style="width:47px;" name="attr_armedmde" size="1" title="@{armedmde} Dé de dommage">
                                             <optgroup label="Normal">
@@ -1983,7 +1983,7 @@
     								        <button type="roll" class="sheet-neutre" style="width: 25px;" name="attr_jet" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=@{atknom}}} {{subtags=Attaque}} @{atkatt}[[@{atkjet}[Dé] + [[@{atkbonus}]][Attaque] ]]}} @{atkdmg}[[@{atkdmnbde}d@{atkdmde}[Dé DM] + [[@{atkdmbonus}]][Mod.DM] ]]}} {{special=@{atkspec}}}" />
     								    </td>
     								    <td class="sheet-boxinputleft" style="min-width: 170px;">
-    								        <input type="checkbox" name="attr_atkatt" title="@{atkatt} Faire un jet d'attaque pour toucher" value="{{attaque=" />
+    								        <input type="checkbox" name="attr_atkatt" title="@{atkatt} Faire un jet d'attaque pour toucher" value="{{attaque=" checked="checked" />
     								        <input type="text" class="sheet-carac" style="width: 120px;" name="attr_atknom" title="@{atknom} Nom de l'arme / attaque" />
         									<select class="sheet-selectmin" name="attr_atkjet" title="@{atkjet} Jet d'attaque normal (d20) ou expert (meilleur de deux d20)">
         										<option value="1d20" selected>N Normal</option>
@@ -1992,7 +1992,7 @@
     								        <input type="number" class="sheet-carac" style="width: 35px;" name="attr_atkbonus" title="@{atkbonus} Bonus d'attaque" value="0" />
     								    </td>
     								    <td class="sheet-boxinput">
-    								        <input type="checkbox" name="attr_atkdmg" title="@{atkdmg} Faire un jet de dommages" value="{{degats=" />
+    								        <input type="checkbox" name="attr_atkdmg" title="@{atkdmg} Faire un jet de dommages" value="{{degats=" checked="checked" />
     								        <input type="number" class="sheet-carac" style="width: 35px;" name="attr_atkdmnbde" title="@{atkdmnbde} Nombre de dés de DM" value="0" />
     								        <select class="sheet-carac" style="width: 45px;" name="attr_atkdmde" title="@{atkdmde} Dé de DM">
     								            <optgroup label="Normaux">
