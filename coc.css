@@ -326,7 +326,6 @@ input[type="checkbox"].sheet-block-switch + span::before {
     content: "►";
     display: inline-block;
     vertical-align: middle;
-
     width: 16px;
     height: 16px;
     font-size: 12px;    
