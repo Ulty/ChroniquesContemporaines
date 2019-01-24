@@ -29,8 +29,6 @@
     <input type="hidden" name="attr_PCONDITION" value="" />
     <!-- INPUT HIDDEN Précédent nombre de PV -->
     <input type="hidden" name="attr_LAST_PV" value="" />
-    <!-- INPUT HIDDEN Actions multiples (COCY) -->
-    <input type="hidden" name="attr_INIT_NEXT" value="" />
     <!-- INPUT HIDDEN Choix carac jets capacités -->
     <input type="hidden" name="attr_QRYMOD" value="?{Carac. ?|Force,@{FOR}|Dextérité,@{DEX}|Constitution,@{CON}|Intelligence,@{INT}|Perception,@{PER}|Charisme,@{CHA}}" />
     <input type="hidden" name="attr_QRYMODT" value="?{Carac. ?|Force,@{FOR_TEST}|Dextérité,@{DEX_TEST}|Constitution,@{CON_TEST}|Intelligence,@{INT_TEST}|Perception,@{PER_TEST}|Charisme,@{CHA_TEST}}" />
@@ -300,8 +298,8 @@
                                                 <td class="sheet-boxinputlight"><input type="number" name="attr_ATKMAG" title="@{ATKMAG}" value="@{ATKMAG_BASE}+@{ATKMAG_CARAC}+@{ATKMAG_DIV}" disabled /></td>
                                             </tr>
                                             <tr>
-                                                <td class="sheet-boxtitre"><button class="sheet-boxtitre" type="roll" name="attr_JET_INIT" title="Initiative" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Initiative}} {{subtags=Combat}} {{carac=[[@{INIT_JET} &{tracker}]]}}"> INITIATIVE</button></td>
-                                                <td class="sheet-boxtitre"><input type="checkbox" name="attr_INIT_COCY" title="@{INIT_COCY} Actions multiples si jet d'Init > 20, 30, etc..." value="1" /> COCY</td>
+                                                <td class="sheet-boxtitre"><button class="sheet-boxtitre" type="roll" name="attr_JET_INIT" title="@{JET_INIT} Initiative" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Initiative}} {{subtags=Combat}} {{carac=[[@{INIT_JET} &{tracker}]]}}"> INITIATIVE</button></td>
+                                                <td class="sheet-boxtitre"><button class="sheet-boxtitre" type="roll" name="attr_NEXT_INIT" title="@{NEXT_INIT} Actions multiples si jet d'Init > 20, 30, etc..." value="@{togm}&{template:co1} {{perso=@{selected|character_name}}} {{subtags=Initiative}} {{name=Action suivante}} {{desc=(A)ction / (M)ouvement à Init-[[10 &{tracker:-}]]}}"> Suite</button></td>
                                                 <td class="sheet-boxinputlight"><input type="number" name="attr_INIT_CARAC" title="@{INIT_CARAC}" value="@{DEXTERITE}" disabled /></td>
                                                 <td class="sheet-boxinputlight"><input type="number" name="attr_INIT_DIV" title="@{INIT_DIV} Bonus divers" value="@{INIT_BUFF}" disabled /></td>
                                                 <td class="sheet-boxinputlight"><input type="number" name="attr_INIT" title="@{INIT}" value="@{INIT_CARAC}+@{INIT_DIV}-(@{DEFARMUREON}*@{DEFARMUREMALUS})" disabled /></td>
@@ -398,57 +396,19 @@
                             </table>
                         </td> <!-- FIN Combat + PV + défense -->
                     </tr>
-                    <tr> <!-- Trait --> <!--
-                        <td colspan="2" style="vertical-align:top;">
-                            <table class="sheet-tabsep">
-                                <tr>
-                                    <td class="sheet-boxinputleft">
-                                        <span class="sheet-textbasesmall">Trait</span>&nbsp;<br/>
-                                        <textarea name="attr_TRAIT" title="@{TRAIT}" style="height:4em;"></textarea>
-                                    </td>
-                                    <td class="sheet-boxinputleft">
-                                        <span class="sheet-textbasesmall">Langues Connues</span><br/>
-                                        <textarea name="attr_LANGUES" title="@{LANGUES}" style="height:4em;"></textarea>
-                                    </td>
-                                    <td class="sheet-boxinputleft">
-                                        <span class="sheet-textbasesmall">Niveau de vie</span><br/>
-                                        <textarea name="attr_NIVEAUVIE" title="@{NIVEAUVIE}" style="height:4em;"></textarea>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td> -->
-                    </tr><!-- FIN Trait -->
                 </table>
             </div> <!-- FIN Caracs + combat + PV + défense  -->
             <img class="sheet-imghr" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/ChroniquesOublieesContemporain/coc_hr.jpg" />
             <div> <!-- Armes -->
                 <table class="sheet-tabsep" title="repeating_armes">
                     <tr>
-                        <td class="sheet-textfatleft" style="width:153px;">ARMES / ATTAQUES</td>
+                        <td class="sheet-textfatleft" style="width:150px;">ARMES / ATTAQUES</td>
                         <td class="sheet-textbase" style="width:150px;">ATTAQUE</td>
                         <td class="sheet-textbase" style="width:20px;">CRIT.</td>
-                        <td class="sheet-textbase" style="width:195px;">DM</td>
+                        <td class="sheet-textbase" style="width:205px;">DM</td>
                         <td class="sheet-textbase" style="width:40px;">PORTÉE</td>
                         <td class="sheet-textbase" style="widht:100%;">SPÉCIAL</td>
                     </tr>
-                    <tr>
-        			    <td class="sheet-textbase" colspan="2">Bonus tir visé (L) :&nbsp;
-        			        <input type="checkbox" name="attr_visee_att" title="@{visee_att} Bonus de PER à l'attaque" value="@{PER}" />&nbsp;Attaque&nbsp;
-        			        <input type="checkbox" name="attr_visee_dm" title="@{visee_dm} Bonus de PER aux DM" value="@{PER}" />&nbsp;DM&nbsp;
-        			    </td>
-        			    <td>&nbsp;</td>
-        			    <td class="sheet-textbase">
-        			        Arc de feu (L)&nbsp;<input type="checkbox" name="attr_arc_feu" title="@{arc_feu}" value="1" />
-        			    </td>
-        			    <td class="sheet-textbase">
-        			        <select class="sheet-carac" style="width: 75px;" name="attr_distance" title="@{distance}" size="1">
-        			            <option value="+3">Proche</option>
-        			            <option value="0" selected>Normale</option>
-        			            <option value="-5">Double</option>
-        			            <option value="-10">Triple</option>
-        			        </select>
-        			    </td>
-        		    </tr>
                 </table>
                 <fieldset class="repeating_armes">
                     <div class="attack">
@@ -457,13 +417,13 @@
                             <table class="sheet-tabsep">
                                 <tr>
                                     <td>
-                                        <button type="roll" class="sheet-neutre" name="attr_jet" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Attaque}} {{name=@{armenom}}} {{portee=@{armeportee}}} {{desc=@{armejetn}}} @{armeatt}[[@{armejetd}cs>@{armecrit}cf<[[@{armeinct}+(1*@{arc_feu})]][Dé] + [[@{armeatk}]][Attaque] + [[@{armeatkdiv}]][Bonus] + ([[@{visee_att}]])[Tir visé] - ([[@{arc_feu}*3]])[Arc de feu] + ([[@{distance}]])[Portée] ]]}} @{armedmg}[[@{armedmnbde}d@{armedmde}@{armedmrel}@{armedmvrel}[Dé DM] + ([[@{armedmcar}]])[Mod.DM] + (@{armedmdiv})[Bonus DM] + ([[@{visee_dm}]])[Tir visé] - ([[@{arc_feu}*3]])[Arc de feu] ]]}} {{special=@{armespec}}} @{INIT_NEXT}" />
+                                        <button type="roll" class="sheet-neutre" name="attr_jet" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Attaque}} {{name=@{armenom}}} {{portee=@{armeportee}}} {{desc=@{armejetn}}} {{@{armeatt}[[@{armejetd}cs>@{armecrit}cf<[[@{armeinct}+(1*@{arc_feu})]][Dé] + [[@{armeatk}]][Attaque] + [[@{armeatkdiv}]][Bonus] + ([[@{visee_att}]])[Tir visé] - [[@{arc_feu}*3]][Arc de feu] + ([[@{distance}]])[Portée] ]]}} {{@{armedmg}[[[[@{armedmnbde}d@{armedmde}@{armedmrel}@{armedmvrel}]][Dé DM] + ([[@{armedmcar}]])[Mod.DM] + (@{armedmdiv})[Bonus DM] + ([[@{visee_dm}]])[Tir visé] - [[@{arc_feu}*3]][Arc de feu]]]}} {{degats2=@{armedmg2}}} {{special=@{armespec}}}" />
                                     </td>
                                     <td class="sheet-boxinputleft" style="min-width:125px;">
                                         <input type="text" name="attr_armenom" title="@armenom}" style="width: 125px; font-weight: bold;" placeholder="Arme/attaque"/>
                                     </td>
                                     <td class="sheet-boxinputleft" style="min-width: 135px;">
-                                        <input type="checkbox" name="attr_armeatt" title="@{armeatt} Faire un jet d'attaque pour toucher" value="{{attaque=" checked="checked" />
+                                        <input type="checkbox" name="attr_armeatt" title="@{armeatt} Faire un jet d'attaque pour toucher" value="attaque=" checked="checked" />
                                         <select class="sheet-carac" style="width: 87px;" name="attr_armeatk" title="@{armeatk}" size="1">
                                             <option value="@{ATKCAC}" selected>CONTACT</option>
                                             <option value="@{ATKTIR}">DISTANCE</option>
@@ -475,7 +435,7 @@
                                         <input type="number" name="attr_armecrit" style="width:32px;" min="2" max="20" value="20" title="@{armecrit} Seuil de Critique (par défaut 20)" />
                                     </td>
                                     <td class="sheet-boxinputleft">
-                                        <input type="checkbox" name="attr_armedmg" title="@{armedmg} Faire un jet de dommages" value="{{degats=" checked="checked" />
+                                        <input type="checkbox" name="attr_armedmg" title="@{armedmg} Faire un jet de dommages" value="degats=" checked="checked" />
                                         <input type="number" style="width:32px;" name="attr_armedmnbde" value="1" title="@{armedmnbde} Nombre de dés de dommage" />
                                         <select class="sheet-carac"  style="width:47px;" name="attr_armedmde" size="1" title="@{armedmde} Dé de dommage">
                                             <optgroup label="Normal">
@@ -528,7 +488,7 @@
                                 <tr>
             						<td style="width: 18px;">&nbsp;</td>
             						<td class="sheet-boxinputleft" style="width: 275px;">
-            							<input type="text" name="attr_armejetn" style="width: 247px; font-weight: bold;" placeholder="Nom de l'attaque" title="@{armejetn}" />
+            							<input type="text" name="attr_armejetn" style="width: 243px; font-weight: bold;" placeholder="Nom de l'attaque" title="@{armejetn}" />
             							<select class="sheet-carac" style="width: 30px;" name="attr_armejetd" size="1" title="@{armejetd} Jet d'attaque : Normal, 'Risque' = avec d12, 'Expert' = meilleur de deux d20">
             								<option value="@{JETNORMAL}" selected>N - Normal</option>
             								<option value="@{JETRISQUE}">R - Risque (d12)</option>
@@ -538,6 +498,11 @@
             						<td class="sheet-boxinputleft" style="width: 32px;">
             							<input type="number" style="width: 32px;" name="attr_armeinct" min="1" max="19" value="1" title="@{armeinct} Seuil d'incident de tir (par défaut 1)" />
             						</td>
+                                    <td class="sheet-boxinputleft" style="width: 200px;">
+                                        <input type="text" style="width: 40px;" name="attr_armedm2_de" placeholder="1d6" title="@{armedm2_de}" />
+                                        <input type="text" style="width: 160px;" name="attr_armedm2_desc" placeholder="Type de dommage supp." title="@{armedm2_desc}" />
+                                        <input type="hidden" name="attr_armedmg2" value="" />
+                                    </td>
             						<td class="sheet-boxinputleft" style="width: 200px;">
             						    <select class="sheet-carac" style="width: 145px;" name="attr_armedmrel" size="1" title="@{armedmrel} Relance dés de DM = (r)eroll -- 1 fois = (r)eroll (o)nce">
             						        <option value="" selected>Pas de relance DM</option>
@@ -552,6 +517,29 @@
                         </div>
                     </div>
                 </fieldset>
+                <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+        			    <td class="sheet-textbase" style="width:35%;" colspan="2">Bonus visée (L) :&nbsp;
+        			        <input type="checkbox" name="attr_visee_att" title="@{visee_att} Bonus de PER à l'attaque" value="@{PER}" />&nbsp;Attaque&nbsp;
+        			        <input type="checkbox" name="attr_visee_dm" title="@{visee_dm} Bonus de PER aux DM" value="@{PER}" />&nbsp;DM&nbsp;
+        			    </td>
+        			    <td class="sheet-textbase" style="width: 20%;">Arc de feu (L)&nbsp;
+                            <input type="checkbox" name="attr_arc_feu" title="@{arc_feu}" value="1" />
+        			    </td>
+        			    <td class="sheet-textbase" style="width: 25%;">Distance :&nbsp;
+        			        <select class="sheet-carac" style="width: 75px;" name="attr_distance" title="@{distance}" size="1">
+        			            <option value="+3">Proche</option>
+        			            <option value="0" selected>Normale</option>
+        			            <option value="-5">Double</option>
+        			            <option value="-10">Triple</option>
+        			        </select>
+        			    </td>
+        			    <td>&nbsp;</td>
+        		    </tr>
+                </table>
             </div>
             <img class="sheet-imghr" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/ChroniquesOublieesContemporain/coc_hr.jpg" />
         </div>
@@ -1458,6 +1446,9 @@
                             {{#rollWasCrit() attaque}}
                                 <span style="color:green;font-weight:bold;"> + {{degats}}</span>
                             {{/rollWasCrit() attaque}}
+                            {{#degats2}}
+                             + <span style="color: steelblue;">{{degats2}}</span>
+                            {{/degats2}}
                         </td>
                     </tr>
                 {{/degats}}
@@ -1466,7 +1457,12 @@
                 {{#degats}}
                     <tr>
                         <td class="tcat">Dégâts </td>
-                        <td>{{degats}}</td>
+                        <td>
+                            {{degats}}
+                            {{#degats2}}
+                             + <span style="color: steelblue;">{{degats2}}</span>
+                            {{/degats2}}
+                        </td>
                     </tr>
                 {{/degats}}
             {{/attaque}}
@@ -1837,9 +1833,7 @@
 
     on('change:per_buff1 change:per_buff2 change:per_buff3 change:per_buff4 change:per_buff5', function(eventInfo) {
         getAttrs(['UNIVERS', 'PER_BUFF1', 'PER_BUFF2', 'PER_BUFF3', 'PER_BUFF4', 'PER_BUFF5'], function(values) {
-            if (values.UNIVERS != 'COF') {
-                setBuff(values, 'PER_BUFF');
-            }
+            if (values.UNIVERS != 'COF') setBuff(values, 'PER_BUFF');
         });
     });
 
@@ -1863,33 +1857,25 @@
 
     on('change:atkmag_buff1 change:atkmag_buff2 change:atkmag_buff3 change:atkmag_buff4 change:atkmag_buff5', function(eventInfo) {
         getAttrs(['UNIVERS', 'ATKMAG_BUFF1', 'ATKMAG_BUFF2', 'ATKMAG_BUFF3', 'ATKMAG_BUFF4', 'ATKMAG_BUFF5'], function(values) {
-            if (values.UNIVERS != 'CG') {
-                setBuff(values, 'ATKMAG_BUFF');
-            }
+            if (values.UNIVERS != 'CG') setBuff(values, 'ATKMAG_BUFF');
         });
     });
 
     on('change:atkmen_buff1 change:atkmen_buff2 change:atkmen_buff3 change:atkmen_buff4 change:atkmen_buff5', function(eventInfo) {
         getAttrs(['UNIVERS', 'ATKMEN_BUFF1', 'ATKMEN_BUFF2', 'ATKMEN_BUFF3', 'ATKMEN_BUFF4', 'ATKMEN_BUFF5'], function(values) {
-            if (values.UNIVERS != 'COF') {
-                setBuff(values, 'ATKMEN_BUFF');
-            }
+            if (values.UNIVERS != 'COF') setBuff(values, 'ATKMEN_BUFF');
         });
     });
 
     on('change:psyinflu_buff1 change:psyinflu_buff2 change:psyinflu_buff3 change:psyinflu_buff4 change:psyinflu_buff5', function(eventInfo) {
         getAttrs(['UNIVERS', 'PSYINFLU_BUFF1', 'PSYINFLU_BUFF2', 'PSYINFLU_BUFF3', 'PSYINFLU_BUFF4', 'PSYINFLU_BUFF5'], function(values) {
-            if (values.UNIVERS == 'CG') {
-                setBuff(values, 'PSYINFLU_BUFF');
-            }
+            if (values.UNIVERS == 'CG') setBuff(values, 'PSYINFLU_BUFF');
         });
     });
 
     on('change:psyintui_buff1 change:psyintui_buff2 change:psyintui_buff3 change:psyintui_buff4 change:psyintui_buff5', function(eventInfo) {
         getAttrs(['UNIVERS', 'PSYINTUI_BUFF1', 'PSYINTUI_BUFF2', 'PSYINTUI_BUFF3', 'PSYINTUI_BUFF4', 'PSYINTUI_BUFF5'], function(values) {
-            if (values.UNIVERS == 'CG') {
-                setBuff(values, 'PSYINTUI_BUFF');
-            }
+            if (values.UNIVERS == 'CG') setBuff(values, 'PSYINTUI_BUFF');
         });
     });
 
@@ -1907,9 +1893,7 @@
 
     on('change:dep_buff1 change:dep_buff2 change:dep_buff3 change:dep_buff4 change:dep_buff5', function(eventInfo) {
         getAttrs(['UNIVERS', 'DEP_BUFF1', 'DEP_BUFF2', 'DEP_BUFF3', 'DEP_BUFF4', 'DEP_BUFF5'], function(values) {
-            if (values.UNIVERS == 'CG') {
-                setBuff(values, 'DEP_BUFF');
-            }
+            if (values.UNIVERS == 'CG') setBuff(values, 'DEP_BUFF');
         });
     });
 
@@ -2008,16 +1992,6 @@
                 LAST_PV: values.PV,
                 BLESSURE: blessure
             });
-        });
-    });
-    
-    on('change:init_cocy', function(eventInfo) {
-        getAttrs(['INIT_COCY'], function(values) {
-            var init_next = '';
-            if (values.INIT_COCY === '1') {
-                init_next = '\n' + '/w gm &{template:co1} {{perso=@{character_name}}} {{name=Suite}} {{subtags=Initiative}}  {{desc=(A)ction / (M)ouvement à Init-[[10 &{tracker:-}]]}}';
-            }
-            setAttrs({ INIT_NEXT: init_next });
         });
     });
 
@@ -2121,6 +2095,17 @@
   on('change:voie9-1 change:voie9-2 change:voie9-3 change:voie9-4 change:voie9-5', function(eventInfo) {
     getAttrs(['voie9-1', 'voie9-2', 'voie9-3', 'voie9-4', 'voie9-5'], function(values) {
       setRank(values, '9');
+    });
+  });
+
+on('change:repeating_armes:armedm2_de change:repeating_armes:armedm2_desc', function(eventInfo) {
+    getAttrs(['repeating_armes_armedm2_de', 'repeating_armes_armedm2_desc'], function(values) {
+      let dm2_de = values.repeating_armes_armedm2_de || '';
+      let dm2_desc = values.repeating_armes_armedm2_desc || '';
+      let dmg2 = '';
+      if (dm2_desc !== '') dm2_desc = `[${dm2_desc}] `;
+      if (dm2_de !== '') dmg2 = `[[${dm2_de}${dm2_desc}]]`;
+      setAttrs({ repeating_armes_armedmg2: dmg2 });
     });
   });
 
