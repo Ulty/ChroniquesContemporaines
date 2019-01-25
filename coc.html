@@ -417,7 +417,7 @@
                             <table class="sheet-tabsep">
                                 <tr>
                                     <td>
-                                        <button type="roll" class="sheet-neutre" name="attr_jet" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Attaque}} {{name=@{armenom}}} {{portee=@{armeportee}}} {{desc=@{armejetn}}} {{@{armeatt}[[@{armejetd}cs>@{armecrit}cf<[[@{armeinct}+(1*@{arc_feu})]][Dé] + [[@{armeatk}]][Attaque] + [[@{armeatkdiv}]][Bonus] + ([[@{visee_att}]])[Tir visé] - [[@{arc_feu}*3]][Arc de feu] + ([[@{distance}]])[Portée] ]]}} {{@{armedmg}[[[[@{armedmnbde}d@{armedmde}@{armedmrel}@{armedmvrel}]][Dé DM] + ([[@{armedmcar}]])[Mod.DM] + (@{armedmdiv})[Bonus DM] + ([[@{visee_dm}]])[Tir visé] - [[@{arc_feu}*3]][Arc de feu]]]}} {{degats2=@{armedmg2}}} {{special=@{armespec}}}" />
+                                        <button type="roll" class="sheet-neutre" name="attr_jet" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Attaque}} {{name=@{armenom}}} {{portee=@{armeportee}}} {{desc=@{armejetn}}} {{@{armeatt}[[@{armejetd}cs>@{armecrit}cf<@{armeinct}[Dé] + [[@{armeatk}]][Attaque] + [[@{armeatkdiv}]][Bonus] + ([[@{visee_att}]])[Tir visé] + ([[@{distance}]])[Portée] ]]}} {{@{armedmg}[[[[@{armedmnbde}d@{armedmde}@{armedmrel}@{armedmvrel}]][Dé DM] + ([[@{armedmcar}]])[Mod.DM] + (@{armedmdiv})[Bonus DM] + ([[@{visee_dm}]])[Tir visé]]]}} {{degats2=@{armedmg2}}} {{special=@{armespec}}}" />
                                     </td>
                                     <td class="sheet-boxinputleft" style="min-width:125px;">
                                         <input type="text" name="attr_armenom" title="@armenom}" style="width: 125px; font-weight: bold;" placeholder="Arme/attaque"/>
@@ -525,9 +525,6 @@
         			    <td class="sheet-textbase" style="width:35%;" colspan="2">Bonus visée (L) :&nbsp;
         			        <input type="checkbox" name="attr_visee_att" title="@{visee_att} Bonus de PER à l'attaque" value="@{PER}" />&nbsp;Attaque&nbsp;
         			        <input type="checkbox" name="attr_visee_dm" title="@{visee_dm} Bonus de PER aux DM" value="@{PER}" />&nbsp;DM&nbsp;
-        			    </td>
-        			    <td class="sheet-textbase" style="width: 20%;">Arc de feu (L)&nbsp;
-                            <input type="checkbox" name="attr_arc_feu" title="@{arc_feu}" value="1" />
         			    </td>
         			    <td class="sheet-textbase" style="width: 25%;">Distance :&nbsp;
         			        <select class="sheet-carac" style="width: 75px;" name="attr_distance" title="@{distance}" size="1">
@@ -1295,6 +1292,7 @@
     		                    </div>
     		                </div>
     		            </div>
+                        <div class="sheet-row">&nbsp;</div>                            
     		            <div class="sheet-row">
 		                    <span class="textfatleft" title="repeating_pnjatk">Attaques</span>
     		            </div>
@@ -1352,7 +1350,7 @@
 		                    <span class="textfatleft">Capacités</span>
 		                </div>
 		                <div class="sheet-row">
-		                    <textarea name="attr_pnj_divers" style="border: 1px solid; height: 15em;"></textarea>
+		                    <textarea name="attr_pnj_divers" style="border: 1px solid; height: 15em;" title="@{pnj_divers}"></textarea>
 		                </div>
 		                <div class="sheet-row">
         					<input type="checkbox" class="sheet-block-switch"><span>Importer statblock</span>
