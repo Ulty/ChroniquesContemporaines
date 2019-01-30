@@ -1,7 +1,7 @@
 <div class="sheet-mainBg"> <!-- FDP -->
     <!-- INPUT HIDDEN Version FdP -->
-    <input type="hidden" name="attr_VERFDP" value="2.4" />
-    <input type="hidden" name="attr_VERSION" value="2.4" />
+    <input type="hidden" name="attr_VERFDP" value="2.5" />
+    <input type="hidden" name="attr_VERSION" value="2.5" />
     <!-- INPUT HIDDEN Univers (COF, CG, COC) -->
     <input type="hidden" name="attr_UNIVERS" value="COC" />
     <!-- INPUT HIDDEN Type de jet -->
@@ -871,219 +871,63 @@
                 <table class="sheet-tabsep">
                     <tr>
                         <td style="width: 5%;">FOR:</td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_FOR_BUFF1_DESC" /><input class="sheet-buff" type="number" name="attr_FOR_BUFF1" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_FOR_BUFF2_DESC" /><input class="sheet-buff" type="number" name="attr_FOR_BUFF2" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_FOR_BUFF3_DESC" /><input class="sheet-buff" type="number" name="attr_FOR_BUFF3" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_FOR_BUFF4_DESC" /><input class="sheet-buff" type="number" name="attr_FOR_BUFF4" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_FOR_BUFF5_DESC" /><input class="sheet-buff" type="number" name="attr_FOR_BUFF5" />
-                        </td>
+                        <td style="width: 90%;"><input class="sheet-buff" type="text" name="attr_FOR_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." /></td>
+                        <td style="width: 5%;"><input class="sheet-buff" type="number" name="attr_FOR_BUFFS" value="@{FOR_BUFF}" disabled /></td>
                     </tr>
                     <tr>
                         <td style="width: 5%;">DEX:</td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_DEX_BUFF1_DESC" /><input class="sheet-buff" type="number" name="attr_DEX_BUFF1" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_DEX_BUFF2_DESC" /><input class="sheet-buff" type="number" name="attr_DEX_BUFF2" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_DEX_BUFF3_DESC" /><input class="sheet-buff" type="number" name="attr_DEX_BUFF3" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_DEX_BUFF4_DESC" /><input class="sheet-buff" type="number" name="attr_DEX_BUFF4" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_DEX_BUFF5_DESC" /><input class="sheet-buff" type="number" name="attr_DEX_BUFF5" />
-                        </td>
+                        <td style="width: 90%;"><input class="sheet-buff" type="text" name="attr_DEX_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." /></td>
+                        <td style="width: 5%;"><input class="sheet-buff" type="number" name="attr_DEX_BUFFS" value="@{DEX_BUFF}" disabled /></td>
                     </tr>
                     <tr>
                         <td style="width: 5%;">CON:</td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_CON_BUFF1_DESC" /><input class="sheet-buff" type="number" name="attr_CON_BUFF1" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_CON_BUFF2_DESC" /><input class="sheet-buff" type="number" name="attr_CON_BUFF2" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_CON_BUFF3_DESC" /><input class="sheet-buff" type="number" name="attr_CON_BUFF3" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_CON_BUFF4_DESC" /><input class="sheet-buff" type="number" name="attr_CON_BUFF4" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_CON_BUFF5_DESC" /><input class="sheet-buff" type="number" name="attr_CON_BUFF5" />
-                        </td>
+                        <td style="width: 90%;"><input class="sheet-buff" type="text" name="attr_CON_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." /></td>
+                        <td style="width: 5%;"><input class="sheet-buff" type="number" name="attr_CON_BUFFS" value="@{CON_BUFF}" disabled /></td>
                     </tr>
                     <tr>
                         <td style="width: 5%;">INT:</td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_INT_BUFF1_DESC" /><input class="sheet-buff" type="number" name="attr_INT_BUFF1" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_INT_BUFF2_DESC" /><input class="sheet-buff" type="number" name="attr_INT_BUFF2" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_INT_BUFF3_DESC" /><input class="sheet-buff" type="number" name="attr_INT_BUFF3" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_INT_BUFF4_DESC" /><input class="sheet-buff" type="number" name="attr_INT_BUFF4" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_INT_BUFF5_DESC" /><input class="sheet-buff" type="number" name="attr_INT_BUFF5" />
-                        </td>
+                        <td style="width: 90%;"><input class="sheet-buff" type="text" name="attr_INT_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." /></td>
+                        <td style="width: 5%;"><input class="sheet-buff" type="number" name="attr_INT_BUFFS" value="@{INT_BUFF}" disabled /></td>
                     </tr>
                     <tr>
                         <td style="width: 5%;">PER:</td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_PER_BUFF1_DESC" /><input class="sheet-buff" type="number" name="attr_PER_BUFF1" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_PER_BUFF2_DESC" /><input class="sheet-buff" type="number" name="attr_PER_BUFF2" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_PER_BUFF3_DESC" /><input class="sheet-buff" type="number" name="attr_PER_BUFF3" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_PER_BUFF4_DESC" /><input class="sheet-buff" type="number" name="attr_PER_BUFF4" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_PER_BUFF5_DESC" /><input class="sheet-buff" type="number" name="attr_PER_BUFF5" />
-                        </td>
+                        <td style="width: 90%;"><input class="sheet-buff" type="text" name="attr_PER_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." /></td>
+                        <td style="width: 5%;"><input class="sheet-buff" type="number" name="attr_PER_BUFFS" value="@{PER_BUFF}" disabled /></td>
                     </tr>
                     <tr>
                         <td style="width: 5%;">CHA:</td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_CHA_BUFF1_DESC" /><input class="sheet-buff" type="number" name="attr_CHA_BUFF1" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_CHA_BUFF2_DESC" /><input class="sheet-buff" type="number" name="attr_CHA_BUFF2" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_CHA_BUFF3_DESC" /><input class="sheet-buff" type="number" name="attr_CHA_BUFF3" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_CHA_BUFF4_DESC" /><input class="sheet-buff" type="number" name="attr_CHA_BUFF4" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_CHA_BUFF5_DESC" /><input class="sheet-buff" type="number" name="attr_CHA_BUFF5" />
-                        </td>
+                        <td style="width: 90%;"><input class="sheet-buff" type="text" name="attr_CHA_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." /></td>
+                        <td style="width: 5%;"><input class="sheet-buff" type="number" name="attr_CHA_BUFFS" value="@{CHA_BUFF}" disabled /></td>
                     </tr>
                     <tr>
                         <td style="width: 5%;">ATC:</td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKCAC_BUFF1_DESC" /><input class="sheet-buff" type="number" name="attr_ATKCAC_BUFF1" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKCAC_BUFF2_DESC" /><input class="sheet-buff" type="number" name="attr_ATKCAC_BUFF2" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKCAC_BUFF3_DESC" /><input class="sheet-buff" type="number" name="attr_ATKCAC_BUFF3" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKCAC_BUFF4_DESC" /><input class="sheet-buff" type="number" name="attr_ATKCAC_BUFF4" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKCAC_BUFF5_DESC" /><input class="sheet-buff" type="number" name="attr_ATKCAC_BUFF5" />
-                        </td>
+                        <td style="width: 90%;"><input class="sheet-buff" type="text" name="attr_ATKCAC_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." /></td>
+                        <td style="width: 5%;"><input class="sheet-buff" type="number" name="attr_ATKCAC_BUFFS" value="@{ATKCAC_BUFF}" disabled /></td>
                     </tr>
                     <tr>
                         <td style="width: 5%;">ATD:</td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKTIR_BUFF1_DESC" /><input class="sheet-buff" type="number" name="attr_ATKTIR_BUFF1" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKTIR_BUFF2_DESC" /><input class="sheet-buff" type="number" name="attr_ATKTIR_BUFF2" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKTIR_BUFF3_DESC" /><input class="sheet-buff" type="number" name="attr_ATKTIR_BUFF3" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKTIR_BUFF4_DESC" /><input class="sheet-buff" type="number" name="attr_ATKTIR_BUFF4" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKTIR_BUFF5_DESC" /><input class="sheet-buff" type="number" name="attr_ATKTIR_BUFF5" />
-                        </td>
+                        <td style="width: 90%;"><input class="sheet-buff" type="text" name="attr_ATKTIR_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." /></td>
+                        <td style="width: 5%;"><input class="sheet-buff" type="number" name="attr_ATKTIR_BUFFS" value="@{ATKTIR_BUFF}" disabled /></td>
                     </tr>
                     <tr>
                         <td style="width: 5%;">MAG:</td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKMAG_BUFF1_DESC" /><input class="sheet-buff" type="number" name="attr_ATKMAG_BUFF1" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKMAG_BUFF2_DESC" /><input class="sheet-buff" type="number" name="attr_ATKMAG_BUFF2" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKMAG_BUFF3_DESC" /><input class="sheet-buff" type="number" name="attr_ATKMAG_BUFF3" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKMAG_BUFF4_DESC" /><input class="sheet-buff" type="number" name="attr_ATKMAG_BUFF4" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKMAG_BUFF5_DESC" /><input class="sheet-buff" type="number" name="attr_ATKMAG_BUFF5" />
-                        </td>
+                        <td style="width: 90%;"><input class="sheet-buff" type="text" name="attr_ATKMAG_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." /></td>
+                        <td style="width: 5%;"><input class="sheet-buff" type="number" name="attr_ATKMAG_BUFFS" value="@{ATKMAG_BUFF}" disabled /></td>
                     </tr>
                     <tr>
                         <td style="width: 5%;">MEN:</td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKMEN_BUFF1_DESC" /><input class="sheet-buff" type="number" name="attr_ATKMEN_BUFF1" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKMEN_BUFF2_DESC" /><input class="sheet-buff" type="number" name="attr_ATKMEN_BUFF2" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKMEN_BUFF3_DESC" /><input class="sheet-buff" type="number" name="attr_ATKMEN_BUFF3" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKMEN_BUFF4_DESC" /><input class="sheet-buff" type="number" name="attr_ATKMEN_BUFF4" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_ATKMEN_BUFF5_DESC" /><input class="sheet-buff" type="number" name="attr_ATKMEN_BUFF5" />
-                        </td>
+                        <td style="width: 90%;"><input class="sheet-buff" type="text" name="attr_ATKMEN_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." /></td>
+                        <td style="width: 5%;"><input class="sheet-buff" type="number" name="attr_ATKMEN_BUFFS" value="@{ATKMEN_BUFF}" disabled /></td>
                     </tr>
                     <tr>
                         <td style="width: 5%;">INIT:</td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_INIT_BUFF1_DESC" /><input class="sheet-buff" type="number" name="attr_INIT_BUFF1" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_INIT_BUFF2_DESC" /><input class="sheet-buff" type="number" name="attr_INIT_BUFF2" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_INIT_BUFF3_DESC" /><input class="sheet-buff" type="number" name="attr_INIT_BUFF3" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_INIT_BUFF4_DESC" /><input class="sheet-buff" type="number" name="attr_INIT_BUFF4" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_INIT_BUFF5_DESC" /><input class="sheet-buff" type="number" name="attr_INIT_BUFF5" />
-                        </td>
+                        <td style="width: 90%;"><input class="sheet-buff" type="text" name="attr_INIT_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." /></td>
+                        <td style="width: 5%;"><input class="sheet-buff" type="number" name="attr_INIT_BUFFS" value="@{INIT_BUFF}" disabled /></td>
                     </tr>
                     <tr>
                         <td style="width: 5%;">DEF:</td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_DEF_BUFF1_DESC" /><input class="sheet-buff" type="number" name="attr_DEF_BUFF1" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_DEF_BUFF2_DESC" /><input class="sheet-buff" type="number" name="attr_DEF_BUFF2" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_DEF_BUFF3_DESC" /><input class="sheet-buff" type="number" name="attr_DEF_BUFF3" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_DEF_BUFF4_DESC" /><input class="sheet-buff" type="number" name="attr_DEF_BUFF4" />
-                        </td>
-                        <td style="width: 19%;">
-                            <input class="sheet-buff" style="width: 70%;" type="text" name="attr_DEF_BUFF5_DESC" /><input class="sheet-buff" type="number" name="attr_DEF_BUFF5" />
-                        </td>
+                        <td style="width: 90%;"><input class="sheet-buff" type="text" name="attr_DEF_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." /></td>
+                        <td style="width: 5%;"><input class="sheet-buff" type="number" name="attr_DEF_BUFFS" value="@{DEF_BUFF}" disabled /></td>
                     </tr>
                 </table>
             </div> <!-- FIN BUFFS -->
@@ -1679,7 +1523,7 @@
     on('sheet:opened',function(){
         // **** Gestion transition de version
         getAttrs(['VERSION'], function(values) {
-            var verfdp = parseInt(values.VERSION) || 0;
+            var verfdp = parseFloat(values.VERSION) || 0;
             if (verfdp < 2) { // version 1.x > 2.0
                 getAttrs(['UNIVERS', 'FOR_BONUS', 'DEX_BONUS', 'CON_BONUS', 'INT_BONUS', 'PER_BONUS', 'CHA_BONUS', 'ATKCAC_DIV', 'ATKTIR_DIV', 'ATKMAG_DIV', 'ATKMEN_DIV', 'PSYINTUI_DIV', 'PSYINFLU_DIV', 'INIT_DIV', 'DEFDIV', 'DEPDIV'], function(values) {
                     var for_bonus_desc = '', for_bonus = parseInt(values.FOR_BONUS) || 0;
@@ -1765,22 +1609,43 @@
                     });
                 });
             }
+            if (verfdp < 2.5) { // version 2.x > 2.5
+                const attrList = ['FOR', 'DEX', 'CON', 'INT', 'PER', 'CHA', 'ATKCAC', 'ATKTIR', 'ATKMAG', 'ATKMEN', 'INIT', 'DEF'];
+                for (let a=0; a < attrList.length; a++) {
+                    let attr = attrList[a];
+                    let attrDesc = [];
+                    let attrVals = [];
+                    for (let b=1; b < 6; b++) {
+                        attrDesc.push(`${attr}_BUFF${b}_DESC`);
+                        attrVals.push(`${attr}_BUFF${b}`);
+                    }
+                    getAttrs([attr, ...attrDesc, ...attrVals], function(values) {
+                        let attr = Object.keys(values)[0];
+                        let buffList = [];
+                        for (let b=1; b < 6; b++) {
+                            let desc = values[`${attr}_BUFF${b}_DESC`] || '';
+                            let buff = values[`${attr}_BUFF${b}`] || 0;
+                            if (desc !== '') buffList.push(`${desc} : ${buff}`);
+                        }
+                        let buffAttr = {};
+                        buffAttr[`${attr}_BUFF_LIST`] = buffList.join(';');
+                        setAttrs(buffAttr);
+                    });
+                }
+                setAttrs({ VERSION: '2.5' });
+            }            
         });
         // Activer Buffs PSY
         getAttrs(["UNIVERS", 'type_personnage'], function(values) {
             if (values.type_personnage == 'pj') {
                 if (values.UNIVERS == 'CG') {
-                    setAttrs({
-                        voir_psy: '1'
-                    });
+                    setAttrs({ voir_psy: '1' });
                 }
             }
         });
         // MAJ Version
         getAttrs(['VERFDP'], function(values) {
-            setAttrs({
-                VERSION: values.VERFDP
-            });
+            setAttrs({ VERSION: values.VERFDP });
         });
         // PC
         getAttrs(['PC_DESC'], function(values) {
@@ -1795,107 +1660,87 @@
         });
     });
 
-    function setBuff(v, buffAttr) {
-        let buffVal = 0;
-        for (let attr = 1; attr < 6; attr++) {
-            buffVal += parseInt(v[buffAttr + attr.toString()]) || 0;
-        }
-        let buff = {};
-        buff[buffAttr] = buffVal;
-        setAttrs(buff);
+    function parseBuff(buffAttr) {
+        getAttrs([`${buffAttr}_BUFF_LIST`], function(v) {
+            let buffAttr = Object.keys(v)[0];
+            let buffList = v[buffAttr];
+            let buffSum = 0;
+            if (buffList && buffList !== '') {
+                let buffs = buffList.split(';');
+                for (let b = 0; b < buffs.length; b++) {
+                    let buff = buffs[b];
+                    if (buff && buff !== '') {
+                        let delim = (buff.indexOf(':') !== -1) ? ':' : ' ';
+                        let buffv = buff.split(delim);
+                        let buffName = '';
+                        let buffVal = 0;
+                        if (delim === ' ') {
+                            buffVal = parseInt(buffv[buffv.length-1]) || 0;
+                            buffv.pop();
+                            buffName = buffv.join(' ').trim();
+                        } else {
+                            buffName = buffv[0];
+                            buffVal = parseInt(buffv[1]) || 0;
+                        }
+                        if (!buffName.startsWith('-')) buffSum += buffVal;
+                    }
+                }
+            }
+            let attr = {};
+            attr[buffAttr.replace('_LIST', '')] = buffSum;
+            setAttrs(attr);
+        });
     }
     
-    on('change:for_buff1 change:for_buff2 change:for_buff3 change:for_buff4 change:for_buff5', function(eventInfo) {
-        getAttrs(['FOR_BUFF1', 'FOR_BUFF2', 'FOR_BUFF3', 'FOR_BUFF4', 'FOR_BUFF5'], function(values) {
-            setBuff(values, 'FOR_BUFF');
-        });
-    });
-
-    on('change:dex_buff1 change:dex_buff2 change:dex_buff3 change:dex_buff4 change:dex_buff5', function(eventInfo) {
-        getAttrs(['DEX_BUFF1', 'DEX_BUFF2', 'DEX_BUFF3', 'DEX_BUFF4', 'DEX_BUFF5'], function(values) {
-            setBuff(values, 'DEX_BUFF');
-        });
-    });
-
-    on('change:con_buff1 change:con_buff2 change:con_buff3 change:con_buff4 change:con_buff5', function(eventInfo) {
-        getAttrs(['CON_BUFF1', 'CON_BUFF2', 'CON_BUFF3', 'CON_BUFF4', 'CON_BUFF5'], function(values) {
-            setBuff(values, 'CON_BUFF');
-        });
-    });
-
-    on('change:int_buff1 change:int_buff2 change:int_buff3 change:int_buff4 change:int_buff5', function(eventInfo) {
-        getAttrs(['INT_BUFF1', 'INT_BUFF2', 'INT_BUFF3', 'INT_BUFF4', 'INT_BUFF5'], function(values) {
-            setBuff(values, 'INT_BUFF');
-        });
-    });
-
-    on('change:per_buff1 change:per_buff2 change:per_buff3 change:per_buff4 change:per_buff5', function(eventInfo) {
-        getAttrs(['UNIVERS', 'PER_BUFF1', 'PER_BUFF2', 'PER_BUFF3', 'PER_BUFF4', 'PER_BUFF5'], function(values) {
-            if (values.UNIVERS != 'COF') setBuff(values, 'PER_BUFF');
-        });
-    });
-
-    on('change:cha_buff1 change:cha_buff2 change:cha_buff3 change:cha_buff4 change:cha_buff5', function(eventInfo) {
-        getAttrs(['CHA_BUFF1', 'CHA_BUFF2', 'CHA_BUFF3', 'CHA_BUFF4', 'CHA_BUFF5'], function(values) {
-            setBuff(values, 'CHA_BUFF');
-        });
+    on('change:for_buff_list', function() {
+        parseBuff('FOR');
     });
     
-    on('change:atkcac_buff1 change:atkcac_buff2 change:atkcac_buff3 change:atkcac_buff4 change:atkcac_buff5', function(eventInfo) {
-        getAttrs(['ATKCAC_BUFF1', 'ATKCAC_BUFF2', 'ATKCAC_BUFF3', 'ATKCAC_BUFF4', 'ATKCAC_BUFF5'], function(values) {
-            setBuff(values, 'ATKCAC_BUFF');
-        });
+    on('change:dex_buff_list', function() {
+        parseBuff('DEX');
+    });
+    
+    on('change:con_buff_list', function() {
+        parseBuff('CON');
+    });
+    
+    on('change:int_buff_list', function() {
+        parseBuff('INT');
+    });
+    
+    on('change:per_buff_list', function() {
+        parseBuff('PER');
+    });
+    
+    on('change:cha_buff_list', function() {
+        parseBuff('CHA');
+    });
+    
+    on('change:atkcac_buff_list', function() {
+        parseBuff('ATKCAC');
     });
 
-    on('change:atktir_buff1 change:atktir_buff2 change:atktir_buff3 change:atktir_buff4 change:atktir_buff5', function(eventInfo) {
-        getAttrs(['ATKTIR_BUFF1', 'ATKTIR_BUFF2', 'ATKTIR_BUFF3', 'ATKTIR_BUFF4', 'ATKTIR_BUFF5'], function(values) {
-            setBuff(values, 'ATKTIR_BUFF');
-        });
+    on('change:atktir_buff_list', function() {
+        parseBuff('ATKTIR');
     });
 
-    on('change:atkmag_buff1 change:atkmag_buff2 change:atkmag_buff3 change:atkmag_buff4 change:atkmag_buff5', function(eventInfo) {
-        getAttrs(['UNIVERS', 'ATKMAG_BUFF1', 'ATKMAG_BUFF2', 'ATKMAG_BUFF3', 'ATKMAG_BUFF4', 'ATKMAG_BUFF5'], function(values) {
-            if (values.UNIVERS != 'CG') setBuff(values, 'ATKMAG_BUFF');
-        });
+    on('change:atkmag_buff_list', function() {
+        parseBuff('ATKMAG');
     });
 
-    on('change:atkmen_buff1 change:atkmen_buff2 change:atkmen_buff3 change:atkmen_buff4 change:atkmen_buff5', function(eventInfo) {
-        getAttrs(['UNIVERS', 'ATKMEN_BUFF1', 'ATKMEN_BUFF2', 'ATKMEN_BUFF3', 'ATKMEN_BUFF4', 'ATKMEN_BUFF5'], function(values) {
-            if (values.UNIVERS != 'COF') setBuff(values, 'ATKMEN_BUFF');
-        });
+    on('change:atkmen_buff_list', function() {
+        parseBuff('ATKMEN');
     });
 
-    on('change:psyinflu_buff1 change:psyinflu_buff2 change:psyinflu_buff3 change:psyinflu_buff4 change:psyinflu_buff5', function(eventInfo) {
-        getAttrs(['UNIVERS', 'PSYINFLU_BUFF1', 'PSYINFLU_BUFF2', 'PSYINFLU_BUFF3', 'PSYINFLU_BUFF4', 'PSYINFLU_BUFF5'], function(values) {
-            if (values.UNIVERS == 'CG') setBuff(values, 'PSYINFLU_BUFF');
-        });
+    on('change:init_buff_list', function() {
+        parseBuff('INIT');
     });
 
-    on('change:psyintui_buff1 change:psyintui_buff2 change:psyintui_buff3 change:psyintui_buff4 change:psyintui_buff5', function(eventInfo) {
-        getAttrs(['UNIVERS', 'PSYINTUI_BUFF1', 'PSYINTUI_BUFF2', 'PSYINTUI_BUFF3', 'PSYINTUI_BUFF4', 'PSYINTUI_BUFF5'], function(values) {
-            if (values.UNIVERS == 'CG') setBuff(values, 'PSYINTUI_BUFF');
-        });
+    on('change:def_buff_list', function() {
+        parseBuff('DEF');
     });
 
-    on('change:init_buff1 change:init_buff2 change:init_buff3 change:init_buff4 change:init_buff5', function(eventInfo) {
-        getAttrs(['INIT_BUFF1', 'INIT_BUFF2', 'INIT_BUFF3', 'INIT_BUFF4', 'INIT_BUFF5'], function(values) {
-            setBuff(values, 'INIT_BUFF');
-        });
-    });
-
-    on('change:def_buff1 change:def_buff2 change:def_buff3 change:def_buff4 change:def_buff5', function(eventInfo) {
-        getAttrs(['DEF_BUFF1', 'DEF_BUFF2', 'DEF_BUFF3', 'DEF_BUFF4', 'DEF_BUFF5'], function(values) {
-            setBuff(values, 'DEF_BUFF');
-        });
-    });
-
-    on('change:dep_buff1 change:dep_buff2 change:dep_buff3 change:dep_buff4 change:dep_buff5', function(eventInfo) {
-        getAttrs(['UNIVERS', 'DEP_BUFF1', 'DEP_BUFF2', 'DEP_BUFF3', 'DEP_BUFF4', 'DEP_BUFF5'], function(values) {
-            if (values.UNIVERS == 'CG') setBuff(values, 'DEP_BUFF');
-        });
-    });
-
-    on('change:condition', function(eventInfo) {
+    on('change:condition', function() {
         getAttrs(['PCONDITION', 'CONDITION', 'ATKCAC_BUFF', 'ATKTIR_BUFF', 'INIT_BUFF', 'DEF_BUFF', 'ETATDE'], function(values) {
             // setup helper objects
             const conditions = {
@@ -1952,7 +1797,7 @@
         });
     });
     
-    on('change:blessure', function(eventInfo) {
+    on('change:blessure', function() {
         getAttrs(['BLESSURE'], function(values) {
             var etatde = (values.BLESSURE == '1') ? '12' : '20';
             setAttrs({
@@ -1961,7 +1806,7 @@
         });
     });
     
-    on('change:poisse', function(eventInfo) {
+    on('change:poisse', function() {
         getAttrs(['POISSE'], function(values) {
             var jetn = (values.POISSE == '1') ? '2d@{ETATDE}kl1' : '1d@{ETATDE}';
             var jets = (values.POISSE == '1') ? '1d@{ETATDE}' : '2d@{ETATDE}kh1';
@@ -1976,7 +1821,7 @@
         });
     });
     
-    on('change:pv', function(eventInfo) {
+    on('change:pv', function() {
         getAttrs(['PV', 'PV_max', 'LAST_PV', 'SEUILBG', 'BLESSURE'], function(values) {
             var seuilbg = parseInt(values.SEUILBG) || 0;
             var max_pv = parseInt(values.PV_max) || 0;
@@ -2025,75 +1870,71 @@
         });
     });
 
-    on('change:type_personnage', function(eventInfo) {
+    on('change:type_personnage', function() {
         getAttrs(['type_personnage'], function(values) {
             setAttrs({ type_fiche: values.type_personnage });
         });
     });
     
-  function setRank(v, voie) {
-    let vr = 0;
-    for (let r = 1; r < 6; r++) {
-      let attr = v['voie' + voie + '-' + r.toString()];
-      if (attr && attr !== '') vr = r;
+  function changeRanks(voie) {
+    return `change:voie${voie}-1 change:voie${voie}-2 change:voie${voie}-3 change:voie${voie}-4 change:voie${voie}-5`;
+  }
+  
+  function attrRanks(voie) {
+    let attrs = [];
+    for (let r=1; r < 6; r++) {
+      attrs.push(`voie${voie}-${r}`);
     }
-    let rank = {};
-    rank['RANG_VOIE' + voie] = vr;
-    setAttrs(rank);
+    return attrs;
+  }
+  
+  function setRank(voie) {
+    getAttrs(attrRanks(voie), function(v) {
+      let vr = 0;
+      for (let r = 1; r < 6; r++) {
+        let attr = v[`voie${voie}-${r}`];
+        if (attr && attr !== '') vr = r;
+      }
+      let rank = {};
+      rank[`RANG_VOIE${voie}`] = vr;
+      setAttrs(rank);
+    });
   }
 
-  on('change:voie1-1 change:voie1-2 change:voie1-3 change:voie1-4 change:voie1-5', function(eventInfo) {
-    getAttrs(['voie1-1', 'voie1-2', 'voie1-3', 'voie1-4', 'voie1-5'], function(values) {
-      setRank(values, '1');
-    });
+  on(changeRanks('1'), function() {
+    setRank('1');
   });
-    
-  on('change:voie2-1 change:voie2-2 change:voie2-3 change:voie2-4 change:voie2-5', function(eventInfo) {
-    getAttrs(['voie2-1', 'voie2-2', 'voie2-3', 'voie2-4', 'voie2-5'], function(values) {
-      setRank(values, '2');
-    });
+
+  on(changeRanks('2'), function() {
+    setRank('2');
   });
-    
-  on('change:voie3-1 change:voie3-2 change:voie3-3 change:voie3-4 change:voie3-5', function(eventInfo) {
-    getAttrs(['voie3-1', 'voie3-2', 'voie3-3', 'voie3-4', 'voie3-5'], function(values) {
-      setRank(values, '3');
-    });
+
+  on(changeRanks('3'), function() {
+    setRank('3');
   });
-    
-  on('change:voie4-1 change:voie4-2 change:voie4-3 change:voie4-4 change:voie4-5', function(eventInfo) {
-    getAttrs(['voie4-1', 'voie4-2', 'voie4-3', 'voie4-4', 'voie4-5'], function(values) {
-      setRank(values, '4');
-    });
+
+  on(changeRanks('4'), function() {
+    setRank('4');
   });
-    
-  on('change:voie5-1 change:voie5-2 change:voie5-3 change:voie5-4 change:voie5-5', function(eventInfo) {
-    getAttrs(['voie5-1', 'voie5-2', 'voie5-3', 'voie5-4', 'voie5-5'], function(values) {
-      setRank(values, '5');
-    });
+
+  on(changeRanks('5'), function() {
+    setRank('5');
   });
-    
-  on('change:voie6-1 change:voie6-2 change:voie6-3 change:voie6-4 change:voie6-5', function(eventInfo) {
-    getAttrs(['voie6-1', 'voie6-2', 'voie6-3', 'voie6-4', 'voie6-5'], function(values) {
-      setRank(values, '6');
-    });
+
+  on(changeRanks('6'), function() {
+    setRank('6');
   });
-    
-  on('change:voie7-1 change:voie7-2 change:voie7-3 change:voie7-4 change:voie7-5', function(eventInfo) {
-    getAttrs(['voie7-1', 'voie7-2', 'voie7-3', 'voie7-4', 'voie7-5'], function(values) {
-      setRank(values, '7');
-    });
+
+  on(changeRanks('7'), function() {
+    setRank('7');
   });
-    
-  on('change:voie8-1 change:voie8-2 change:voie8-3 change:voie8-4 change:voie8-5', function(eventInfo) {
-    getAttrs(['voie8-1', 'voie8-2', 'voie8-3', 'voie8-4', 'voie8-5'], function(values) {
-      setRank(values, '8');
-    });
+
+  on(changeRanks('8'), function() {
+    setRank('8');
   });
-    
-  on('change:voie9-1 change:voie9-2 change:voie9-3 change:voie9-4 change:voie9-5', function(eventInfo) {
-    getAttrs(['voie9-1', 'voie9-2', 'voie9-3', 'voie9-4', 'voie9-5'], function(values) {
-      setRank(values, '9');
-    });
+
+  on(changeRanks('9'), function() {
+    setRank('9');
   });
 
 on('change:repeating_armes:armedm2_de change:repeating_armes:armedm2_desc', function(eventInfo) {
