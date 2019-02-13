@@ -570,7 +570,7 @@
             <td class="sheet-textbase" style="width:20px;">CRIT.</td>
             <td class="sheet-textbase" style="width:205px;">DM</td>
             <td class="sheet-textbase" style="width:40px;">PORTÉE</td>
-            <td class="sheet-textbase" style="widht:100%;">SPÉCIAL</td>
+            <td class="sheet-textbase">SPÉCIAL</td>
           </tr>
         </table>
         <fieldset class="repeating_armes">
@@ -654,10 +654,10 @@
               <table class="sheet-tabsep">
                 <tr>
                   <td style="width: 18px;">&nbsp;</td>
-                  <td class="sheet-boxinputleft" style="width: 270px;">
+                  <td class="sheet-boxinputleft" style="width: 275px;">
                     <input type="checkbox" name="attr_arme_al" style="width: 12px;" title="@{armelim} Action limitée (L)" value="1" />
                     <input type="hidden" name="attr_armelim" value="" />
-                    <input type="text" name="attr_armejetn" class="sheet-carac" style="width: 227px; font-weight: bold;" placeholder="Nom de l'attaque" title="@{armejetn}" />
+                    <input type="text" name="attr_armejetn" class="sheet-carac" style="width: 230px; font-weight: bold;" placeholder="Nom de l'attaque" title="@{armejetn}" />
                     <select name="attr_armejetd" class="sheet-carac" style="width: 30px;" title="@{armejetd} Jet d'attaque : Normal, 'Risque' = avec d12, 'Expert' = meilleur de deux d20">
                       <option value="@{JETNORMAL}" selected>N - Normal</option>
                       <option value="@{JETRISQUE}">R - Risque (d12)</option>
@@ -667,18 +667,18 @@
                   <td class="sheet-boxinputleft" style="width: 32px;">
                     <input type="number" class="sheet-carac" style="width: 32px;" name="attr_armeinct" min="1" max="19" value="1" title="@{armeinct} Seuil d'incident de tir (par défaut 1)" />
                   </td>
-                  <td class="sheet-boxinputleft" style="width: 200px;">
-                    <input type="text" class="sheet-carac" style="width: 106px;" name="attr_armedmtype" title="@{armedmtype}" placeholder="Type DM">
+                  <td class="sheet-boxinputleft" style="width: 215px;">
+                    <input type="text" class="sheet-carac" style="width: 115px;" name="attr_armedmtype" title="@{armedmtype}" placeholder="Type DM">
                     <select class="sheet-carac" style="width: 40px;" name="attr_armedmrel" title="@{armedmrel} Relance dés de DM = (r)eroll -- 1 seule fois = (r)eroll (o)nce">
                       <option value="" selected>-x- Pas de relance DM</option>
                       <option value="r">-r- Relance DM (r)</option>
                       <option value="ro">-o- Relance DM 1 seule fois (ro)</option>
                     </select>
-                    <input type="text" class="sheet-carac" style="width: 50px;" name="attr_armedmvrel" title="@{armedmvrel} Seuil de relance (relance les 1 si non indiqué)" />
+                    <input type="text" class="sheet-carac" style="width: 45px;" name="attr_armedmvrel" title="@{armedmvrel} Seuil de relance (relance les 1 si non indiqué)" />
                   </td>
-                  <td class="sheet-boxinputleft" style="width: 200px;" colspan="2">
+                  <td class="sheet-boxinputleft" style="width: 240px;" colspan="2">
                     <input type="text" class="sheet-carac" style="width: 50px;" name="attr_armedm2_de" placeholder="1d6" title="@{armedm2_de}" />
-                    <input type="text" class="sheet-carac" style="width: 150px;" name="attr_armedm2_desc" placeholder="Type de dommage supp." title="@{armedm2_desc}" />
+                    <input type="text" class="sheet-carac" style="width: 190px;" name="attr_armedm2_desc" placeholder="Type de dommage supp." title="@{armedm2_desc}" />
                     <input type="hidden" name="attr_armedmg2" value="" />
                   </td>
                 </tr>
