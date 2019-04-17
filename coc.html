@@ -1,8 +1,8 @@
 <div class="sheet-mainBg">
   <!-- FDP -->
   <!-- INPUT HIDDEN Version FdP -->
-  <input type="hidden" name="attr_VERFDP" value="2.5" />
-  <input type="hidden" name="attr_VERSION" value="2.5" />
+  <input type="hidden" name="attr_VERFDP" value="2.6" />
+  <input type="hidden" name="attr_VERSION" value="2.6" />
   <!-- INPUT HIDDEN Univers (COF, CG, COC) -->
   <input type="hidden" name="attr_UNIVERS" value="COC" />
   <!-- INPUT HIDDEN Type de jet -->
@@ -10,6 +10,7 @@
   <input type="hidden" name="attr_JETSUP" value="2d@{ETATDE}kh1" />
   <input type="hidden" name="attr_JETSUPHERO" value="{2d@{ETATDE}kh1, 0d20+10}kh1" />
   <input type="hidden" name="attr_JETRISQUE" value="1d12" />
+  <input type="hidden" name="attr_JETINF" value="2d@{ETATDE}kl1" />
   <input type="hidden" name="attr_JDEX" value="1d@{ETATDE}" />
   <input type="hidden" name="attr_JDEXSUP" value="2d@{ETATDE}kh1" />
   <input type="hidden" name="attr_JDEXSUPHERO" value="{2d@{ETATDE}kh1, 0d20+10}kh1" />
@@ -700,7 +701,7 @@
                     <select name="attr_armejetd" class="sheet-carac" style="width: 30px;" title="@{armejetd} Jet d'attaque : Normal, 'Risque' = avec d12, 'Expert' = meilleur de deux d20">
                       <option value="@{JETNORMAL}" selected>N - Normal</option>
                       <option value="@{JETRISQUE}">R - Risque (d12)</option>
-                      <option value="@{JETSUP}">E - Expert (2 d20)</option>
+                      <option value="@{JETSUP}">E - Expert (max 2 d20)</option>
                     </select>
                   </td>
                   <td class="sheet-boxinputleft" style="width: 32px;">
@@ -1623,7 +1624,7 @@
               <div class="sheet-col" style="width: 27%;">
                 <div class="sheet-boxtitre">DEF / RD</div>
                 <div class="sheet-boxinput">
-                  <input class="sheet-carac" name="attr_pnj_def" type="number" title="@{pnj_def}" />&nbsp;/
+                  <input class="sheet-carac" name="attr_pnj_def" type="number" title="@{pnj_def}" /> /
                   <input class="sheet-carac" name="attr_pnj_rd" type="number" title="@{pnj_rd}" />
                 </div>
               </div>
@@ -1798,79 +1799,96 @@
           <div class="desc">{{desc}}</div>
         </td>
       </tr>
-      {{/desc}} {{#DV}}
+      {{/desc}} 
+      {{#DV}}
       <tr>
         <td class="tcat">PV gagnés</td>
         <td>{{DV}}</td>
       </tr>
-      {{/DV}} {{#carac}}
+      {{/DV}} 
+      {{#carac}}
       <tr>
         {{#jet}}
-        <td class="tcat">{{jet}} </td>
-        {{/jet}} {{^jet}}
-        <td class="tcat">Jet </td>
+          <td class="tcat">{{jet}} </td>
+        {{/jet}} 
+        {{^jet}}
+          <td class="tcat">Jet </td>
         {{/jet}}
         <td>{{carac}}</td>
       </tr>
-      {{/carac}} {{#test}}
+      {{/carac}} 
+      {{#test}}
       <tr>
         <td colspan="2" style="display: none;">{{test}}</td>
       </tr>
-      {{#rollWasCrit() test}}
-      <tr>
-        <td colspan="2" style="color:green;">
-          <div class="desc"><b>{{test_crit}}</b></div>
-        </td>
-      </tr>
-      {{/rollWasCrit() test}} {{#rollWasFumble() test}}
-      <tr>
-        <td colspan="2" style="color:red;">
-          <div class="desc"><b>{{test_fumble}}</b></div>
-        </td>
-      </tr>
-      {{/rollWasFumble() test}} {{/test}} {{#attaque}} {{#rollWasCrit() attaque}}
-      <tr>
-        <td colspan="2" style="color:green;"><b>Critique !</b></td>
-      </tr>
-      {{/rollWasCrit() attaque}} {{#rollWasFumble() attaque}}
-      <tr>
-        <td colspan="2" style="color:red;"><b>Fumble !</b></td>
-      </tr>
-      {{/rollWasFumble() attaque}}
-      <tr>
-        <td class="tcat">Jet </td>
-        <td>{{attaque}} contre DEF</td>
-      </tr>
-      {{#degats}}
-      <tr>
-        <td class="tcat">Dégâts </td>
-        <td>
-          {{degats}} {{#rollWasCrit() attaque}}
-          <span style="color:green;font-weight:bold;"> + {{degats}}</span> {{/rollWasCrit() attaque}} {{dmtype}}
-        </td>
-      </tr>
-      {{#degats2}}
-      <tr>
-        <td style="text-align: right;">+</td>
-        <td><span style="color: steelblue;">{{degats2}} {{dm2type}}</span></td>
-      </tr>
-      {{/degats2}} {{/degats}} {{/attaque}} {{^attaque}} {{#degats}}
-      <tr>
-        <td class="tcat">Dégâts </td>
-        <td>{{degats}} {{dmtype}}</td>
-      </tr>
-      {{#degats2}}
-      <tr>
-        <td style="text-align: right;">+</td>
-        <td><span style="color: steelblue;">{{degats2}} {{dm2type}}</span></td>
-      </tr>
-      {{/degats2}} {{/degats}} {{/attaque}} {{#special}}
+        {{#rollWasCrit() test}}
+        <tr>
+          <td colspan="2" style="color:green;">
+            <div class="desc"><b>{{test_crit}}</b></div>
+          </td>
+        </tr>
+        {{/rollWasCrit() test}} 
+        {{#rollWasFumble() test}}
+        <tr>
+          <td colspan="2" style="color:red;">
+            <div class="desc"><b>{{test_fumble}}</b></div>
+          </td>
+        </tr>
+        {{/rollWasFumble() test}} 
+      {{/test}} 
+      {{#attaque}} 
+        {{#rollWasCrit() attaque}}
+        <tr>
+          <td colspan="2" style="color:green;"><b>Critique !</b></td>
+        </tr>
+        {{/rollWasCrit() attaque}} 
+        {{#rollWasFumble() attaque}}
+        <tr>
+          <td colspan="2" style="color:red;"><b>Fumble !</b></td>
+        </tr>
+        {{/rollWasFumble() attaque}}
+        <tr>
+          <td class="tcat">Jet </td>
+          <td>{{attaque}} contre DEF</td>
+        </tr>
+        {{#degats}}
+        <tr>
+          <td class="tcat">Dégâts </td>
+          <td>
+            {{degats}} {{#rollWasCrit() attaque}}
+            <span style="color:green;font-weight:bold;"> + {{degats}}</span> {{/rollWasCrit() attaque}} {{dmtype}}
+          </td>
+        </tr>
+          {{#degats2}}
+          <tr>
+            <td style="text-align: right;">+</td>
+            <td><span style="color: steelblue;">{{degats2}} {{dm2type}}</span></td>
+          </tr>
+          {{/degats2}} 
+        {{/degats}} 
+      {{/attaque}} 
+      {{^attaque}} 
+        {{#degats}}
+        <tr>
+          <td class="tcat">Dégâts </td>
+          <td>{{degats}} {{dmtype}}</td>
+        </tr>
+          {{#degats2}}
+          <tr>
+            <td style="text-align: right;">+</td>
+            <td><span style="color: steelblue;">{{degats2}} {{dm2type}}</span></td>
+          </tr>
+          {{/degats2}} 
+        {{/degats}} 
+      {{/attaque}} 
+      {{#special}}
       <tr>
         <td colspan="2" style="white-space:normal;">
           <div class="desc">{{special}}</div>
         </td>
       </tr>
-      {{/special}} {{#text}}
+      {{/special}} 
+      {{#text}}
       <tr>
         <td colspan="2" style="white-space:normal; margin: 1px;">
           <div class="text">{{text}}</div>
@@ -2411,9 +2429,12 @@
               buffv.pop();
               buffName = buffv.join(' ').trim();
             } else {
-              buffName = buffv[0];
+              buffName = buffv[0].trim();
               buffVal = buffValue(buffv[1], caracs);
             }
+            consoleLog(buff);
+            consoleLog(buffName);
+            consoleLog(buffVal);
             if (!buffName.startsWith('-')) buffSum += buffVal;
           }
         }
@@ -2930,13 +2951,13 @@
       };
       const modifiers = {
         atc: '',
+        atcdm: '',
         atd: '',
+        atddm: '',
         mag: '',
+        magdm: '',
         men: '',
-        dma: '',
-        dmc: '',
-        dmd: '',
-        dme: ''
+        mendm: ''
       };
       let result = ' ';
       if (values.mods_atk !== '') {
@@ -2952,16 +2973,16 @@
             mod_attr = modv.shift().toLowerCase();
             if (Object.keys(aliases).includes(mod_attr)) {
               if (aliases[mod_attr] === 'att') mod_attr = 'dm';
-              if (aliases[mod_attr] === 'atc') mod_attr = 'dmc';
-              if (aliases[mod_attr] === 'atd') mod_attr = 'dmd';
-              if (aliases[mod_attr] === 'mag') mod_attr = 'dma';
-              if (aliases[mod_attr] === 'men') mod_attr = 'dme';
+              if (aliases[mod_attr] === 'atc') mod_attr = 'atcdm';
+              if (aliases[mod_attr] === 'atd') mod_attr = 'atddm';
+              if (aliases[mod_attr] === 'mag') mod_attr = 'magdm';
+              if (aliases[mod_attr] === 'men') mod_attr = 'mendm';
             } else {
               if (mod_attr === 'att') mod_attr = 'dm';
-              if (mod_attr === 'atc') mod_attr = 'dmc';
-              if (mod_attr === 'atd') mod_attr = 'dmd';
-              if (mod_attr === 'mag') mod_attr = 'dma';
-              if (mod_attr === 'men') mod_attr = 'dme';
+              if (mod_attr === 'atc') mod_attr = 'atcdm';
+              if (mod_attr === 'atd') mod_attr = 'atddm';
+              if (mod_attr === 'mag') mod_attr = 'magdm';
+              if (mod_attr === 'men') mod_attr = 'mendm';
             }
           }
           let mod_sgn = '+';
@@ -2979,13 +3000,13 @@
           let mod_desc = ` ${mod_sgn}${mod_val}[${modv.join(' ').trim()}]`;
           switch (mod_attr) {
             case 'atc':
+            case 'atcdm':
             case 'atd':
+            case 'atddm':
             case 'mag':
+            case 'magdm':
             case 'men':
-            case 'dma':
-            case 'dmc':
-            case 'dmd':
-            case 'dme':
+            case 'mendm':
               modifiers[mod_attr] += mod_desc;
               break;
             case 'att':
@@ -2994,9 +3015,10 @@
               }
               break;
             case 'dm':
-              for (let attr of ['dma', 'dmc', 'dmd', 'dme']) {
+              for (let attr of ['atcdm', 'atddm', 'magdm', 'mendm']) {
                 modifiers[attr] += mod_desc;
               }
+              break;
             default:
               if (Object.keys(aliases).includes(mod_attr)) {
                 modifiers[aliases[mod_attr]] += mod_desc;
@@ -3016,16 +3038,16 @@
             let attr = {};
             if (type === '@{ATKCAC}' || (type === '@{ATKTIR}' && portee === '')) {
               attr[`repeating_armes_${id}_armebuff`] = modifiers.atc.trim();
-              attr[`repeating_armes_${id}_armebuffdm`] = modifiers.dmc.trim();
+              attr[`repeating_armes_${id}_armebuffdm`] = modifiers.atcdm.trim();
             } else if (type === '@{ATKTIR}') {
               attr[`repeating_armes_${id}_armebuff`] = modifiers.atd.trim();
-              attr[`repeating_armes_${id}_armebuffdm`] = modifiers.dmd.trim();
+              attr[`repeating_armes_${id}_armebuffdm`] = modifiers.atddm.trim();
             } else if (type === '@{ATKMAG}') {
               attr[`repeating_armes_${id}_armebuff`] = modifiers.mag.trim();
-              attr[`repeating_armes_${id}_armebuffdm`] = modifiers.dma.trim();
+              attr[`repeating_armes_${id}_armebuffdm`] = modifiers.magdm.trim();
             } else if (type === '@{ATKMEN}') {
               attr[`repeating_armes_${id}_armebuff`] = modifiers.men.trim();
-              attr[`repeating_armes_${id}_armebuffdm`] = modifiers.dme.trim();
+              attr[`repeating_armes_${id}_armebuffdm`] = modifiers.mendm.trim();
             }
             if (attr !== null) setAttrs(attr);
           });
