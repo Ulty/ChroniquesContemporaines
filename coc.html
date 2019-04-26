@@ -31,11 +31,14 @@
   <input type="hidden" name="attr_INIT_BUFF" value="0" />
   <input type="hidden" name="attr_DEF_BUFF" value="0" />
   <input type="hidden" name="attr_DEP_BUFF" value="0" />
+  <input type="hidden" name="attr_PV_BUFF" value="0" />
   <!-- INPUT HIDDEN Précédent état préjudiciable -->
   <input type="hidden" name="attr_CONDITION" value="" />
   <input type="hidden" name="attr_PCONDITION" value="" />
   <!-- INPUT HIDDEN Précédent nombre de PV -->
   <input type="hidden" name="attr_LAST_PV" value="" />
+  <!-- INPUT HIDDEN PV par niveau -->
+  <input type="hidden" name="attr_PV_NIVEAU" value="" />
   <!-- INPUT HIDDEN Choix carac jets capacités -->
   <input type="hidden" name="attr_QRYMOD" value="?{Carac. ?|Force,@{FOR}|Dextérité,@{DEX}|Constitution,@{CON}|Intelligence,@{INT}|Perception,@{PER}|Charisme,@{CHA}}" />
   <input type="hidden" name="attr_QRYMODT" value="?{Carac. ?|Force,@{FOR_TEST}|Dextérité,@{DEX_TEST}|Constitution,@{CON_TEST}|Intelligence,@{INT_TEST}|Perception,@{PER_TEST}|Charisme,@{CHA_TEST}}" />
@@ -492,8 +495,9 @@
                         <td class="sheet-textfat">&nbsp;</td>
                       </tr>
                       <tr>
-                        <td class="sheet-boxtitre">
-                          <button class="sheet-boxtitre" type="roll" name="JET_DV" title="Jet de Dé de Vie" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Dé de Vie}} {{subtags=Vitalité}} {{DV=[[ 1d@{DV}[Dé de Vie] + [[@{CON}]][CON] ]]}}"> DV</button>
+                        <td class="sheet-boxtitre"> <!--
+                          <button class="sheet-boxtitre" type="roll" name="JET_DV" title="Jet de Dé de Vie" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Dé de Vie}} {{subtags=Vitalité}} {{DV=[[ 1d@{DV}[Dé de Vie] + [[@{CON}]][CON] ]]}}"> DV</button> -->
+                          <button class="sheet-boxtitre" type="action" name="act_dv" title="Progression d'un niveau"> DV</button>
                         </td>
                         <td class="sheet-boxinput">
                           <select class="sheet-carac" name="attr_DV" size="1" title="@{DV} Dé de Vie">
@@ -1245,6 +1249,13 @@
               <span class="textbase">Encombrement</span>&nbsp;
               <input type="checkbox" name="attr_use_encombrement" title="@{use_encombrement} Gérer l'encombrement" value="1" />
             </td>
+            <td>
+              <span class="textbase">Progression PV :</span>&nbsp;
+              <select class="sheet-carac" style="width: 90px;" name="attr_prog_pv" title="@{prog_pv}" size="1">
+                <option value="0" selected>Jet DV</option>
+                <option value="1">Moyenne</option>
+              </select>
+            </td>
           </tr>
         </table>
       </div>
@@ -1360,6 +1371,15 @@
             </td>
             <td style="width: 5%;">
               <input class="sheet-buff" type="number" name="attr_DEF_BUFFS" value="@{DEF_BUFF}" disabled />
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 5%;">PV:</td>
+            <td style="width: 90%;">
+              <input class="sheet-buff" type="text" name="attr_PV_BUFF_LIST" placeholder="<Type> : <Valeur>; <Type> <Valeur>..." />
+            </td>
+            <td style="width: 5%;">
+              <input class="sheet-buff" type="number" name="attr_PV_BUFFS" value="@{PV_BUFF}" disabled />
             </td>
           </tr>
         </table>
@@ -1913,6 +1933,12 @@
     console.log('** CO sheetworker' + m + ' <<<');
     console.log(l);
     console.log('** CO sheetworker' + m + ' >>>');
+  }
+  
+  function getRandom(max) {
+    let min = 1;
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min +1)) + min;
   }
 
   function addTrait(npcObj, traitObj) {
@@ -2525,6 +2551,10 @@
 
   on('change:def_buff_list', function() {
     parseBuff('DEF');
+  });
+
+  on('change:pv_buff_list', function() {
+    parseBuff('PV');
   });
   
   on('change:blessure', function() {
@@ -3199,6 +3229,77 @@
         PCONDITION: condition,
         conditions: displayConditions
       });
+    });
+  });
+  
+  function hitPoints(attr) {
+    getAttrs(['NIVEAU', 'DV', 'CONSTITUTION', 'PV_NIVEAU', 'PV_BUFF', 'prog_pv'], function(values) {
+      let niveau = parseInt(values.NIVEAU) || 0;
+      if (niveau === 0) return;
+      let dv = parseInt(values.DV) || 0;
+      if (dv === 0) return;
+      let constitution = parseInt(values.CONSTITUTION) || 0;
+      let modcon = 0;
+      if (constitution > 0) modcon = Math.floor((constitution - 10) / 2);
+      let pv_niveau = values.PV_NIVEAU || '';
+      let pv = [];
+      if (attr === 'niveau' || attr === 'constitution' || attr === 'pv_buff') {
+        if (pv_niveau !== '') pv = JSON.parse(pv_niveau);
+      }
+      let average = (parseInt(values.prog_pv) || 0 === 1) ? 1 + (dv / 2) : 0;
+      let pv_buff = parseInt(values.PV_BUFF) || 0;
+      let pv_max = 0;
+      for (let n = 1; n <= niveau; n++) {
+        let pvie = 0;
+        if (n === 1) {
+          pvie = dv + modcon; // niveau 1 : Max. DV + Mod. CON
+        } else {
+          if (n > 10) { // niveaux > 10 : 1 ou 2 PV selon DV
+            if (dv >= 10) pvie = 2;
+            else pvie = 1;
+          } else { // niveaux <= 10
+            if (n % 2 === 0) { // niveau pair
+              if (n > pv.length) { // nouveau niveau
+                if (average !== 0) {
+                  pvie = average; // ... soit moyenne du DV + 1
+                } else {
+                  pvie = getRandom(dv); // ... soit tirage de DV
+                }
+                if (modcon < 0) pvie += modcon; // ... + Mod. CON si négative
+                if (pvie < 0) pvie = 0; // ... mais on ne perd pas de PV
+              } else { // niveau existant
+                pvie = pv[n - 1];
+              }
+            } else { // niveau impair
+              if (modcon > 0) pvie = modcon; // Mod. CON si positif
+            }
+          }
+        }
+        if (n > pv.length) pv.push(pvie);
+        else pv[n - 1] = pvie;
+        pv_max += pvie;
+      }
+      pv_max += pv_buff;
+      setAttrs({
+        PV_NIVEAU: JSON.stringify(pv),
+        PV_max: pv_max,
+        PV: pv_max
+      });
+    });
+  }
+  
+  on('change:niveau change:dv change:constitution change:pv_buff change:prog_pv', function(eventInfo) {
+    hitPoints(eventInfo.sourceAttribute);
+  });
+  
+  on('clicked:dv', function() {
+    getAttrs(['NIVEAU'], function(value) {
+      let niveau = parseInt(value.NIVEAU) || 0;
+      if (niveau > 0 && niveau <=20) {
+        setAttrs({
+          NIVEAU: niveau + 1
+        });
+      }
     });
   });
 
