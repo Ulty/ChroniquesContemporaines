@@ -158,7 +158,7 @@
                 </tr>
                 <tr>
                   <td class="sheet-boxtitre">
-                    <button class="sheet-boxtitre" type="roll" name="roll_jet_for" title="Jet de Force" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Force}} {{subtags=Test}} {{carac=[[@{FOR_SUP}[Dé] + [[@{FOR_TEST}]][Bonus] ]] }}"> FOR</button>
+                    <button class="sheet-boxtitre" type="roll" name="roll_jet_for" title="%{jet_for} Jet de Force" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Force}} {{subtags=Test}} {{carac=[[@{FOR_SUP}[Dé] + [[@{FOR_TEST}]][Bonus] ]] }}"> FOR</button>
                   </td>
                   <td class="sheet-boxinputlight">
                     <select class="sheet-selectmin" name="attr_FOR_SUP" title="@{FOR_SUP} Caractéristique Normale ou Supérieure/Héroïque (règle p.138)">
@@ -182,7 +182,7 @@
                 </tr>
                 <tr>
                   <td class="sheet-boxtitre">
-                    <button class="sheet-boxtitre" type="roll" name="roll_jet_dex" title="Jet de Dextérité" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Dextérité}} {{subtags=Test}} {{carac=[[@{DEX_SUP}[Dé] + [[@{DEX_TEST}]][Bonus] ]]}}"> DEX</button>
+                    <button class="sheet-boxtitre" type="roll" name="roll_jet_dex" title="%{jet_dex} Jet de Dextérité" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Dextérité}} {{subtags=Test}} {{carac=[[@{DEX_SUP}[Dé] + [[@{DEX_TEST}]][Bonus] ]]}}"> DEX</button>
                   </td>
                   <td class="sheet-boxinputlight">
                     <select class="sheet-selectmin" name="attr_DEX_SUP" title="@{DEX_SUP} Caractéristique Normale ou Supérieure/Héroïque (règle p.138)">
@@ -206,7 +206,7 @@
                 </tr>
                 <tr>
                   <td class="sheet-boxtitre">
-                    <button class="sheet-boxtitre" type="roll" name="roll_jet_con" title="Jet de Constitution" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Constitution}} {{subtags=Test}} {{carac=[[@{CON_SUP}[Dé] + [[@{CON_TEST}]][Bonus] ]]}}"> CON</button>
+                    <button class="sheet-boxtitre" type="roll" name="roll_jet_con" title="%{jet_con} Jet de Constitution" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Constitution}} {{subtags=Test}} {{carac=[[@{CON_SUP}[Dé] + [[@{CON_TEST}]][Bonus] ]]}}"> CON</button>
                   </td>
                   <td class="sheet-boxinputlight">
                     <select class="sheet-selectmin" name="attr_CON_SUP" title="@{CON_SUP} Caractéristique Normale ou Supérieure/Héroïque (règle p.138)">
@@ -230,7 +230,7 @@
                 </tr>
                 <tr>
                   <td class="sheet-boxtitre">
-                    <button class="sheet-boxtitre" type="roll" name="roll_jet_int" title="Jet d'Intelligence" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Intelligence}} {{subtags=Test}} {{carac=[[@{INT_SUP}[Dé] + [[@{INT_TEST}]][Bonus] ]]}}"> INT</button>
+                    <button class="sheet-boxtitre" type="roll" name="roll_jet_int" title="%{jet_int} Jet d'Intelligence" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Intelligence}} {{subtags=Test}} {{carac=[[@{INT_SUP}[Dé] + [[@{INT_TEST}]][Bonus] ]]}}"> INT</button>
                   </td>
                   <td class="sheet-boxinputlight">
                     <select class="sheet-selectmin" name="attr_INT_SUP" title="@{INT_SUP} Caractéristique Normale ou Supérieure/Héroïque (règle p.138)">
@@ -254,7 +254,7 @@
                 </tr>
                 <tr>
                   <td class="sheet-boxtitre">
-                    <button class="sheet-boxtitre" type="roll" name="roll_jet_per" title="Jet de Perception" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Perception}} {{subtags=Test}} {{carac=[[@{PER_SUP}[Dé] + [[@{PER_TEST}]][Bonus] ]]}}"> PER</button>
+                    <button class="sheet-boxtitre" type="roll" name="roll_jet_per" title="%{jet_per} Jet de Perception" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Perception}} {{subtags=Test}} {{carac=[[@{PER_SUP}[Dé] + [[@{PER_TEST}]][Bonus] ]]}}"> PER</button>
                   </td>
                   <td class="sheet-boxinputlight">
                     <select class="sheet-selectmin" name="attr_PER_SUP" title="@{PER_SUP} Caractéristique Normale ou Supérieure/Héroïque (règle p.138)">
@@ -278,7 +278,7 @@
                 </tr>
                 <tr>
                   <td class="sheet-boxtitre">
-                    <button class="sheet-boxtitre" type="roll" name="roll_jet_cha" title="Jet de Charisme" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Charisme}} {{subtags=Test}} {{carac=[[@{CHA_SUP}[Dé] + [[@{CHA_TEST}]][Bonus] ]]}}"> CHA</button>
+                    <button class="sheet-boxtitre" type="roll" name="roll_jet_cha" title="%{jet_cha} Jet de Charisme" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Charisme}} {{subtags=Test}} {{carac=[[@{CHA_SUP}[Dé] + [[@{CHA_TEST}]][Bonus] ]]}}"> CHA</button>
                   </td>
                   <td class="sheet-boxinputlight">
                     <select class="sheet-selectmin" name="attr_CHA_SUP" title="@{CHA_SUP} Caractéristique Normale ou Supérieure/Héroïque (règle p.138)">
@@ -373,7 +373,7 @@
                       </tr>
                       <tr>
                         <td class="sheet-boxtitre">
-                          <button class="sheet-boxtitre" type="roll" name="roll_jet_cac" title="Jet d'attaque au contact" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Au Contact}} {{subtags=Attaque}} {{attaque=[[@{JETNORMAL}cs20cf1[Dé] + [[@{ATKCAC}]][Bonus] ]]}}"> AU CONTACT</button>
+                          <button class="sheet-boxtitre" type="roll" name="roll_jet_cac" title="%{jet_cac} Jet d'attaque au contact" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Au Contact}} {{subtags=Attaque}} {{attaque=[[@{JETNORMAL}cs20cf1[Dé] + [[@{ATKCAC}]][Bonus] ]]}}"> AU CONTACT</button>
                         </td>
                         <td class="sheet-boxinput">
                           <input type="number" name="attr_ATKCAC_BASE" value="0" title="@{ATKCAC_BASE} Score de base" />
@@ -397,7 +397,7 @@
                       </tr>
                       <tr>
                         <td class="sheet-boxtitre">
-                          <button class="sheet-boxtitre" type="roll" name="roll_jet_tir" title="Jet d'attaque à distance" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=&Agrave; Distance}} {{subtags=Attaque}} {{attaque=[[@{JETNORMAL}cs20cf1[Dé] + [[@{ATKTIR}]][Bonus] ]]}}"> &Agrave; DISTANCE</button>
+                          <button class="sheet-boxtitre" type="roll" name="roll_jet_tir" title="%{jet_tir} Jet d'attaque à distance" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=&Agrave; Distance}} {{subtags=Attaque}} {{attaque=[[@{JETNORMAL}cs20cf1[Dé] + [[@{ATKTIR}]][Bonus] ]]}}"> &Agrave; DISTANCE</button>
                         </td>
                         <td class="sheet-boxinput">
                           <input type="number" name="attr_ATKTIR_BASE" value="0" title="@{ATKTIR_BASE} Score de base" />
@@ -421,7 +421,7 @@
                       </tr>
                       <tr>
                         <td class="sheet-boxtitre">
-                          <button class="sheet-boxtitre" type="roll" name="roll_jet_men" title="Jet d'attaque mentale" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Mental}} {{subtags=Attaque}} {{attaque=[[@{JETNORMAL}cs20cf1[Dé] + [[@{ATKMEN}]][Bonus] ]]}}"> MENTAL</button>
+                          <button class="sheet-boxtitre" type="roll" name="roll_jet_men" title="%{jet_men} Jet d'attaque mentale" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Mental}} {{subtags=Attaque}} {{attaque=[[@{JETNORMAL}cs20cf1[Dé] + [[@{ATKMEN}]][Bonus] ]]}}"> MENTAL</button>
                         </td>
                         <td class="sheet-boxinput">
                           <input type="number" name="attr_ATKMEN_BASE" value="0" title="@{ATKMEN_BASE} Score de base" />
@@ -445,7 +445,7 @@
                       </tr>
                       <tr>
                         <td class="sheet-boxtitre">
-                          <button class="sheet-boxtitre" type="roll" name="roll_jet_mag" title="Jet d'attaque magique" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Magique}} {{subtags=Attaque}} {{attaque=[[@{JETNORMAL}cs20cf1[Dé] + [[@{ATKMAG}]][Bonus] ]]}}"> MAGIQUE</button>
+                          <button class="sheet-boxtitre" type="roll" name="roll_jet_mag" title="%{jet_mag} Jet d'attaque magique" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Magique}} {{subtags=Attaque}} {{attaque=[[@{JETNORMAL}cs20cf1[Dé] + [[@{ATKMAG}]][Bonus] ]]}}"> MAGIQUE</button>
                         </td>
                         <td class="sheet-boxinput">
                           <input type="number" name="attr_ATKMAG_BASE" value="0" title="@{ATKMAG_BASE} Score de base" />
@@ -469,10 +469,10 @@
                       </tr>
                       <tr>
                         <td class="sheet-boxtitre">
-                          <button class="sheet-boxtitre" type="roll" name="roll_jet_init" title="@{JET_INIT} Initiative" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Initiative}} {{subtags=Combat}} {{carac=[[@{INIT_JET} &{tracker}]]}}"> INITIATIVE</button>
+                          <button class="sheet-boxtitre" type="roll" name="roll_jet_init" title="%{jet_init} Initiative" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Initiative}} {{subtags=Combat}} {{carac=[[@{INIT_JET} &{tracker}]]}}"> INITIATIVE</button>
                         </td>
                         <td class="sheet-boxtitre">
-                          <button class="sheet-boxtitre" type="roll" name="roll_next_init" title="@{NEXT_INIT} Actions multiples si jet d'Init > 20, 30, etc..." value="@{togm}&{template:co1} {{perso=@{selected|character_name}}} {{subtags=Initiative}} {{name=Action suivante}} {{desc=(A)ction / (M)ouvement à Init-[[10 &{tracker:-}]]}}"> Suite</button>
+                          <button class="sheet-boxtitre" type="roll" name="roll_next_init" title="%{next_init} Actions multiples si jet d'Init > 20, 30, etc..." value="@{togm}&{template:co1} {{perso=@{selected|character_name}}} {{subtags=Initiative}} {{name=Action suivante}} {{desc=(A)ction / (M)ouvement à Init-[[10 &{tracker:-}]]}}"> Suite</button>
                         </td>
                         <td class="sheet-boxinputlight">
                           <input type="number" name="attr_INIT_CARAC" title="@{INIT_CARAC}" value="@{DEXTERITE}" disabled />
@@ -621,7 +621,7 @@
               <table class="sheet-tabsep">
                 <tr>
                   <td>
-                    <button type="roll" class="sheet-neutre" name="roll_jet" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Attaque}} {{name=@{armenom}}} {{portee=@{armeportees}}} {{desc=@{armejetn} @{armelim}}} {{@{armeatt}[[@{armejetd}cs>@{armecrit}cf<@{armeinct}[Dé] + [[@{armeatk}]][Attaque] + [[@{armeatkdiv}]][Bonus] + (@{armebuff}) ]]}} {{@{armedmg}[[[[@{armedmnbde}d@{armedmde}@{armedmrel}@{armedmvrel}]][Dé DM] + ([[@{armedmcar}]])[Mod.DM] + (@{armedmdiv})[Bonus DM] + (@{armebuffdm}) ]]}} {{dmtype=@{armedmtype}}} {{degats2=@{armedmg2}}} {{dm2type=@{armedm2_desc}}} {{special=@{armespec}}}" />
+                    <button type="roll" class="sheet-neutre" name="roll_jet" title="%{repeating_armes_$N_jet}" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Attaque}} {{name=@{armenom}}} {{portee=@{armeportees}}} {{desc=@{armejetn} @{armelim}}} {{@{armeatt}[[@{armejetd}cs>@{armecrit}cf<@{armeinct}[Dé] + [[@{armeatk}]][Attaque] + [[@{armeatkdiv}]][Bonus] + (@{armebuff}) ]]}} {{@{armedmg}[[[[@{armedmnbde}d@{armedmde}@{armedmrel}@{armedmvrel}]][Dé DM] + ([[@{armedmcar}]])[Mod.DM] + (@{armedmdiv})[Bonus DM] + (@{armebuffdm}) ]]}} {{dmtype=@{armedmtype}}} {{degats2=@{armedmg2}}} {{dm2type=@{armedm2_desc}}} {{special=@{armespec}}}" />
                     <!-- original : "@{togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Attaque}} {{name=@{armenom}  @{armelim}}} {{portee=@{armeportees}}} {{desc=@{armejetn}}} {{@{armeatt}[[@{armejetd}cs>@{armecrit}cf<@{armeinct}[Dé] + [[@{armeatk}]][Attaque] + [[@{armeatkdiv}]][Bonus] + ([[@{visee_att}]])[Tir visé] + ([[@{distance}]])[Portée] ]]}} {{@{armedmg}[[[[@{armedmnbde}d@{armedmde}@{armedmrel}@{armedmvrel}]][Dé DM] + ([[@{armedmcar}]])[Mod.DM] + (@{armedmdiv})[Bonus DM] + ([[@{visee_dm}]])[Tir visé] ]]}} {{dmtype=@{armedmtype}}} {{degats2=@{armedmg2}}} {{dm2type=@{armedm2_desc}}} {{special=@{armespec}}}" -->
                   </td>
                   <td class="sheet-boxinputleft" style="min-width:125px;">
@@ -1024,7 +1024,7 @@
           <table class="sheet-tabsep">
             <tr>
               <td>
-                <button type="roll" class="sheet-neutre" name="roll_jet" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Capacité}} {{name=@{jetcapanom} @{jetcapalim}}} {{carac=[[@{jetcapanbde}d@{jetcapade}@{jetcapatypjet} + [[@{jetcapacarac}]] + @{jetcapadiv}]] }} {{jet=@{jetcapatitre}}} {{desc=@{jetcapavoie}}} {{text=@{jetcapadesc}}}" />
+                <button type="roll" class="sheet-neutre" name="roll_jet" title="%{repeating_jet_capas_$N_jet}" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Capacité}} {{name=@{jetcapanom} @{jetcapalim}}} {{carac=[[@{jetcapanbde}d@{jetcapade}@{jetcapatypjet} + [[@{jetcapacarac}]] + @{jetcapadiv}]] }} {{jet=@{jetcapatitre}}} {{desc=@{jetcapavoie}}} {{text=@{jetcapadesc}}}" />
               </td>
               <td class="sheet-boxinputleft" style="min-width:200px;">
                 <input type="text" name="attr_jetcapanom" title="@{jetcapanom}" style="font-weight: bold;" placeholder="Nom du Jet de capacité" />
@@ -1102,7 +1102,7 @@
           <table class="sheet-tabsep">
             <tr>
               <td style="width: 15px;">
-                <button type="roll" name="roll_trait" class="sheet-output" value='/w "@{character_name}" &{template:co1} {{perso=@{character_name}}} {{name=@{traitnom}}} {{subtags=@{traittype}}} {{text=@{traitdesc}}}'>w</button>
+                <button type="roll" name="roll_trait" class="sheet-output" title="%{repeating_traits_$N_trait}" value='/w "@{character_name}" &{template:co1} {{perso=@{character_name}}} {{name=@{traitnom}}} {{subtags=@{traittype}}} {{text=@{traitdesc}}}'>w</button>
               </td>
               <td class="sheet-boxinputleft" style="width: 200px;">
                 <input type="text" style="font-weight: bold;" name="attr_traitnom" placeholder="Nom du trait" title="@{traitnom}" />
@@ -1146,10 +1146,10 @@
             <table class="sheet-tabsep">
               <tr>
                 <td class="sheet-boxtitre">
-                  <button type="roll" class="sheet-boxtitre" title="Utilisation d'un PC" name="roll_jet_pc" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=@{PC_DESC}}} {{subtags=Bonus}} {{desc=@{character_name} utilise un @{PC_DESC} et obtient un bonus de @{PC_BONUS}}}" /> PC
+                  <button type="roll" class="sheet-boxtitre" title="%{jet_pc} Utilisation d'un PC" name="roll_jet_pc" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=@{PC_DESC}}} {{subtags=Bonus}} {{desc=@{character_name} utilise un @{PC_DESC} et obtient un bonus de @{PC_BONUS}}}" /> PC
                 </td>
                 <td class="sheet-boxtitre">
-                  <button type="roll" class="sheet-boxtitre" title="Jet de Récupération" name="roll_jet_pr" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Récupération}} {{subtags=Vitalité}} {{DV=[[1d@{DV}[Dé de Vie] +[[@{CON}]][CON] +@{NIVEAU}[Niveau] ]]}}" /> PR</td>
+                  <button type="roll" class="sheet-boxtitre" title="%{jet_pr} Jet de Récupération" name="roll_jet_pr" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Récupération}} {{subtags=Vitalité}} {{DV=[[1d@{DV}[Dé de Vie] +[[@{CON}]][CON] +@{NIVEAU}[Niveau] ]]}}" /> PR</td>
                 <td class="sheet-boxtitre">PM</td>
               </tr>
               <tr>
@@ -1393,7 +1393,7 @@
           <table class="sheet-tabsep">
             <tr>
               <td class="sheet-boxtitre">
-                <button class="sheet-boxtitre" type="roll" name="roll_jet_psi" title="Jet d'attaque PSI" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=PSI}} {{subtags=Attaque}} {{attaque=[[@{JETNORMAL}cs20cf1[Dé] + [[@{ATKPSI}]][Bonus] ]]}}"> Attaque PSI</button>
+                <button class="sheet-boxtitre" type="roll" name="roll_jet_psi" title="%{jet_psi} Jet d'attaque PSI" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=PSI}} {{subtags=Attaque}} {{attaque=[[@{JETNORMAL}cs20cf1[Dé] + [[@{ATKPSI}]][Bonus] ]]}}"> Attaque PSI</button>
               </td>
               <td class="sheet-boxinput">
                 <input type="number" name="attr_ATKPSI_BASE" value="0" title="@{ATKPSI_BASE}" />
@@ -1482,7 +1482,7 @@
         <table class="sheet-tabsep">
           <tr>
             <td>
-              <button type="roll" class="sheet-neutre" name="roll_jetv" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=@{jetvnom}}} {{subtags=@{VEHICULE}}} {{carac=[[@{jetvnbde}d@{jetvde}@{jetvtypjet} + [[@{jetvcaracp}]][Bonus] + [[@{jetvcarac}]][Véhicule] + @{jetvdiv}[Divers] ]]}} {{desc=@{jetvdesc}}}" />
+              <button type="roll" class="sheet-neutre" name="roll_jetv" title="%{repeating_jetv_$N_jet_v} Jet de véhicule" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=@{jetvnom}}} {{subtags=@{VEHICULE}}} {{carac=[[@{jetvnbde}d@{jetvde}@{jetvtypjet} + [[@{jetvcaracp}]][Bonus] + [[@{jetvcarac}]][Véhicule] + @{jetvdiv}[Divers] ]]}} {{desc=@{jetvdesc}}}" />
             </td>
             <td class="sheet-boxinputleft" style="min-width:200px;">
               <input type="text" name="attr_jetvnom" title="@{jetvnom}" style="font-weight: bold;" placeholder="Nom du Jet de véhicule" />
@@ -1564,7 +1564,7 @@
             <div class="sheet-3colrow">
               <div class="sheet-col" style="width: 27%;">
                 <div class="sheet-boxtitre">
-                  <button class="sheet-boxtitre" type="roll" name="roll_pnj_for" title="Jet de Force" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Force}} {{subtags=Test}} {{carac=[[@{pnj_jetfor}cs20cf1[Dé] + [[@{pnj_for}]][FOR] ]] }}"> FOR</div>
+                  <button class="sheet-boxtitre" type="roll" name="roll_pnj_for" title="%{pnj_for} Jet de Force" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Force}} {{subtags=Test}} {{carac=[[@{pnj_jetfor}cs20cf1[Dé] + [[@{pnj_for}]][FOR] ]] }}"> FOR</div>
                 <div class="sheet-boxinput">
                   <input class="sheet-carac" name="attr_pnj_for" type="number" title="@{pnj_for}" />
                   <select class="sheet-carac" style="width: 30px;" size="1" name="attr_pnj_jetfor" title="@{pnj_jetfor}">
@@ -1575,7 +1575,7 @@
               </div>
               <div class="sheet-col" style="width: 27%;">
                 <div class="sheet-boxtitre">
-                  <button class="sheet-boxtitre" type="roll" name="roll_pnj_dex" title="Jet de Dextérité" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Dextérité}} {{subtags=Test}} {{carac=[[@{pnj_jetdex}cs20cf1[Dé] + [[@{pnj_dex}]][DEX] ]] }}"> DEX</div>
+                  <button class="sheet-boxtitre" type="roll" name="roll_pnj_dex" title="%{pnj_dex} Jet de Dextérité" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Dextérité}} {{subtags=Test}} {{carac=[[@{pnj_jetdex}cs20cf1[Dé] + [[@{pnj_dex}]][DEX] ]] }}"> DEX</div>
                 <div class="sheet-boxinput">
                   <input class="sheet-carac" name="attr_pnj_dex" type="number" title="@{pnj_dex}" />
                   <select class="sheet-carac" style="width: 30px;" size="1" name="attr_pnj_jetdex" title="@{pnj_jetdex}">
@@ -1586,7 +1586,7 @@
               </div>
               <div class="sheet-col" style="width: 27%;">
                 <div class="sheet-boxtitre">
-                  <button class="sheet-boxtitre" type="roll" name="roll_pnj_con" title="Jet de Constitution" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Constitution}} {{subtags=Test}} {{carac=[[@{pnj_jetcon}cs20cf1[Dé] + [[@{pnj_con}]][CON] ]] }}"> CON</div>
+                  <button class="sheet-boxtitre" type="roll" name="roll_pnj_con" title="%{pnj_con} Jet de Constitution" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Constitution}} {{subtags=Test}} {{carac=[[@{pnj_jetcon}cs20cf1[Dé] + [[@{pnj_con}]][CON] ]] }}"> CON</div>
                 <div class="sheet-boxinput">
                   <input class="sheet-carac" name="attr_pnj_con" type="number" title="@{pnj_con}" />
                   <select class="sheet-carac" style="width: 30px;" size="1" name="attr_pnj_jetcon" title="@{pnj_jetcon}">
@@ -1600,7 +1600,7 @@
             <div class="sheet-3colrow">
               <div class="sheet-col" style="width: 27%;">
                 <div class="sheet-boxtitre">
-                  <button class="sheet-boxtitre" type="roll" name="jet_pnj_int" title="Jet d'Intelligence" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Intelligence}} {{subtags=Test}} {{carac=[[@{pnj_jetint}cs20cf1[Dé] + [[@{pnj_int}]][INT] ]] }}"> INT</div>
+                  <button class="sheet-boxtitre" type="roll" name="jet_pnj_int" title="%{pnj_int} Jet d'Intelligence" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Intelligence}} {{subtags=Test}} {{carac=[[@{pnj_jetint}cs20cf1[Dé] + [[@{pnj_int}]][INT] ]] }}"> INT</div>
                 <div class="sheet-boxinput">
                   <input class="sheet-carac" name="attr_pnj_int" type="number" title="@{pnj_int}" />
                   <select class="sheet-carac" style="width: 30px;" size="1" name="attr_pnj_jetint" title="@{pnj_jetint}">
@@ -1611,7 +1611,7 @@
               </div>
               <div class="sheet-col" style="width: 27%;">
                 <div class="sheet-boxtitre">
-                  <button class="sheet-boxtitre" type="roll" name="jet_pnj_per" title="Jet de Perception" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Perception}} {{subtags=Test}} {{carac=[[@{pnj_jetper}cs20cf1[Dé] + [[@{pnj_per}]][PER] ]] }}"> PER</div>
+                  <button class="sheet-boxtitre" type="roll" name="jet_pnj_per" title="%{pnj_per} Jet de Perception" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Perception}} {{subtags=Test}} {{carac=[[@{pnj_jetper}cs20cf1[Dé] + [[@{pnj_per}]][PER] ]] }}"> PER</div>
                 <div class="sheet-boxinput">
                   <input class="sheet-carac" name="attr_pnj_per" type="number" title="@{pnj_per}" />
                   <select class="sheet-carac" style="width: 30px;" size="1" name="attr_pnj_jetper" title="@{pnj_jetper}">
@@ -1622,7 +1622,7 @@
               </div>
               <div class="sheet-col" style="width: 27%;">
                 <div class="sheet-boxtitre">
-                  <button class="sheet-boxtitre" type="roll" name="jet_pnj_cha" title="Jet de Charisme" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Charisme}} {{subtags=Test}} {{carac=[[@{pnj_jetcha}cs20cf1[Dé] + [[@{pnj_cha}]][CHA] ]] }}"> CHA</div>
+                  <button class="sheet-boxtitre" type="roll" name="jet_pnj_cha" title="%{pnj_cha} Jet de Charisme" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Charisme}} {{subtags=Test}} {{carac=[[@{pnj_jetcha}cs20cf1[Dé] + [[@{pnj_cha}]][CHA] ]] }}"> CHA</div>
                 <div class="sheet-boxinput">
                   <input class="sheet-carac" name="attr_pnj_cha" type="number" title="@{pnj_cha}" />
                   <select class="sheet-carac" style="width: 30px;" size="1" name="attr_pnj_jetcha" title="@{pnj_jetcha}">
@@ -1636,7 +1636,7 @@
             <div class="sheet-3colrow">
               <div class="sheet-col" style="width: 27%;">
                 <div class="sheet-boxtitre">
-                  <button class="sheet-boxtitre" type="roll" name="roll_pnj_init" title="Jet d'Initiative" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Initiative}} {{subtags=Combat}} {{carac=[[@{pnj_init}[Init.] + @{pnj_init_var}[Dé(s)] &{tracker}]]}}"> Init.</div>
+                  <button class="sheet-boxtitre" type="roll" name="roll_pnj_init" title="%{pnj_init} Jet d'Initiative" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{name=Initiative}} {{subtags=Combat}} {{carac=[[@{pnj_init}[Init.] + @{pnj_init_var}[Dé(s)] &{tracker}]]}}"> Init.</div>
                 <div class="sheet-boxinput">
                   <input class="sheet-carac" name="attr_pnj_init" type="number" title="@{pnj_init}" />
                 </div>
@@ -1685,7 +1685,7 @@
             <table class="sheet-tabsep">
               <tr>
                 <td style="width: 30px;">
-                  <button type="roll" class="sheet-neutre" style="width: 25px;" name="roll_jet" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Attaque}} {{name=@{atknom}}} {{portee=@{atkportee}}} {{@{atkatt}[[@{atkjet}cf1cs>@{atkcrit}[Dé] + [[@{atkbonus}]][Attaque] ]]}} {{@{atkdmg}[[@{atkdmnbde}d@{atkdmde}[Dé DM] + [[@{atkdmbonus}]][Mod.DM] ]]}} {{special=@{atkspec}}}" />
+                  <button type="roll" class="sheet-neutre" style="width: 25px;" name="roll_jet" title="%{repeating_pnjatk_$N_jet} Jet d'attaque PNJ" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Attaque}} {{name=@{atknom}}} {{portee=@{atkportee}}} {{@{atkatt}[[@{atkjet}cf1cs>@{atkcrit}[Dé] + [[@{atkbonus}]][Attaque] ]]}} {{@{atkdmg}[[@{atkdmnbde}d@{atkdmde}[Dé DM] + [[@{atkdmbonus}]][Mod.DM] ]]}} {{special=@{atkspec}}}" />
                 </td>
                 <td class="sheet-boxinputleft" style="width: 250px;">
                   <input type="checkbox" name="attr_atkatt" title="@{atkatt} Faire un jet d'attaque pour toucher" value="attaque=" checked="checked" />
@@ -1743,7 +1743,7 @@
             <table class="sheet-tabsep">
               <tr>
                 <td style="width: 30px;">
-                  <button type="roll" class="sheet-neutre" style="width: 25px;" name="roll_jet" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Capacité}} {{name=@{capanom}}} {{text=@{capadesc}}}" />
+                  <button type="roll" class="sheet-neutre" style="width: 25px;" name="roll_jet" title="%{repeating_pnjcapas_$N_jet} Jet de capacité PNJ" value="@{pnj_togm}&{template:co1} {{perso=@{character_name}}} {{subtags=Capacité}} {{name=@{capanom}}} {{text=@{capadesc}}}" />
                 </td>
                 <td class="sheet-boxinputleft" style="width: 200px;">
                   <input type="text" class="sheet-carac" style="width: 200px;" name="attr_capanom" title="@{capanom} Nom de la capacité" />
