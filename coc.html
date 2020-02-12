@@ -1388,7 +1388,7 @@
             <tr>
               <td style="width: 15px;">
                 <button type="roll" name="roll_pjtrait" class="sheet-output" title="%{repeating_traits_$N_pjtrait}"
-                  value='/w "@{character_name}" &{template:co1} {{perso=@{character_name}}} {{name=@{traitnom}}} {{subtags=@{traittype}}} {{text=@{traitdesc}}}'>w</button>
+                  value='@{togm} &{template:co1} {{perso=@{character_name}}} {{name=@{traitnom}}} {{subtags=@{traittype}}} {{text=@{traitdesc}}}'>w</button>
               </td>
               <td class="sheet-boxinputleft" style="width: 200px;">
                 <input type="text" style="font-weight: bold;" name="attr_traitnom" placeholder="Nom du trait"
@@ -1476,15 +1476,15 @@
     <div class="sheet-tab-content sheet-tab4">
       <div class="sheet-row">
         <!-- Config -->
-        <div class="sheet-textfatleft">PARAMETRES</div>
         <span style="float: right;"><button type="action" class="sheet-iconbtn" name="act_reset_btn"
           title="Re-calculer attributs (rangs, encombrement)">r</button>
         </span>
+        <div class="sheet-textfatleft">PARAMETRES</div>
         <ul>
           <li>Jets :
-            <select class="sheet-carac" style="width: 80px;" name="attr_togm" title="@{togm}" size="1">
-              <option value="" selected>Normaux</option>
-              <option value="/w gm ">Cachés</option>
+            <select class="sheet-carac" style="width: 130px;" name="attr_togm" title="@{togm}" size="1">
+              <option value="" selected>Publics</option>
+              <option value="/w gm ">Chuchotés au MJ</option>
             </select>
           </li>
           <li>Setting :
