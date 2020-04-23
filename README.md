@@ -47,7 +47,7 @@ Le jeu complet est disponible sur le site de l'éditeur [Black Book Editions](ht
         - _DM : 1d6, ATD : 10m_ (pour un pistolet léger)
 * Sur l'onglet **Capacités**, les jets de capacités ont été modifiés pour permettre d'ajouter à un jet un bonus lié à une voie possédée par le personnage. Il suffit pour cela de :
     - sélectionner la voie dont la possession procure un bonus au jet
-    - sélectionner la type de bonus obtenu pour chaque rang possédé (+1 ou +2 par rang dans la voie)
+    - sélectionner le type de bonus obtenu pour chaque rang possédé (+1 ou +2 par rang dans la voie)
 
 ## v2.9 (2020-02-12)
 * Déplacement des parties règles optionnelles vers le tab caractéristiques
