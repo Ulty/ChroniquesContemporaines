@@ -31,7 +31,7 @@ Le jeu complet est disponible sur le site de l'éditeur [Black Book Editions](ht
     - Elles peuvent être une référence à un attribut, _ex : Vue perçante : +[PER]_ pour utiliser le mod. de PERception
     - Elles peuvent être une référence à un rang dans une voie
         - Soit en utilisant les attributs RANG_VOIEx _ex : Pilote émérite : +[RANG_VOIE1]_ 
-        - Soit en utilisant le nom de la voie tel qu'il a été entré dans l'onglet **Capacités**, _ex : Pilote émérite : [rang Pilotage]_ pour un bonus de +1 par rang dans la voie, ou _ex : Discrétion : 2[rang Furtivité]_ pour un bonus de +1 par rang
+        - Soit en utilisant le nom de la voie tel qu'il a été entré dans l'onglet **Capacités**, _ex : Pilote émérite : [rang Pilotage]_ pour un bonus de +1 par rang dans la voie, ou _ex : Discrétion : 2[rang Furtivité]_ pour un bonus de +2 par rang
     - Elles peuvent être une formule mathématique mettant en oeuvre plusieurs attributs, _ex Tenue de combat : +[RANG_VOIE1*DEFARMUREON]_
 * Sur l'onglet **Equipement**, les deux listes d'équipements sont maintenant regroupées en une seule, permettant de :
     - Gérer l'encombrement (reprise des règles du Compagnon COF) en indiquant pour chaque équipement, une valeur d'encombrement, un nombre en inventaire, et si ce nombre est possédé ou porté (et compte donc dans l'encombrement).

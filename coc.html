@@ -3902,6 +3902,12 @@ on([
   encumbrance();
 });
 
+/**
+ * Parse an individual equipment property
+ * @param {string} value Properties field chunk to parse
+ * @param {string} prop Property name to find
+ * Returns null if the property name is not found
+ */
 function parseProp(value, prop) {
   let propVal = null;
   value = value.trim().toLowerCase();
@@ -3915,11 +3921,16 @@ function parseProp(value, prop) {
   return propVal;
 }
 
+/**
+ * On changing equipment properties
+ * - Change DEF & RD for armor
+ * - Add or remove attack line for a weapon
+ */
 on([
   'change:repeating_equipement:equip-props',
   'change:repeating_equipement:equip-on',
   'change:repeating_equipement:equip-atk'
-].join(' '), function () {
+].join(' '), function (eventInfo) {
   getAttrs([
   'repeating_equipement_equip-props', 
   'repeating_equipement_equip-on',
@@ -3938,9 +3949,8 @@ on([
 
     const hasAtk = parseInt(values[Object.keys(values)[2]]) || 0;
     let atkId = values[Object.keys(values)[3]];
-    if (!hasAtk) {
+    if (eventInfo.sourceAttribute.endsWith('equip-atk') && !hasAtk) {
       if (atkId) {
-        consoleLog(atkId);
         removeRepeatingRow(`repeating_armes_${atkId}`);
         attrs['repeating_equipement_equip-atkid'] = '';
         setAttrs(attrs);
@@ -3949,8 +3959,7 @@ on([
     }
 
     const atkName = values[Object.keys(values)[4]];
-    let dmProps = [];
-    let atkOpt = {};
+    let atkInfo = {};
 
     for (const prop of props.split(',')) {
       if (parseProp(prop,'DEF')) {
@@ -3966,40 +3975,43 @@ on([
         }
       }
       if (parseProp(prop,'RD')) {
-        const rds = values['RDS'].toString();
+        const rds = values['RDS'];
         const propVal = parseInt(parseProp(prop,'RD'));
-        if (eqpon === 1 && rds.trim() === '') {
-          attrs['RDS'] = propVal;
+        if (eqpon === 1) {
+          if (propVal !== rds) {
+            attrs['RDS'] = propVal;
+          }
         }
       }
       if (parseProp(prop,'DM')) {
-        dmProps = parseProp(prop,'DM').toLowerCase().split('d');
+        atkInfo['dm'] = parseProp(prop,'DM').toLowerCase().split('d');
       }
       if (parseProp(prop, 'ATD')) {
-        atkOpt['portee'] = parseProp(prop, 'ATD');
-        atkOpt['type'] = '@{ATKTIR}';
+        atkInfo['portee'] = parseProp(prop, 'ATD');
+        atkInfo['type'] = '@{ATKTIR}';
       } else {
-        atkOpt['type'] = '@{ATKCAC}';
+        atkInfo['type'] = '@{ATKCAC}';
       }
     }
-    if (hasAtk && !atkId) {
-      atkId = generateRowID();
+    if (hasAtk) {
+      if (!atkId) {
+        atkId = generateRowID();
+      }
       attrs['repeating_equipement_equip-atkid'] = atkId;
       atkId = `repeating_armes_${atkId}`;
       attrs[`${atkId}_armenom`] = atkName;
       attrs[`${atkId}_armeatt`] = '1';
-      attrs[`${atkId}_armeatk`] = atkOpt.type;
-      attrs[`${atkId}_armeportee`] = atkOpt.portee || '';
-      if (dmProps.length) {
+      attrs[`${atkId}_armeatk`] = atkInfo.type;
+      attrs[`${atkId}_armeportee`] = atkInfo.portee || '';
+      if (atkInfo.dm.length) {
         attrs[`${atkId}_armedmg`] = '1';
-        attrs[`${atkId}_armedmnbde`] = dmProps[0];
-        attrs[`${atkId}_armedmde`] = dmProps[1] + '!';
+        attrs[`${atkId}_armedmnbde`] = atkInfo.dm[0];
+        attrs[`${atkId}_armedmde`] = atkInfo.dm[1] + '!';
       } else {
         attrs[`${atkId}_armedmg`] = '0';
       }
     }
     if (Object.keys(attrs).length > 0) {
-      consoleLog(attrs);
       setAttrs(attrs);
     }
   })
