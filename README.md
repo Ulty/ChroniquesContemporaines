@@ -9,9 +9,14 @@ Cette feuilles de personnage inclut quelques jets et r&egrave;gles optionnelles.
 Le jeu complet est disponible sur le site de l'éditeur [Black Book Editions](http://www.black-book-editions.fr/produit.php?id=4349).
 
 # Version courante
-2.9 [Screenshot](coc_v2.png)
+3.2 [Screenshot](coc_v2.png)
 
 # Notes de version
+
+## v3.2 (2020-04-28)
+* Modifications internes sur les champs INIT et DEF pour permettre la liaison de ces attributs avec un token (contourne un bug de Roll20 sur la liaison avec des champs auto-calculés)
+* Ajout de cases à cocher pour chaque capacité (permet de remplir les voies à l'avance)
+* Modifications cosmétiques (alignement des attributs sur le premier onglet de la fiche)
 
 ## v3.1 (2020-04-23)
 * Déplacement des buffs généraux vers l'onglet **Capacités**
