@@ -9,6 +9,7 @@ Cette fonction est capable de récupérer :
 * Les six caractéristiques principales (FOR, DEX, CON, INT, SAG/PER, CHA)
 * Les attributs de combat (PV, DEF et Init)
 * Les diverses lignes d'attaque
+* Les diverses capacités
 
 ## Mode d'emploi ##
 Pour importer un statblock et récupérer ses données dans une fiche de PNJ :
@@ -16,6 +17,7 @@ Pour importer un statblock et récupérer ses données dans une fiche de PNJ :
 2. Sur l'onglet _PNJ_ et le sous-onglet _Caractéristiques_, cliquer sur la flèche _Importer statblock_ pour afficher le champ d'import
 3. Coller le texte précédemment copié dans le champ approprié
 4. Cliquer en dehors de ce champ : la fonction d'import se déclenche
+5. Depuis la version 3.4 de la fiche, c´est un bouton qui permet de lancer la fonction d´import
 
 Si l'import se déroule sans encombres, le champ contenant le statblock est effacé.
 
@@ -30,14 +32,16 @@ _FOR xxx DEX xxx CON xxx_
 _INT xxx PER xxx CHA xxx_                                                                                        
 _DEF xxx PV xxx (RD xxx) Init xxx_                                                                               
 _Attaque/Arme (autres info) +Bonus DM Dommages (autres infos)_                                             
-_Autre attaque DM Dommages (autres infos)_                                             
+_Autre attaque DM Dommages (autres infos)_ 
+_Nom de la capacité : Description de la capacité_
 
 Toutes les données n'ont pas obligatoirement à être présentes. La fonction d'import extrait celles qu'elle trouve et les insère dans les champs appropriés de la fiche de PNJ, les autres seront à remplir manuellement.
 
 ## Trucs & astuces ##
 * Lorsque le statblock est collé dans le champ d'import, prenez soin de supprimer les sauts de lignes surnuméraires, qui surviennent souvent sur la première ligne du bloc ou sur les lignes d'attaques
-* Une ligne d'attaque est reconnue comme telle si elle comporte le mot DM.
+* Une ligne d'attaque est reconnue comme telle si elle comporte le mot 'DM' ou qu´elle commence par le mot 'attaque'.
 * Le bonus d'attaque est le premier chiffre précédé d'un signe + présent sur la ligne d'attaque
 * Les dommages sont le premier mot de la ligne d'attaque après le mot DM
-* La fonction d'import regroupe les autres infos de la ligne d'attaque dans un champ _Spécial_ et si elle y détecte la mention d'un jet de dés, elle remet celui-ci en forme de manière à effectuer un _"inline roll"_ lorsque l'attaque est utilisée.
+* La fonction d'import regroupe les autres informations de la ligne d'attaque dans un champ _Spécial_ et si elle y détecte la mention d'un jet de dés, elle remet celui-ci en forme de manière à effectuer un _"inline roll"_ lorsque l'attaque est utilisée.
+* Les descriptions de capacités sont également traitées pour transformer toute mention d´un jet de dés en _"inline roll"_
 * Toutes les données extraites du statblock qui ne correspondent pas à un champ sur la fiche de PNJ sont regroupées dans le champ texte _Capacités_
