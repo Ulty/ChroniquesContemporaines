@@ -33,6 +33,7 @@ _INT xxx PER xxx CHA xxx_
 _DEF xxx PV xxx (RD xxx) Init xxx_                                                                               
 _Attaque/Arme (autres info) +Bonus DM Dommages (autres infos)_                                             
 _Autre attaque DM Dommages (autres infos)_ 
+
 _Nom de la capacité : Description de la capacité_
 
 Toutes les données n'ont pas obligatoirement à être présentes. La fonction d'import extrait celles qu'elle trouve et les insère dans les champs appropriés de la fiche de PNJ, les autres seront à remplir manuellement.
