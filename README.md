@@ -10,7 +10,7 @@ Le jeu complet est disponible sur le site de l'éditeur [Black Book Editions](ht
 
 # Version courante
 
-3.3 [Screenshot](coc_v2.png)
+3.4 [Screenshot](coc_v2.png)
 
 # Notes de version
 
