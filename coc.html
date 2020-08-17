@@ -1,8 +1,8 @@
 <div class="sheet-mainBg">
   <!-- FDP -->
   <!-- INPUT HIDDEN Version FdP -->
-  <input type="hidden" name="attr_VERFDP" value="3.4.0" />
-  <input type="hidden" name="attr_VERSION" value="3.4.0" />
+  <input type="hidden" name="attr_VERFDP" value="3.5.0" />
+  <input type="hidden" name="attr_VERSION" value="3.5.0" />
   <!-- INPUT HIDDEN Univers (COF, CG, COC) -->
   <input type="hidden" name="attr_UNIVERS" value="COC" />
   <!-- INPUT HIDDEN Type de jet -->
@@ -61,6 +61,8 @@
   <input type="hidden" name="attr_PC_DESC_SNGL" value="" />
   <input type="hidden" name="attr_PC_DESC_PLUR" value="" />
   <input type="hidden" name="attr_PC_DESC_ABRV" value="" />
+  <!-- INPUT HIDDEN Liste des equipements avec dé d'usure -->
+  <input type="hidden" name="attr_QRYUD" value="" />
   <!-- Fin INPUT HIDDEN -->
   <div class="sheet-container">
     <!-- Identité -->    
@@ -1734,6 +1736,15 @@
                 <input type="hidden" name="attr_equip-atkid" value="" />
               </div>
             </fieldset>
+            <div>
+              <input type="checkbox" class="optional-block-switch" name="attr_coc_setting"
+                        value="bitume"><span></span>
+              <div class="optional-block">
+                <div class="sheet-boxtitre" style="margin: 5px 5px 5px 0; width: 100px;">
+                  <button type="roll" class="sheet-boxtitre" name="roll_ud" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Usure}} {{subtags=Test}} {{carac=[[@{QRYUD}cf<3]] }}">Usure (Ud)</button>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="sheet-col" title="repeating_ressources">
             <div class="sheet-boxtitre">Autres ressources</div>
@@ -4417,6 +4428,43 @@ function encumbrance() {
   });
 }
 
+function rebuildUD() {
+  getAttrs(['coc_setting'], function (v) {
+    if (v.coc_setting !== 'bitume') return;
+    getSectionIDs('repeating_equipement', function (ids) {
+      var uds = [];
+      ids.forEach((id, ix) => {
+        const rowId = `repeating_equipement_${id}`;
+        getAttrs([`${rowId}_equip-desc`, `${rowId}_equip-props`], function (
+          values
+        ) {
+          const desc = values[Object.keys(values)[0]];
+          const props = (values[Object.keys(values)[1]] || '').split(',');
+          if (props === '') return;
+          const uD = props.find((prop) => {
+            return parseNameValue(prop)['name'].toUpperCase() === 'UD';
+          });
+          if (uD === undefined) return;
+          const dU =
+            parseInt(parseNameValue(uD)['value'].replace(/d/g, '')) || 0;
+          if (dU !== 0) {
+            uds.push(`${desc},d${dU}`);
+          }
+          if (ix == ids.length - 1) {
+            let qryud = '';
+            if (uds.length == 1) {
+              qryud = atks[0].split(',')[1];
+            } else if (uds.length > 1) {
+              qryud = `?{Dé d'usure ?|${uds.join('|')}}`;
+            }
+            setAttrs({ QRYUD: qryud });
+          }
+        });
+      });
+    });
+  });
+}
+
 /**
  * On changing character equipment
  * - Recompute character encumbrance
@@ -4425,6 +4473,7 @@ on(
   ['change:repeating_equipement', 'remove:repeating_equipement'].join(' '),
   function () {
     encumbrance();
+    rebuildUD();
   }
 );
 
@@ -4595,6 +4644,7 @@ function rebuildAll() {
   rebuildBuffs();
   rebuildModAtkDM('repeating_modatk', 'armebuff');
   rebuildModAtkDM('repeating_moddm', 'armebuffdm');
+  rebuildUD();
 }
 
 /**

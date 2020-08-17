@@ -10,9 +10,13 @@ Le jeu complet est disponible sur le site de l'éditeur [Black Book Editions](ht
 
 # Version courante
 
-3.4 [Screenshot](coc_v2.png)
+3.5 [Screenshot](coc_v2.png)
 
 # Notes de version
+
+## v3.5 (2020-08-??)
+
+- Gestion des dés d'usure en mode CO Bitume. Pour chaque pièce d'équipement concernée, indiquer dans la liste des propriétés une propriété nommée Ud et donner en valeur le chiffre du dé d'usure (8 pour d8, 10 pour d10, etc...). Un bouton sous la liste des équipements permet de lancer un test d'usure en sélectionnant d'abord l'équipement concerné. En cas d'échec (le chiffre du jet dans le chat apparait en rouge), le dé d'usure de cette équipement doit être baissé d'un cran (ex : de 'Ud : 8' à 'Ud : 6', cf livre de règles).
 
 ## v3.4 (2020-08-15)
 
