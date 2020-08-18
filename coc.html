@@ -5,6 +5,7 @@
   <input type="hidden" name="attr_VERSION" value="3.5.0" />
   <!-- INPUT HIDDEN Univers (COF, CG, COC) -->
   <input type="hidden" name="attr_UNIVERS" value="COC" />
+  <input type="hidden" name="attr_BITUME" value="0" />
   <!-- INPUT HIDDEN Type de jet -->
   <input type="hidden" name="attr_JETNORMAL" value="1d@{ETATDE}" />
   <input type="hidden" name="attr_JETSUP" value="2d@{ETATDE}kh1" />
@@ -66,10 +67,19 @@
   <!-- Fin INPUT HIDDEN -->
   <div class="sheet-container">
     <!-- Identité -->    
-    <div style="vertical-align: middle; text-align: center;">
-        <img style="width:70%; height:90%" title="Version 3.22 - 16/05/2020"
+    <input type="checkbox" class="block-switch" style="display: none;" name="attr_BITUME" value="1">
+    <div class="block-hidden">
+      <div style="vertical-align: middle; text-align: center;">
+        <img style="width:70%; height:90%" title="Version 3.5 - 15/08/2020"
           src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/ChroniquesOublieesContemporain/coc_logo.png" />
+      </div>
     </div>
+    <div class="block-show">
+      <div style="vertical-align: middle; text-align: center;">
+        <img style="width:70%; height:90%" title="Version 3.5 - 15/08/2020"
+          src="https://raw.githubusercontent.com/stephaned68/ChroniquesContemporaines/master/coc_bitume.jpg" />
+      </div>
+    </div>  
     <div style="width:250px;">
       <table>
         <tr>
@@ -1737,8 +1747,7 @@
               </div>
             </fieldset>
             <div>
-              <input type="checkbox" class="optional-block-switch" name="attr_coc_setting"
-                        value="bitume"><span></span>
+              <input type="checkbox" class="optional-block-switch" name="attr_BITUME" value="1"><span></span>
               <div class="optional-block">
                 <div class="sheet-boxtitre" style="margin: 5px 5px 5px 0; width: 100px;">
                   <button type="roll" class="sheet-boxtitre" name="roll_ud" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Usure}} {{subtags=Test}} {{carac=[[@{QRYUD}cf<3]] }}">Usure (Ud)</button>
@@ -1892,133 +1901,361 @@
   </div>
   <div class="sheet-tab-content sheet-fp2">
     <div>
-      <!-- Véhicule -->
-      <table class="sheet-tabsep">
-        <tr>
-          <td class="sheet-textbase" colspan="2">Type :
-            <input type="text" class="sheet-nobox" style="width: 75%;" name="attr_VEHICULE" title="@{VEHICULE}" />
-          </td>
-          <td class="sheet-textbase" colspan="3">Description :
-            <input type="text" class="sheet-nobox" style="width: 75%;" name="attr_VEHICULE_DESC"
-              title="@{VEHICULE_DESC}" />
-          </td>
-        </tr>
-        <tr>
-          <td class="sheet-textbase" colspan="2">Pilote :
-            <input type="text" class="sheet-nobox" style="width: 75%;" name="attr_PILOTE"
-              title="@{PILOTE} Nom du pilote" />
-          </td>
-          <td colspan="3">&nbsp;</td>
-        </tr>
-        <tr>
-          <td class="sheet-boxtitre" style="width: 15%;">FOR</td>
-          <td class="sheet-boxtitre" style="width: 15%;">AGI</td>
-          <td class="sheet-boxtitre" style="width: 25%;">PV</td>
-          <td class="sheet-boxtitre" style="width: 35%;">DEF</td>
-          <td class="sheet-boxtitre" style="width: 10%;">Blindage (RD)</td>
-        </tr>
-        <tr>
-          <td class="sheet-boxinput">
-            <input type="number" name="attr_FOV" value="0" title="@{FOV} Force du véhicule" />
-          </td>
-          <td class="sheet-boxinput">
-            <input type="number" name="attr_AGI" value="0" title="@{AGI} Agilité du véhicule" />
-          </td>
-          <td class="sheet-boxinput">
-            <input type="number" name="attr_PVV" value="0" title="@{PVV} Points de Vie courants" /> &nbsp;/&nbsp;
-            <input type="number" name="attr_PVV_max" value="0" title="@{PVV|max} Points de Vie MAX" />
-          </td>
-          <td class="sheet-boxinput">&nbsp;Base :&nbsp;
-            <input type="number" name="attr_DEFV_BASE" value="0" title="@{DEFV_BASE} DEF de base" /> + DEX :
-            <input type="number" name="attr_DEFV_DEX" value="0" title="@{DEFV_DEX} DEX du pilote" /> =
-            <input type="number" name="attr_DEFV" value="@{DEFV_BASE}+@{DEFV_DEX}" title="@{DEFV} DEF du véhicule"
-              disabled />
-          </td>
-          <td class="sheet-boxinput">
-            <input type="number" name="attr_RDV" value="0" title="@{RDV} Blindage" />
-          </td>
-        </tr>
-      </table>
-      <div class="sheet-row">
-        <span class="textfatleft">Jets du véhicule</span>
+      <input type="checkbox" class="block-switch" style="display: none;" name="attr_BITUME" value="1">
+      <div class="block-hidden">
+        <div>
+          <!-- Véhicule -->
+          <table class="sheet-tabsep">
+            <tr>
+              <td class="sheet-textbase" colspan="2">Type :
+                <input type="text" class="sheet-nobox" style="width: 75%;" name="attr_VEHICULE" title="@{VEHICULE}" />
+              </td>
+              <td class="sheet-textbase" colspan="3">Description :
+                <input type="text" class="sheet-nobox" style="width: 75%;" name="attr_VEHICULE_DESC"
+                  title="@{VEHICULE_DESC}" />
+              </td>
+            </tr>
+            <tr>
+              <td class="sheet-textbase" colspan="2">Pilote :
+                <input type="text" class="sheet-nobox" style="width: 75%;" name="attr_PILOTE"
+                  title="@{PILOTE} Nom du pilote" />
+              </td>
+              <td colspan="3">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="sheet-boxtitre" style="width: 15%;">FOR</td>
+              <td class="sheet-boxtitre" style="width: 15%;">AGI</td>
+              <td class="sheet-boxtitre" style="width: 25%;">PV</td>
+              <td class="sheet-boxtitre" style="width: 35%;">DEF</td>
+              <td class="sheet-boxtitre" style="width: 10%;">Blindage (RD)</td>
+            </tr>
+            <tr>
+              <td class="sheet-boxinput">
+                <input type="number" name="attr_FOV" value="0" title="@{FOV} Force du véhicule" />
+              </td>
+              <td class="sheet-boxinput">
+                <input type="number" name="attr_AGI" value="0" title="@{AGI} Agilité du véhicule" />
+              </td>
+              <td class="sheet-boxinput">
+                <input type="number" name="attr_PVV" value="0" title="@{PVV} Points de Vie courants" /> &nbsp;/&nbsp;
+                <input type="number" name="attr_PVV_max" value="0" title="@{PVV|max} Points de Vie MAX" />
+              </td>
+              <td class="sheet-boxinput">&nbsp;Base :&nbsp;
+                <input type="number" name="attr_DEFV_BASE" value="0" title="@{DEFV_BASE} DEF de base" /> + DEX :
+                <input type="number" name="attr_DEFV_DEX" value="0" title="@{DEFV_DEX} DEX du pilote" /> =
+                <input type="number" name="attr_DEFV" value="@{DEFV_BASE}+@{DEFV_DEX}" title="@{DEFV} DEF du véhicule"
+                  disabled />
+              </td>
+              <td class="sheet-boxinput">
+                <input type="number" name="attr_RDV" value="0" title="@{RDV} Blindage" />
+              </td>
+            </tr>
+          </table>
+          <div class="sheet-row">
+            <span class="textfatleft">Jets du véhicule</span>
+          </div>
+          <fieldset class="repeating_jetv">
+            <table class="sheet-tabsep">
+              <tr>
+                <td>
+                  <button type="roll" class="sheet-neutre" name="roll_vehicule"
+                    title="%{repeating_jetv_$N_vehicule} Jet de véhicule"
+                    value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=@{jetvnom}}} {{subtags=@{VEHICULE}}} {{carac=[[@{jetvnbde}d@{jetvde}@{jetvtypjet} + [[@{jetvcaracp}]][Bonus] + [[@{jetvcarac}]][Véhicule] + @{jetvdiv}[Divers] ]]}} {{desc=@{jetvdesc}}}" />
+                </td>
+                <td class="sheet-boxinputleft" style="min-width:200px;">
+                  <input type="text" name="attr_jetvnom" title="@{jetvnom}" style="font-weight: bold;"
+                    placeholder="Nom du Jet de véhicule" />
+                </td>
+                <td class="sheet-boxinputleft">
+                  <input type="number" style="width:32px;" name="attr_jetvnbde" value="1"
+                    title="@{jetvnbde} Nombre de dés" />
+                  <select class="sheet-carac" style="width:50px;" name="attr_jetvde" size="1" title="@{jetvde} Dé">
+                    <option value="4">d4</option>
+                    <option value="6">d6</option>
+                    <option value="8">d8</option>
+                    <option value="10">d10</option>
+                    <option value="12">d12</option>
+                    <option value="@{ETATDE}" selected>d20 (ou d12 si Affaibli)</option>
+                  </select>
+                  (
+                  <select class="sheet-carac" style="width:30px;" name="attr_jetvtypjet" size="1"
+                    title="@{jetvtypjet} Option du jet : normal, meilleur dé, moins bon dé, sans limite">
+                    <option value="">N - Normal / additionner tous les dés</option>
+                    <option value="kh1">S - Garder le dé Supérieur / le plus haut score</option>
+                    <option value="kl1">I - Garder le dé Inférieur / le plus bas score</option>
+                    <option value="!">E - Explosif (jet ouvert / sans limite)</option>
+                  </select>
+                  ) +
+                  <select class="sheet-carac" style="width:50px;" name="attr_jetvcaracpil" size="1"
+                    title="@{jetvcaracp} Mod. du personnage">
+                    <option value="0" selected>-</option>
+                    <optgroup label="Mod. de Base">
+                      <option value="@{FOR}">FOR</option>
+                      <option value="@{DEX}">DEX</option>
+                      <option value="@{CON}">CON</option>
+                      <option value="@{INT}">INT</option>
+                      <option value="@{PER}">PER</option>
+                      <option value="@{CHA}">CHA</option>
+                    </optgroup>
+                    <optgroup label="Mod. de Test">
+                      <option value="@{FOR_TEST}">FOR</option>
+                      <option value="@{DEX_TEST}">DEX</option>
+                      <option value="@{CON_TEST}">CON</option>
+                      <option value="@{INT_TEST}">INT</option>
+                      <option value="@{PER_TEST}">PER</option>
+                      <option value="@{CHA_TEST}">CHA</option>
+                    </optgroup>
+                    <optgroup label="Attaques">
+                      <option value="@{ATKCAC}">ATC</option>
+                      <option value="@{ATKTIR}">ATD</option>
+                      <option value="@{ATKMEN}">MEN</option>
+                      <option value="@{ATKMAG}">MAG</option>
+                    </optgroup>
+                  </select>
+                  +
+                  <select class="sheet-carac" style="width:50px;" name="attr_jetvcarac" size="1"
+                    title="@{jetvcarac} Mod. du véhicule">
+                    <option value="0" selected>-</option>
+                    <option value="@{FOV}">FOR</option>
+                    <option value="@{AGI}">AGI</option>
+                  </select>
+                  +
+                  <input type="number" style="width:32px;" name="attr_jetvdiv" value="0" title="@{jetvdiv} Bonus divers" />
+                  <input type="hidden" name="attr_jetvcaracp" value="" />
+                </td>
+                <td class="sheet-boxinputleft" style="width:100%;">
+                  <textarea name="attr_jetvdesc" placeholder="Description" title="@{jetvdesc}"></textarea>
+                </td>
+              </tr>
+            </table>
+          </fieldset>
+          <img class="sheet-imghr"
+            src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/ChroniquesOublieesContemporain/coc_hr.jpg" />
+        </div>        
       </div>
-      <fieldset class="repeating_jetv">
-        <table class="sheet-tabsep">
-          <tr>
-            <td>
-              <button type="roll" class="sheet-neutre" name="roll_vehicule"
-                title="%{repeating_jetv_$N_vehicule} Jet de véhicule"
-                value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=@{jetvnom}}} {{subtags=@{VEHICULE}}} {{carac=[[@{jetvnbde}d@{jetvde}@{jetvtypjet} + [[@{jetvcaracp}]][Bonus] + [[@{jetvcarac}]][Véhicule] + @{jetvdiv}[Divers] ]]}} {{desc=@{jetvdesc}}}" />
-            </td>
-            <td class="sheet-boxinputleft" style="min-width:200px;">
-              <input type="text" name="attr_jetvnom" title="@{jetvnom}" style="font-weight: bold;"
-                placeholder="Nom du Jet de véhicule" />
-            </td>
-            <td class="sheet-boxinputleft">
-              <input type="number" style="width:32px;" name="attr_jetvnbde" value="1"
-                title="@{jetvnbde} Nombre de dés" />
-              <select class="sheet-carac" style="width:50px;" name="attr_jetvde" size="1" title="@{jetvde} Dé">
-                <option value="4">d4</option>
-                <option value="6">d6</option>
-                <option value="8">d8</option>
-                <option value="10">d10</option>
-                <option value="12">d12</option>
-                <option value="@{ETATDE}" selected>d20 (ou d12 si Affaibli)</option>
-              </select>
-              (
-              <select class="sheet-carac" style="width:30px;" name="attr_jetvtypjet" size="1"
-                title="@{jetvtypjet} Option du jet : normal, meilleur dé, moins bon dé, sans limite">
-                <option value="">N - Normal / additionner tous les dés</option>
-                <option value="kh1">S - Garder le dé Supérieur / le plus haut score</option>
-                <option value="kl1">I - Garder le dé Inférieur / le plus bas score</option>
-                <option value="!">E - Explosif (jet ouvert / sans limite)</option>
-              </select>
-              ) +
-              <select class="sheet-carac" style="width:50px;" name="attr_jetvcaracpil" size="1"
-                title="@{jetvcaracp} Mod. du personnage">
-                <option value="0" selected>-</option>
-                <optgroup label="Mod. de Base">
-                  <option value="@{FOR}">FOR</option>
-                  <option value="@{DEX}">DEX</option>
-                  <option value="@{CON}">CON</option>
-                  <option value="@{INT}">INT</option>
-                  <option value="@{PER}">PER</option>
-                  <option value="@{CHA}">CHA</option>
-                </optgroup>
-                <optgroup label="Mod. de Test">
-                  <option value="@{FOR_TEST}">FOR</option>
-                  <option value="@{DEX_TEST}">DEX</option>
-                  <option value="@{CON_TEST}">CON</option>
-                  <option value="@{INT_TEST}">INT</option>
-                  <option value="@{PER_TEST}">PER</option>
-                  <option value="@{CHA_TEST}">CHA</option>
-                </optgroup>
-                <optgroup label="Attaques">
-                  <option value="@{ATKCAC}">ATC</option>
-                  <option value="@{ATKTIR}">ATD</option>
-                  <option value="@{ATKMEN}">MEN</option>
-                  <option value="@{ATKMAG}">MAG</option>
-                </optgroup>
-              </select>
-              +
-              <select class="sheet-carac" style="width:50px;" name="attr_jetvcarac" size="1"
-                title="@{jetvcarac} Mod. du véhicule">
-                <option value="0" selected>-</option>
-                <option value="@{FOV}">FOR</option>
-                <option value="@{AGI}">AGI</option>
-              </select>
-              +
-              <input type="number" style="width:32px;" name="attr_jetvdiv" value="0" title="@{jetvdiv} Bonus divers" />
-              <input type="hidden" name="attr_jetvcaracp" value="" />
-            </td>
-            <td class="sheet-boxinputleft" style="width:100%;">
-              <textarea name="attr_jetvdesc" placeholder="Description" title="@{jetvdesc}"></textarea>
-            </td>
-          </tr>
-        </table>
-      </fieldset>
-      <img class="sheet-imghr"
-        src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/ChroniquesOublieesContemporain/coc_hr.jpg" />
+      <div class="block-show">
+        <div>
+          <!-- Véhicule Bitume -->
+          <div class="2colrow">
+            <div class="col">
+              <table class="sheet-tabsep">
+                <tr>
+                  <td class="sheet-textfatleft" colspan="4">Type :
+                    <input type="text" class="sheet-nobox" name="attr_VEHICULE" title="@{VEHICULE}" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sheet-textfatleft" colspan="4">Description :<br>
+                    <textarea type="text" class="sheet-nobox" style="border: 1px solid; height: 5em;" name="attr_VEHICULE_DESC"
+                      title="@{VEHICULE_DESC}">
+                    </textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sheet-textfatleft" colspan="4">Pilote :
+                    <input type="text" class="sheet-nobox" name="attr_PILOTE"
+                      title="@{PILOTE} Nom du pilote" />
+                  </td>
+                  <td colspan="3">&nbsp;</td>
+                </tr>
+              </table>
+              <br>
+              <p class="sheet-textfatleft">Modifications</p>
+              <fieldset class="repeating_vbmods">
+                <div class="sheet-boxvoie">
+                  <input type="text" style="width: 250px;" name="attr_vbmod-desc" placeholder="Modification"
+                    title="@{vbmod-desc}" />
+                  <span class="sheet-textbase">Emp.</span>
+                  <input type="number" name="attr_vbmod-emp" style="width: 30px;" value="1"
+                    title="@{vbmod-emp} Emplacements" />
+                  <span class="sheet-textbase">Coût</span>
+                  <input type="number" name="attr_vbmod-res" style="width: 30px;" value="0"
+                    title="@{vbmod-res} Coût (R)" />
+                  <br>
+                  <textarea name="attr_vbmod-effet" placeholder="Effet de la modification" title="@{vbmod-effet} Effet"></textarea>
+                  </div>
+              </fieldset>
+            </div>
+            <div class="col">
+              <table class="sheet-tabsep">
+                <tr>
+                  <td></td>
+                  <td>Base</td>
+                  <td>Divers</td>
+                  <td>Test</td>
+                </tr>
+                <tr>
+                  <td class="sheet-boxtitre" style="width: 25%;" title="Rapidité">RAP</td>
+                  <td class="sheet-boxinput" style="width: 25%;"><input type="number" name="attr_vbrap_base" value="0" /></td>
+                  <td class="sheet-boxinput" style="width: 25%;"><input type="number" name="attr_vbrap_div" value="0" /></td>
+                  <td class="sheet-boxinput" style="width: 25%;">
+                    <input type="hidden" name="attr_vbrap" value="0" />
+                    <span name="attr_vbrap"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sheet-boxtitre" style="width: 25%;" title="Maniabilité">MAN</td>
+                  <td class="sheet-boxinput" style="width: 25%;"><input type="number" name="attr_vbman_base" value="0" /></td>
+                  <td class="sheet-boxinput" style="width: 25%;"><input type="number" name="attr_vbman_div" value="0" /></td>
+                  <td class="sheet-boxinput" style="width: 25%;">
+                    <input type="hidden" name="attr_vbman" value="0" />
+                    <span name="attr_vbman"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sheet-boxtitre" style="width: 25%;" title="Impact">IMP</td>
+                  <td class="sheet-boxinput" style="width: 25%;"><input type="number" name="attr_vbimp_base" value="0" /></td>
+                  <td class="sheet-boxinput" style="width: 25%;"><input type="number" name="attr_vbimp_div" value="0" /></td>
+                  <td class="sheet-boxinput" style="width: 25%;">
+                    <input type="hidden" name="attr_vbimp" value="0" />
+                    <span name="attr_vbimp"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sheet-boxtitre" style="width: 25%;" title="Emplacements">EMP</td>
+                  <td class="sheet-boxinput" style="width: 25%;"><input type="number" name="attr_vbemp_base" value="0" /></td>
+                  <td class="sheet-boxinput" style="width: 25%;"><input type="number" name="attr_vbemp_div" value="0" /></td>
+                  <td class="sheet-boxinput" style="width: 25%;">
+                    <input type="hidden" name="attr_vbemp" value="0" />
+                    <span name="attr_vbemp"></span>
+                  </td>
+                </tr>
+              </table>
+              <table class="sheet-tabsep">
+                <tr>
+                  <td class="sheet-boxtitre" style="width: 25%;" title="Défense">DEF</td>
+                  <td class="sheet-boxinputlight" style="width: 10%;">10+</td>
+                  <td class="sheet-boxinputlight" style="width: 15%;"><span name="attr_vbimp"></span></td>
+                  <td class="sheet-boxinputlight" style="width: 15%;"><span name="attr_vbman"></span></td>
+                  <td class="sheet-boxinput" style="width: 20%;"><input type="number" name="attr_vbdef_div" value="0" /></td>
+                  <td class="sheet-boxinputlight" style="width: 15%;">
+                    <input type="hidden" name="attr_vbdef" value="0" />
+                    <span name="attr_vbdef"></span>
+                  </td>
+                </tr>
+              </table>
+              <br>
+              <table class="sheet-tabsep">
+                <tr>
+                  <td class="sheet-boxtitre">UD</td>
+                  <td class="sheet-textfatleft" colspan="2">Dés d'Usure</td>
+                </tr>
+                <tr>
+                  <td class="sheet-boxtitre">
+                    <button type="roll" class="sheet-roll-d12 sheet-boxtitre" name="roll_ud12" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Usure}} {{subtags=Test}} {{carac=[[d12cf<3]] }}">Ud12</button>
+                  </td>
+                  <td class="sheet-textfatleft">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">|
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">|
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td>
+                    <input type="radio" name="attr_vbud" value="12" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sheet-boxtitre">
+                    <button type="roll" class="sheet-roll-d10 sheet-boxtitre" name="roll_ud10" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Usure}} {{subtags=Test}} {{carac=[[d10cf<3]] }}">Ud10</button>
+                  </td>
+                  <td class="sheet-textfatleft">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">|
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">|
+                    <input type="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td>
+                    <input type="radio" name="attr_vbud" value="10" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sheet-boxtitre">
+                    <button type="roll" class="sheet-roll-d8 sheet-boxtitre" name="roll_ud8" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Usure}} {{subtags=Test}} {{carac=[[d8cf<3]] }}">Ud8</button>
+                  </td>
+                  <td class="sheet-textfatleft">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">|
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td>
+                    <input type="radio" name="attr_vbud" value="8" selected/>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sheet-boxtitre">
+                    <button type="roll" class="sheet-roll-d6 sheet-boxtitre" name="roll_ud6" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Usure}} {{subtags=Test}} {{carac=[[d6cf<3]] }}">Ud6</button>
+                  </td>
+                  <td class="sheet-textfatleft">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">|
+                    <input type="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td>
+                    <input type="radio" name="attr_vbud" value="6" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sheet-boxtitre">
+                    <button type="roll" class="sheet-roll-d4 sheet-boxtitre" name="roll_ud4" value="@{togm}&{template:co1} {{perso=@{character_name}}} {{name=Usure}} {{subtags=Test}} {{carac=[[d4cf<3]] }}">Ud4</button>
+                  </td>
+                  <td class="sheet-textfatleft">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td>
+                    <input type="radio" name="attr_vbud" value="4" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sheet-boxtitre">Ud0</td>
+                  <td></td>
+                  <td>
+                    <input type="radio" name="attr_vbud" value="0" />
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <img class="sheet-imghr"
+            src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/ChroniquesOublieesContemporain/coc_hr.jpg" />
+      </div>
+      <div class="sheet-textfatleft">PARAMETRES</div>
+      <ul>
+        <li>Jets :
+          <select class="sheet-carac" style="width: 130px;" name="attr_togm" title="@{togm}" size="1">
+            <option value="" selected>Publics</option>
+            <option value="/w gm ">Chuchotés au MJ</option>
+          </select>
+        </li>
+        <li>Bitume :
+          <input type="checkbox" name="attr_BITUME" value="1">
+        </li>
+      </ul>
     </div>
     <!-- FIN Véhicule -->
   </div>
@@ -5068,6 +5305,40 @@ on('change:pc_desc', function () {
   });
 });
 
+on('change:vbrap_base change:vbrap_div', function () {
+  getAttrs(['vbrap_base', 'vbrap_div'], function (values) {
+    let vbrap = parseInt(values.vbrap_base) || 0;
+    vbrap += parseInt(values.vbrap_div) || 0;
+    setAttrs({
+      vbrap: vbrap,
+    });
+  });
+});
+
+on('change:vbman_base change:vbman_div', function () {
+  getAttrs(['vbman_base', 'vbman_div', 'vbimp'], function (values) {
+    let vbman = parseInt(values.vbman_base) || 0;
+    vbman += parseInt(values.vbman_div) || 0;
+    let vbimp = parseInt(values.vbimp) || 0;
+    setAttrs({
+      vbman: vbman,
+      vbdef: 10 + vbimp + vbman,
+    });
+  });
+});
+
+on('change:vbimp_base change:vbimp_div', function () {
+  getAttrs(['vbimp_base', 'vbimp_div', 'vbman'], function (values) {
+    let vbimp = parseInt(values.vbimp_base) || 0;
+    vbimp += parseInt(values.vbimp_div) || 0;
+    let vbman = parseInt(values.vbman) || 0;
+    setAttrs({
+      vbimp: vbimp,
+      vbdef: 10 + vbimp + vbman,
+    });
+  });
+});
+
 /**
  * On changing COC setting
  * - Set character sheet options to default values for setting
@@ -5088,6 +5359,7 @@ on(['change:coc_setting', 'change:coc_surh'].join(' '), function () {
         use_encombrement: '0',
         PC_DESC: 'Points de Choc,Point de Choc,PC',
         PC_BONUS: '+10',
+        BITUME: '0',
       },
       pulp: {
         INIT_JET: '@{INIT}',
@@ -5102,6 +5374,7 @@ on(['change:coc_setting', 'change:coc_surh'].join(' '), function () {
         use_encombrement: '0',
         PC_DESC: 'Points de Chance,Point de Chance,PC',
         PC_BONUS: '+10',
+        BITUME: '0',
       },
       postapo: {
         INIT_JET: '@{INIT}',
@@ -5116,6 +5389,7 @@ on(['change:coc_setting', 'change:coc_surh'].join(' '), function () {
         use_encombrement: '0',
         PC_DESC: 'Points de Chance,Point de Chance,PC',
         PC_BONUS: '+10',
+        BITUME: '0',
       },
       surhumain: {
         INIT_JET: '@{INIT}',
@@ -5130,6 +5404,7 @@ on(['change:coc_setting', 'change:coc_surh'].join(' '), function () {
         use_encombrement: '0',
         PC_DESC: 'Points de Chance,Point de Chance,PC',
         PC_BONUS: '+10',
+        BITUME: '0',
       },
       cyberpunk: {
         INIT_JET: '{[[@{INIT}]]+1d6!, ([[@{INIT}]]*2)+0d6}kl1',
@@ -5144,6 +5419,7 @@ on(['change:coc_setting', 'change:coc_surh'].join(' '), function () {
         use_encombrement: '0',
         PC_DESC: 'Points de Cash,Point de Cash,PC',
         PC_BONUS: '+[[1d6]]',
+        BITUME: '0',
       },
       shadowrun: {
         INIT_JET: '{[[@{INIT}]]+1d6!, ([[@{INIT}]]*2)+0d6}kl1',
@@ -5158,6 +5434,7 @@ on(['change:coc_setting', 'change:coc_surh'].join(' '), function () {
         use_encombrement: '0',
         PC_DESC: 'Points de Cash,Point de Cash,PC',
         PC_BONUS: '+[[1d6]]',
+        BITUME: '0',
       },
       menacex: {
         INIT_JET: '@{INIT}',
@@ -5172,6 +5449,7 @@ on(['change:coc_setting', 'change:coc_surh'].join(' '), function () {
         use_encombrement: '0',
         PC_DESC: 'Points de Chance,Point de Chance,PC',
         PC_BONUS: '+10',
+        BITUME: '0',
       },
       bitume: {
         INIT_JET: '{[[@{INIT}]]+1d6!, ([[@{INIT}]]*2)+0d6}kl1',
@@ -5186,6 +5464,7 @@ on(['change:coc_setting', 'change:coc_surh'].join(' '), function () {
         use_encombrement: '0',
         PC_DESC: 'Points de Style,Point de Style,PS',
         PC_BONUS: 'effet Waouh, réussite héroïque, juste une égratignure',
+        BITUME: '1',
       },
     };
 
