@@ -31,7 +31,7 @@ Si le champ contenant le statblock n'est pas effacé, il s'agit d'une erreur d'a
 
 ## Format du statblock
 
-_Nom_
+_Nom_    
 _NC xxx, créature xxx, taille xxx_  
 _FOR xxx DEX xxx CON xxx_  
 _INT xxx PER xxx CHA xxx_  
