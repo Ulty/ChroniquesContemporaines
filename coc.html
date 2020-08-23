@@ -70,14 +70,14 @@
     <input type="checkbox" class="block-switch" style="display: none;" name="attr_coc_setting_bitume" value="1">
     <div class="block-hidden">
       <div style="vertical-align: middle; text-align: center;">
-        <img style="width:70%; height:90%" title="Version 3.5 - 15/08/2020"
+        <img style="width:70%; height:90%" title="Version 3.5 - 22/08/2020"
           src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/ChroniquesOublieesContemporain/coc_logo.png" />
       </div>
     </div>
     <div class="block-show">
       <div style="vertical-align: middle; text-align: center;">
-        <img style="width:70%; height:90%" title="Version 3.5 - 15/08/2020"
-          src="https://i.imgur.com/oXO5Ymc.jpg" />
+        <img style="width:70%; height:90%" title="Version 3.5 - 22/08/2020"
+          src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/ChroniquesOublieesContemporain/coc_bitume.jpg" />
       </div>
     </div>  
     <div style="width:250px;">
@@ -5485,13 +5485,16 @@ on('change:vbemp_base change:vbemp_div', function () {
  * Rebuild Bitume vehicle used EMP
  */
 function rebuildUsedSlots() {
-  getSectionIDs('vbmods', function (ids) {
-    setAttrs({ vbemp_total: 0 });
-    let used = 0;
-    ids.forEach((id) => {
-      getAttrs([`repeating_vbmods_${id}_vbmod-emp`], function (value) {
-        used += parseInt(value[Object.keys(value)[0]]) || 0;
-        setAttrs({ vbemp_total: used });
+  getAttrs(['coc_setting'], function (value) {
+    if (value.coc_setting !== 'bitume') return;
+    getSectionIDs('vbmods', function (ids) {
+      setAttrs({ vbemp_total: 0 });
+      let used = 0;
+      ids.forEach((id) => {
+        getAttrs([`repeating_vbmods_${id}_vbmod-emp`], function (value) {
+          used += parseInt(value[Object.keys(value)[0]]) || 0;
+          setAttrs({ vbemp_total: used });
+        });
       });
     });
   });
