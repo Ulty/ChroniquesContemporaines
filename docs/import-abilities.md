@@ -16,9 +16,11 @@ Cette fonction est basée sur la base de données utilisée par l'application Ch
 ## Import des données
 
  1. Lancez Roll20 et ouvrez la fiche du personnage dans laquelle vous souhaitez importer les données
- 2. Sélectionnez l'onglet **Configuration** et collez les données préalablement copiées dans le champ
+ 2. Sélectionnez l'onglet **Configuration** et collez les données préalablement copiées dans le champ **Importer profil**
+![enter image description here](https://i.imgur.com/YB0TtAi.png)
+ 3. Cliquez sur le bouton d'import, 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMxMzk5ODc0MywtMTM3MzEzNjg0NSwxMj
-UxODkyMjZdfQ==
+eyJoaXN0b3J5IjpbNDE2OTU0MTQ0LC0zMTM5OTg3NDMsLTEzNz
+MxMzY4NDUsMTI1MTg5MjI2XX0=
 -->
