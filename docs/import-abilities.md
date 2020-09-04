@@ -8,19 +8,19 @@ Cette fonction est basée sur la base de données utilisée par l'application [C
 
 ## Export des données
 
- 1. Pointez votre navigateur vers l'application [Export Chroniques Mobiles](https://comob-data.rpgapps.net)
+ 1. Pointez votre navigateur vers l'application [Export Chroniques Mobiles](https://comob-data.rpgapps.net).
  ![enter image description here](https://i.imgur.com/YcBJcg5.png)
- 2. Sélectionnez l'univers (Fantasy, Contemporain, Cyberpunk) et le profil souhaité. Cochez la case **Détail** si vous souhaitez récupérer la description complète des capacités, sinon seuls les noms seront récupérés.
- 3. Cliquez sur le bouton **Copier** pour copier les données dans le presse-papier
+ 2. Sélectionnez l'**Univers** (Fantasy, Contemporain, Cyberpunk) et le **Profil** souhaité. Cochez la case **Détail** si vous souhaitez récupérer la description complète des capacités, sinon seuls les noms seront récupérés.
+ 3. Cliquez sur le bouton **Copier** pour copier les données dans le presse-papier.
 
 ## Import des données
 
- 1. Lancez Roll20 et ouvrez la fiche du personnage dans laquelle vous souhaitez importer les données
- 2. Sélectionnez l'onglet **Configuration** et collez les données préalablement copiées dans le champ **Importer profil**
+ 1. Lancez Roll20 et ouvrez la fiche du personnage dans laquelle vous souhaitez importer les données.
+ 2. Sélectionnez l'onglet **Configuration** et collez les données préalablement copiées dans le champ **Importer profil**.
 ![enter image description here](https://i.imgur.com/YB0TtAi.png)
  3. Cliquez sur le bouton d'import pour insérer les données dans les champs **Profil**, **Famille** et dans les cases du tableau des **Capacités** du personnage sur l'onglet du même nom.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjI0Mzk1NSwtMTY1NzI4NjcsLTMxMz
-k5ODc0MywtMTM3MzEzNjg0NSwxMjUxODkyMjZdfQ==
+eyJoaXN0b3J5IjpbLTE1NTcwNDM0MzcsLTE2NTcyODY3LC0zMT
+M5OTg3NDMsLTEzNzMxMzY4NDUsMTI1MTg5MjI2XX0=
 -->
