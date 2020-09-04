@@ -11,12 +11,13 @@ Cette fonction est basée sur la base de données utilisée par l'application Ch
  1. Pointez votre navigateur vers : https://comob-data.rpgapps.net
  ![enter image description here](https://i.imgur.com/YcBJcg5.png)
  2. Sélectionnez l'univers (Fantasy, Contemporain, Cyberpunk) et le profil souhaité. Cochez la case **Détail** si vous souhaitez récupérer la description complète des capacités, sinon seuls les noms seront récupérés.
- 3. Cliquer sur le bouton **Copier** pour copier les données dans le presse-papier
+ 3. Cliquez sur le bouton **Copier** pour copier les données dans le presse-papier
 
 ## Import des données
 
+ 1. Lancez Roll20 et ouvre la fiche du personnage dans laquelle 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDI2NzI1NDg4LC0xMzczMTM2ODQ1LDEyNT
-E4OTIyNl19
+eyJoaXN0b3J5IjpbLTE5ODI4OTY0MjEsLTEzNzMxMzY4NDUsMT
+I1MTg5MjI2XX0=
 -->
