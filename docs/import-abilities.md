@@ -2,8 +2,8 @@
 
 La version 3.6 de la fiche de personnage Chroniques Oubliées Contemporain comporte une fonction d'import des capacités pour les fiches de PJ.
 
-Cette fonction est basée sur la base de données utilisée par l'application Chroniques Mobiles (https://comob.rpgapps.net) pour afficher 
+Cette fonction est basée sur la base de données utilisée par l'application Chroniques Mobiles (https://comob.rpgapps.net) pour afficher les listes de profils, de voies et les descriptions des capacités sur tout navigateur de bureau ou mobile
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1MTg5MjI2XX0=
+eyJoaXN0b3J5IjpbNTY5MzI5MjU5LDEyNTE4OTIyNl19
 -->
