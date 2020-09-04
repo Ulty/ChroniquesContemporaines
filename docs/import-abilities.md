@@ -4,7 +4,10 @@ La version 3.6 de la fiche de personnage Chroniques Oubliées Contemporain compo
 
 Cette fonction est basée sur la base de données utilisée par l'application Chroniques Mobiles (https://comob.rpgapps.net) pour afficher les listes de profils, de voies, et les descriptions des capacités sur tout navigateur de bureau ou mobile.
 
+## Mode d'emploi
+
+Heading
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwMTIwMjQ1OSwxMjUxODkyMjZdfQ==
+eyJoaXN0b3J5IjpbMzc4MTQ5NzAzLDEyNTE4OTIyNl19
 -->
