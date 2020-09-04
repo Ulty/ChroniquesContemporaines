@@ -8,8 +8,9 @@ Cette fonction est basée sur la base de données utilisée par l'application Ch
 
 ## Export des données
 
- 1. Pointer votre na
+ 1. Pointer votre navigateur vers : https://comob-data.rpgapps.net
+ 2. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQ1MDUxNTYwLDEyNTE4OTIyNl19
+eyJoaXN0b3J5IjpbLTEzNzMxMzY4NDUsMTI1MTg5MjI2XX0=
 -->
