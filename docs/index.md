@@ -3,3 +3,7 @@
 Cliquer sur un lien pour consulter la documentation correspondante :
 
 [Import de statblock]({{ site.baseurl }}/import-statblock)
+[Import des capacités]({{ site.baseurl }}/import-abilities)
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTk4NTM4MDc0OF19
+-->
