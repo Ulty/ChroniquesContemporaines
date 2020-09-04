@@ -5066,6 +5066,10 @@ on(
   }
 );
 
+/**
+ * On changing path & rank number attributes
+ * - Set the path & rank identifier (v?r?)
+ */
 on(
   [
     'change:repeating_jetcapas:jetcapavoieno',
@@ -5079,7 +5083,6 @@ on(
       ],
       function (values) {
         const vr = `${values.repeating_jetcapas_jetcapavoieno}${values.repeating_jetcapas_jetcapavoierang}`;
-        console.log(vr);
         if (vr.length !== 4) return;
         getAttrs([vr.replace('v', 'voie').replace('r', '-')], function (value) {
           const rankData = value[Object.keys(value)[0]].split('\n');
@@ -5091,7 +5094,6 @@ on(
             repeating_jetcapas_jetcapavr: vr,
           };
           setAttrs(updated);
-          console.log(updated);
         });
       }
     );
