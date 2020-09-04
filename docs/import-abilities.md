@@ -19,9 +19,10 @@ Cette fonction est basée sur la base de données utilisée par l'application [C
  2. Sélectionnez l'onglet **Configuration** et collez les données préalablement copiées dans le champ **Importer profil**.
 ![enter image description here](https://i.imgur.com/YB0TtAi.png)
  3. Cliquez sur le bouton d'import pour insérer les données dans les champs **Profil**, **Famille** et dans les cases du tableau des **Capacités** du personnage sur l'onglet du même nom.
+![enter image description here](https://i.imgur.com/x6Xu3It.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzODkzMTczNywtMTU1NzA0MzQzNywtMT
-Y1NzI4NjcsLTMxMzk5ODc0MywtMTM3MzEzNjg0NSwxMjUxODky
-MjZdfQ==
+eyJoaXN0b3J5IjpbMTkwNjk3NjIzMCwxMTM4OTMxNzM3LC0xNT
+U3MDQzNDM3LC0xNjU3Mjg2NywtMzEzOTk4NzQzLC0xMzczMTM2
+ODQ1LDEyNTE4OTIyNl19
 -->
