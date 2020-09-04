@@ -6,8 +6,10 @@ Cette fonction est basée sur la base de données utilisée par l'application Ch
 
 ## Mode d'emploi
 
-Heading
+## Export des données
+
+ 1. Pointer votre na
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzc4MTQ5NzAzLDEyNTE4OTIyNl19
+eyJoaXN0b3J5IjpbODQ1MDUxNTYwLDEyNTE4OTIyNl19
 -->
