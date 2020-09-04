@@ -2,13 +2,13 @@
 
 La version 3.6 de la fiche de personnage Chroniques Oubliées Contemporain comporte une fonction d'import des capacités pour les fiches de PJ.
 
-Cette fonction est basée sur la base de données utilisée par l'application Chroniques Mobiles (https://comob.rpgapps.net) pour afficher les listes de profils, de voies, et les descriptions des capacités sur tout navigateur de bureau ou mobile.
+Cette fonction est basée sur la base de données utilisée par l'application [Chroniques Mobiles](https://comob.rpgapps.net) pour afficher les listes de profils, de voies, et les descriptions des capacités sur tout navigateur de bureau ou mobile.
 
 ## Mode d'emploi
 
 ## Export des données
 
- 1. Pointez votre navigateur vers : https://comob-data.rpgapps.net
+ 1. Pointez votre navigateur vers l'application [Export Chroniques Mobiles](https://comob-data.rpgapps.net)
  ![enter image description here](https://i.imgur.com/YcBJcg5.png)
  2. Sélectionnez l'univers (Fantasy, Contemporain, Cyberpunk) et le profil souhaité. Cochez la case **Détail** si vous souhaitez récupérer la description complète des capacités, sinon seuls les noms seront récupérés.
  3. Cliquez sur le bouton **Copier** pour copier les données dans le presse-papier
@@ -21,6 +21,6 @@ Cette fonction est basée sur la base de données utilisée par l'application Ch
  3. Cliquez sur le bouton d'import pour insérer les données dans les champs **Profil**, **Famille** et dans les cases du tableau des **Capacités** du personnage sur l'onglet du même nom.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTcyODY3LC0zMTM5OTg3NDMsLTEzNz
-MxMzY4NDUsMTI1MTg5MjI2XX0=
+eyJoaXN0b3J5IjpbLTE1MjI0Mzk1NSwtMTY1NzI4NjcsLTMxMz
+k5ODc0MywtMTM3MzEzNjg0NSwxMjUxODkyMjZdfQ==
 -->
