@@ -14,6 +14,10 @@ Le jeu complet est disponible sur le site de l'éditeur [Black Book Editions](ht
 
 # Notes de version
 
+## v3.8.1 (2021-03-01)
+
+Suppression du code de remise en forme des textes de capacités par élimination des retours à la ligne
+
 ## v3.8 (2021-02-22)
 
 _Fiche de PJ_
