@@ -962,33 +962,23 @@
                         <option value="12">d12</option>
                       </optgroup>
                       <optgroup label="Sans limite">
-                        <option value="3!">d3</option>
-                        <option value="4!">d4</option>
-                        <option value="6!" selected>d6</option>
-                        <option value="8!">d8</option>
-                        <option value="10!">d10</option>
-                        <option value="12!">d12</option>
+                        <option value="3!">d3+</option>
+                        <option value="4!">d4+</option>
+                        <option value="6!" selected>d6+</option>
+                        <option value="8!">d8+</option>
+                        <option value="10!">d10+</option>
+                        <option value="12!">d12+</option>
                       </optgroup>
                     </select>+
                     <select class="sheet-carac" style="width:52px;" name="attr_armedmcar" size="1"
                       title="@{armedmcar} Modificateur aux dommages">
                       <option value="0" selected>-</option>
-                      <optgroup label="Mod. de Base">
                         <option value="@{FOR}">FOR</option>
                         <option value="@{DEX}">DEX</option>
                         <option value="@{CON}">CON</option>
                         <option value="@{INT}">INT</option>
                         <option value="@{PER}">PER</option>
-                        <option value="@{CHA}">CHA</option>
-                      </optgroup>
-                      <optgroup label="Mod. de Test">
-                        <option value="@{FOR_TEST}">FOR</option>
-                        <option value="@{DEX_TEST}">DEX</option>
-                        <option value="@{CON_TEST}">CON</option>
-                        <option value="@{INT_TEST}">INT</option>
-                        <option value="@{PER_TEST}">PER</option>
-                        <option value="@{CHA_TEST}">CHA</option>
-                      </optgroup>
+                        <option value="@{CHA}">CHA</option>                      
                     </select>+
                     <input type="number" style="width:32px;" name="attr_armedmdiv" value="0"
                       title="@{armedmdiv} Bonus de dommage divers" />
@@ -2075,16 +2065,16 @@
                     <option value="@{INT}">INT</option>
                     <option value="@{PER}">PER</option>
                     <option value="@{CHA}">CHA</option>
-                    <option value="@{QRYMOD}">Choix</option>
+                    <option value="@{QRYMOD}">Choix base</option>
                   </optgroup>
                   <optgroup label="Mod. de Test">
-                    <option value="@{FOR_TEST}">FOR</option>
-                    <option value="@{DEX_TEST}">DEX</option>
-                    <option value="@{CON_TEST}">CON</option>
-                    <option value="@{INT_TEST}">INT</option>
-                    <option value="@{PER_TEST}">PER</option>
-                    <option value="@{CHA_TEST}">CHA</option>
-                    <option value="@{QRYMODT}">Choix</option>
+                    <option value="@{FOR_TEST}">FOR(t)</option>
+                    <option value="@{DEX_TEST}">DEX(t)</option>
+                    <option value="@{CON_TEST}">CON(t)</option>
+                    <option value="@{INT_TEST}">INT(t)</option>
+                    <option value="@{PER_TEST}">PER(t)</option>
+                    <option value="@{CHA_TEST}">CHA(t)</option>
+                    <option value="@{QRYMODT}">Choix test</option>
                   </optgroup>
                   <optgroup label="Attaques">
                     <option value="@{ATKCAC}">ATC</option>
@@ -2704,12 +2694,12 @@
                       <option value="@{CHA}">CHA</option>
                     </optgroup>
                     <optgroup label="Mod. de Test">
-                      <option value="@{FOR_TEST}">FOR</option>
-                      <option value="@{DEX_TEST}">DEX</option>
-                      <option value="@{CON_TEST}">CON</option>
-                      <option value="@{INT_TEST}">INT</option>
-                      <option value="@{PER_TEST}">PER</option>
-                      <option value="@{CHA_TEST}">CHA</option>
+                      <option value="@{FOR_TEST}">FOR(t)</option>
+                      <option value="@{DEX_TEST}">DEX(t)</option>
+                      <option value="@{CON_TEST}">CON(t)</option>
+                      <option value="@{INT_TEST}">INT(t)</option>
+                      <option value="@{PER_TEST}">PER(t)</option>
+                      <option value="@{CHA_TEST}">CHA(t)</option>
                     </optgroup>
                     <optgroup label="Attaques">
                       <option value="@{ATKCAC}">ATC</option>
@@ -3035,12 +3025,12 @@
                       <option value="@{CHA}">CHA</option>
                     </optgroup>
                     <optgroup label="Mod. de Test">
-                      <option value="@{FOR_TEST}">FOR</option>
-                      <option value="@{DEX_TEST}">DEX</option>
-                      <option value="@{CON_TEST}">CON</option>
-                      <option value="@{INT_TEST}">INT</option>
-                      <option value="@{PER_TEST}">PER</option>
-                      <option value="@{CHA_TEST}">CHA</option>
+                      <option value="@{FOR_TEST}">FOR(t)</option>
+                      <option value="@{DEX_TEST}">DEX(t)</option>
+                      <option value="@{CON_TEST}">CON(t)</option>
+                      <option value="@{INT_TEST}">INT(t)</option>
+                      <option value="@{PER_TEST}">PER(t)</option>
+                      <option value="@{CHA_TEST}">CHA(t)</option>
                     </optgroup>
                     <optgroup label="Attaques">
                       <option value="@{ATKCAC}">ATC</option>
@@ -3291,12 +3281,12 @@
                       <option value="12">d12</option>
                     </optgroup>
                     <optgroup label="Sans limite">
-                      <option value="3!">d3</option>
-                      <option value="4!">d4</option>
-                      <option value="6!" selected>d6</option>
-                      <option value="8!">d8</option>
-                      <option value="10!">d10</option>
-                      <option value="12!">d12</option>
+                      <option value="3!">d3+</option>
+                      <option value="4!">d4+</option>
+                      <option value="6!" selected>d6+</option>
+                      <option value="8!">d8+</option>
+                      <option value="10!">d10+</option>
+                      <option value="12!">d12+</option>
                     </optgroup>
                   </select>
                   +
