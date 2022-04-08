@@ -18,7 +18,8 @@ v3.12.0 [Screenshot](coc_v2.png)
 
 Modification cosmétique
 
-Un bug de "sanitization" de Roll20 élimine les éléments HTML optgroup permettant de séparer les options par types dans les listes dépliantes (élements HTML select). Une solution de contournement a été implémentée en utilisant une option 'disabled' avec un style CSS
+Un bug de "sanitization" de Roll20 élimine les éléments HTML optgroup permettant de séparer les options par types dans les listes dépliantes (élements HTML select). Une solution de contournement a été implémentée en utilisant une option 'disabled' avec un style CSS.
+
 Ces séparateurs d'options sont par exemple utilisés dans les listes dépliantes des dés de dommages pour distinguer les DM normaux des DM sans limites.
 
 ## v3.11.0 (2022-01-16)
