@@ -187,6 +187,12 @@ div.sheet-boxability {
   font-weight: normal;
 }
 
+.sheet-optgroup {
+  background:gray;
+  font-weight:bold;
+  color:white;
+}
+
 /* BUTTONS */
 button[type='roll'].sheet-boxtitre {
   height: 20px;

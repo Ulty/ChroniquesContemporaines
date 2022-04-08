@@ -1,8 +1,8 @@
 <div class="sheet-mainBg">
   <!-- FDP -->
   <!-- INPUT HIDDEN Version FdP -->
-  <input type="hidden" name="attr_VERFDP" value="3.11.0" />
-  <input type="hidden" name="attr_VERSION" value="3.11.0" />
+  <input type="hidden" name="attr_VERFDP" value="3.12.0" />
+  <input type="hidden" name="attr_VERSION" value="3.12.0" />
   <!-- INPUT HIDDEN Univers (COF, CG, COC) -->
   <input type="hidden" name="attr_UNIVERS" value="COC" />
   <input type="hidden" name="attr_coc_setting_bitume" value="0" />
@@ -956,6 +956,7 @@
                     <select class="sheet-carac" style="width:47px;" name="attr_armedmde" size="1"
                       title="@{armedmde} Dé de dommage">
                       <optgroup label="Normal">
+                        <option disabled class="sheet-optgroup">&nbsp;Normal</option>
                         <option value="3">d3</option>
                         <option value="4">d4</option>
                         <option value="6">d6</option>
@@ -964,6 +965,7 @@
                         <option value="12">d12</option>
                       </optgroup>
                       <optgroup label="Sans limite">
+                        <option disabled class="sheet-optgroup">&nbsp;Sans limite</option>
                         <option value="3!">d3+</option>
                         <option value="4!">d4+</option>
                         <option value="6!" selected>d6+</option>
@@ -976,6 +978,7 @@
                       title="@{armedmcar} Modificateur aux dommages">
                       <option value="0" selected>-</option>
                       <optgroup label="Mod. de base">
+                        <option disabled class="sheet-optgroup">&nbsp;Mod. de base</option>
                         <option value="@{FOR}">FOR</option>
                         <option value="@{DEX}">DEX</option>
                         <option value="@{CON}">CON</option>
@@ -984,6 +987,7 @@
                         <option value="@{CHA}">CHA</option>
                       </optgroup>
                       <optgroup label="Mod. de test">
+                        <option disabled class="sheet-optgroup">&nbsp;Mod. de test</option>
                         <option value="@{FOR_TEST}">FOR(t)</option>
                         <option value="@{DEX_TEST}">DEX(t)</option>
                         <option value="@{CON_TEST}">CON(t)</option>
@@ -1068,6 +1072,7 @@
               <select style="width: 130px;" name="attr_distance" title="@{distance} Mod. de portée"
                 value="0[Portée normale]">
                 <optgroup label="Portée">
+                  <option disabled class="sheet-optgroup">&nbsp;Portée</option>
                   <option value="+3[Portée courte]">Courte (+3)</option>
                   <option value="0[Portée normale]" selected>Normale</option>
                   <option value="-5[Portée double]">Double (-5)</option>
@@ -1077,6 +1082,7 @@
               <select style="width: 130px;" name="attr_couvert" title="@{couvert} Mod. de couverture"
                 value="0[Aucun couvert]">
                 <optgroup label="Couvert">
+                  <option disabled class="sheet-optgroup">&nbsp;Couvert</option>
                   <option value="0[Aucun couvert]" selected>Aucun</option>
                   <option value="-2[Couvert partiel]">Partiel (-2)</option>
                   <option value="-5[Couvert important]">Important (-5)</option>
@@ -1085,6 +1091,7 @@
               <select style="width: 130px;" name="attr_visibilite" title="@{visibilite} Mod. visibilité cible"
                 value="0[Cible visible]">
                 <optgroup label="Cible">
+                  <option disabled class="sheet-optgroup">&nbsp;Cible</option>
                   <option value="0[Cible visible]" selected>Visible</option>
                   <option value="-2[Cible au CaC]">Cible au CaC (-2)</option>
                   <option value="-5[Cible masquée par allié]">Masquée par allié (-5)</option>
@@ -2071,6 +2078,7 @@
                   <option value="0" selected>-</option>
                   <option value="@{NIVEAU}">NIV</option>
                   <optgroup label="Mod. de Base">
+                    <option disabled class="sheet-optgroup">&nbsp;Mod. de base</option>
                     <option value="@{FOR}">FOR</option>
                     <option value="@{DEX}">DEX</option>
                     <option value="@{CON}">CON</option>
@@ -2080,6 +2088,7 @@
                     <option value="@{QRYMOD}">Choix base</option>
                   </optgroup>
                   <optgroup label="Mod. de Test">
+                    <option disabled class="sheet-optgroup">&nbsp;Mod. de test</option>
                     <option value="@{FOR_TEST}">FOR(t)</option>
                     <option value="@{DEX_TEST}">DEX(t)</option>
                     <option value="@{CON_TEST}">CON(t)</option>
@@ -2089,6 +2098,7 @@
                     <option value="@{QRYMODT}">Choix test</option>
                   </optgroup>
                   <optgroup label="Attaques">
+                    <option disabled class="sheet-optgroup">&nbsp;Attaques</option>
                     <option value="@{ATKCAC}">ATC</option>
                     <option value="@{ATKTIR}">ATD</option>
                     <option value="@{ATKMEN}">MEN</option>
@@ -2474,6 +2484,7 @@
               <option value="ange">Ange</option>
               <option value="demon">Démon</option>
               <optgroup label="Être féérique">
+                <option disabled class="sheet-optgroup">&nbsp;Être féérique</option>
                 <option value="fee-dragon">Dragon</option>
                 <option value="fee-dryade">Dryade</option>
                 <option value="fee-dwergar">Dwergar</option>
@@ -2484,6 +2495,7 @@
               <option value="garou">Loup-garou</option>
               <option value="vampire">Vampire</option>
               <optgroup label="Mutant">
+                <option disabled class="sheet-optgroup">&nbsp;Mutant</option>
                 <option value="mutant-endo">Endo-actif</option>
                 <option value="mutant-exo">Exo-actif</option>
                 <option value="mutant-psycho">Psycho-actif</option>
@@ -2702,6 +2714,7 @@
                     title="@{jetvcaracp} Mod. du personnage">
                     <option value="0" selected>-</option>
                     <optgroup label="Mod. de Base">
+                      <option disabled class="sheet-optgroup">&nbsp;Mod. de base</option>
                       <option value="@{FOR}">FOR</option>
                       <option value="@{DEX}">DEX</option>
                       <option value="@{CON}">CON</option>
@@ -2710,6 +2723,7 @@
                       <option value="@{CHA}">CHA</option>
                     </optgroup>
                     <optgroup label="Mod. de Test">
+                      <option disabled class="sheet-optgroup">&nbsp;Mod. de test</option>
                       <option value="@{FOR_TEST}">FOR(t)</option>
                       <option value="@{DEX_TEST}">DEX(t)</option>
                       <option value="@{CON_TEST}">CON(t)</option>
@@ -2718,6 +2732,7 @@
                       <option value="@{CHA_TEST}">CHA(t)</option>
                     </optgroup>
                     <optgroup label="Attaques">
+                      <option disabled class="sheet-optgroup">&nbsp;Attaques</option>
                       <option value="@{ATKCAC}">ATC</option>
                       <option value="@{ATKTIR}">ATD</option>
                       <option value="@{ATKMEN}">MEN</option>
@@ -3033,6 +3048,7 @@
                     title="@{jetvcaracp} Mod. du personnage">
                     <option value="0" selected>-</option>
                     <optgroup label="Mod. de Base">
+                      <option disabled class="sheet-optgroup">&nbsp;Mod. de base</option>
                       <option value="@{FOR}">FOR</option>
                       <option value="@{DEX}">DEX</option>
                       <option value="@{CON}">CON</option>
@@ -3041,6 +3057,7 @@
                       <option value="@{CHA}">CHA</option>
                     </optgroup>
                     <optgroup label="Mod. de Test">
+                      <option disabled class="sheet-optgroup">&nbsp;Mod. de test</option>
                       <option value="@{FOR_TEST}">FOR(t)</option>
                       <option value="@{DEX_TEST}">DEX(t)</option>
                       <option value="@{CON_TEST}">CON(t)</option>
@@ -3049,6 +3066,7 @@
                       <option value="@{CHA_TEST}">CHA(t)</option>
                     </optgroup>
                     <optgroup label="Attaques">
+                      <option disabled class="sheet-optgroup">&nbsp;Attaques</option>
                       <option value="@{ATKCAC}">ATC</option>
                       <option value="@{ATKTIR}">ATD</option>
                       <option value="@{ATKPIL}">PIL</option>
@@ -3293,6 +3311,7 @@
                     title="@{atkdmnbde} Nombre de dés de DM" value="0" />
                   <select class="sheet-carac" style="width: 45px;" name="attr_atkdmde" title="@{atkdmde} Dé de DM">
                     <optgroup label="Normaux">
+                      <option disabled class="sheet-optgroup">&nbsp;Normaix</option>
                       <option value="3">d3</option>
                       <option value="4">d4</option>
                       <option value="6">d6</option>
@@ -3301,6 +3320,7 @@
                       <option value="12">d12</option>
                     </optgroup>
                     <optgroup label="Sans limite">
+                      <option disabled class="sheet-optgroup">&nbsp;Sans limite</option>
                       <option value="3!">d3+</option>
                       <option value="4!">d4+</option>
                       <option value="6!" selected>d6+</option>
