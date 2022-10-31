@@ -10,9 +10,14 @@ Le jeu complet est disponible sur le site de l'éditeur [Black Book Editions](ht
 
 # Version courante
 
-v3.12.0 [Screenshot](coc_v2.png)
+v3.13.0 [Screenshot](coc_v2.png)
 
 # Notes de version
+
+## v3.13.0 (2022-10-31)
+
+- Ajout d'une section Notes de Version sur l'onglet Configuration
+- Modification cosmétique des boutons +Add, Modify et Done des sections répétables
 
 ## v3.12.0 (2022-04-10)
 
